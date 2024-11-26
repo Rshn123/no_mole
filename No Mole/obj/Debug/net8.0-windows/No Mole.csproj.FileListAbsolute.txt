@@ -1,0 +1,35 @@
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\No Mole.exe
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\No Mole.deps.json
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\No Mole.runtimeconfig.json
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\No Mole.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\No Mole.pdb
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\App.g.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole_MarkupCompile.cache
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole_MarkupCompile.lref
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.g.resources
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.AssemblyInfoInputs.cache
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.AssemblyInfo.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.csproj.CoreCompileInputs.cache
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.dll
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\refint\No Mole.dll
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.pdb
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.genruntimeconfig.cache
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\ref\No Mole.dll
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\App.baml
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\CustomButton.g.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\CustomButton.baml
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\AForge.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\AForge.Video.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\AForge.Video.DirectShow.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+D:\Roshan Workspace\No Mole\No Mole\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.csproj.AssemblyReference.cache
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.csproj.Up2Date
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\InspectionDetailModal.g.cs
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\InspectionDetailModal.baml

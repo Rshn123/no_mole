@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>No_Mole</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AForge.Video" Version="2.2.5" />
+    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources/Icons/settings.png" />
+		<Resource Include="Resources/Icons/sun.png" />
+		<Resource Include="Resources/Icons/recorder.png" />
+		<Resource Include="Resources/Icons/scan-search.png" />
+		<Resource Include="Resources/Icons/maximize.png" />
+		<Resource Include="Resources/Icons/camera.png" />
+		<Resource Include="Resources/Icons/play.png" />
+	</ItemGroup>
+</Project>
