@@ -169,7 +169,7 @@ namespace No_Mole
 
             BlurEffect blur = new BlurEffect
             {
-                Radius = 5
+                Radius = 10
             };
             this.Effect = blur;
 

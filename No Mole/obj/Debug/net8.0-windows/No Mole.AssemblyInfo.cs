@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("No Mole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5ae255cd6527af0624bf72146b840856d1ea8b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26b399dad16ec34094d42c0567cdd0ccc2abc343")]
 [assembly: System.Reflection.AssemblyProductAttribute("No Mole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("No Mole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

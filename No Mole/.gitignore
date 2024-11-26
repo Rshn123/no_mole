@@ -1,2 +1,27 @@
-obj/
+# Ignore build artifacts
 bin/
+obj/
+
+# Ignore Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore NuGet packages
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Ignore logs
+*.log
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.bak
+~$*
