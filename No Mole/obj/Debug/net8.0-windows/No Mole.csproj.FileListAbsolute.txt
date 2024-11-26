@@ -33,3 +33,4 @@ D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.csproj.Asse
 D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.csproj.Up2Date
 D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\InspectionDetailModal.g.cs
 D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\Components\InspectionDetailModal.baml
+D:\Roshan Workspace\No Mole\No Mole\obj\Debug\net8.0-windows\No Mole.sourcelink.json
