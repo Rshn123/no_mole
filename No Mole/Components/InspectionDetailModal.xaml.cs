@@ -25,20 +25,7 @@ namespace No_Mole.Components
         }
 
 
-        private void MyTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            HintTextBlock.Visibility = string.IsNullOrEmpty(MyTextBox.Text) ? Visibility.Visible : Visibility.Collapsed;
-        }
-
-        private void MyTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            HintTextBlock.Visibility = string.IsNullOrEmpty(MyTextBox.Text) ? Visibility.Collapsed : Visibility.Visible;
-        }
-
-        private void MyTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            HintTextBlock.Visibility = string.IsNullOrEmpty(MyTextBox.Text) ? Visibility.Visible : Visibility.Collapsed;
-        }
+    
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)
         {
