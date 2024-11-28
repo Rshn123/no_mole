@@ -14,7 +14,6 @@ using System.Windows.Media;
 using ColorConverter = System.Windows.Media.ColorConverter;
 using System.ComponentModel;
 using Color = System.Windows.Media.Color;
-using No_Mole.View;
 
 namespace No_Mole
 {
@@ -235,9 +234,35 @@ namespace No_Mole
             ButtonText.Text = text;
         }
 
+        private void OpenModal(Window modal, int height, int width)
+        {
+            BlurEffect blur = new()
+            {
+                Radius = 10
+            };
+
+            this.Effect = blur;
+
+            modal.Owner = this;
+            modal.Width = width;
+            modal.Height = height;
+
+            modal.Left = this.Left + (this.Width - modal.Width) / 2;
+            modal.Top = this.Top + (this.Height - modal.Height) / 2;
+
+            modal.ShowDialog();
+
+            this.Effect = null;
+        }
+
         private void Click_About(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new ContactUs());
+            OpenModal(new About(), 450, 800);
+        }
+
+        private void Click_Help(object sender, RoutedEventArgs e)
+        {
+            OpenModal(new ContactUs(), 450, 800);
         }
     }
 }

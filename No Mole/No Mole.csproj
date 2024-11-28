@@ -24,5 +24,11 @@
 		<Resource Include="Resources/Icons/camera.png" />
 		<Resource Include="Resources/Icons/play.png" />
 		<Resource Include="Resources/Icons/stop.png" />
+		<Resource Include="Resources/Icons/no_mole_logo.png" />
+		
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="View\" />
 	</ItemGroup>
 </Project>

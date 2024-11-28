@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\About.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\CameraNotFoundWarning.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\ContactUs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\CustomButton.xaml.cs">
@@ -22,12 +28,15 @@
     <Compile Update="Components\VideoEffect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ContactUs.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\About.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\CameraNotFoundWarning.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\ContactUs.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\CustomButton.xaml">
@@ -43,9 +52,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\ContactUs.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

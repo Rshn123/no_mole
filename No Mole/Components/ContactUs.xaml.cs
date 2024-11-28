@@ -10,19 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace No_Mole.View
+namespace No_Mole.Components
 {
     /// <summary>
     /// Interaction logic for ContactUs.xaml
     /// </summary>
-    public partial class ContactUs : Page
+    public partial class ContactUs : Window
     {
         public ContactUs()
         {
             InitializeComponent();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Close the window when the background is clicked
+            this.Close();
+        }
+
+
+
+        private void Contact_Us_Close_BTN(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

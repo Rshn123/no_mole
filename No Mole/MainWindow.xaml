@@ -14,7 +14,7 @@
             <MenuItem Header="Image" />
             <MenuItem Header="Video" />
             <MenuItem Header="About" Click="Click_About" />
-            <MenuItem Header="Help" />
+            <MenuItem Header="Help" Click="Click_Help" />
         </Menu>
         
       
