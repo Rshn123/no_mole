@@ -12,6 +12,9 @@ using System.Windows.Media.Effects;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ColorConverter = System.Windows.Media.ColorConverter;
+using System.ComponentModel;
+using Color = System.Windows.Media.Color;
+using No_Mole.View;
 
 namespace No_Mole
 {
@@ -31,9 +34,11 @@ namespace No_Mole
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
             StartLive();
         }
 
+  
         private void StartLive()
         {
             // Enumerate cameras
@@ -171,10 +176,28 @@ namespace No_Mole
         {
             Button? button = sender as Button;
 
-            if (button!.Content.ToString() == "Stop Inspection")
+            if (ButtonText.Text.ToString() == "Stop Inspection")
             {
-                button.Content = "Start Inspection";
-                button.Background = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#AD42AD"));
+                BlurEffect blur = new()
+                {
+                    Radius = 10
+                };
+                this.Effect = blur;
+
+                FailedInspection modal = new(button!, this)
+                {
+                    Owner = this,
+                    Width = 615,
+                    Height = 415
+                };
+
+                modal.Left = this.Left + (this.Width - modal.Width) / 2;
+                modal.Top = this.Top + (this.Height - modal.Height) / 2;
+
+                modal.ShowDialog();
+
+                this.Effect = null;
+
             }
             else
             {
@@ -184,7 +207,7 @@ namespace No_Mole
                 };
                 this.Effect = blur;
 
-                InspectionDetailModal modal = new(button!)
+                InspectionDetailModal modal = new(button!, this)
                 {
                     Owner = this,
                     Width = 615,
@@ -198,6 +221,23 @@ namespace No_Mole
                 this.Effect = null;
             }
           
+        }
+    
+        public void ChangeButtonImage(string imageSource)
+
+        {
+            ButtonImage.Source = new BitmapImage(new Uri(imageSource, UriKind.Relative));
+        }
+
+        public void ChangeText(string text)
+
+        {
+            ButtonText.Text = text;
+        }
+
+        private void Click_About(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ContactUs());
         }
     }
 }

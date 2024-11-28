@@ -23,5 +23,6 @@
 		<Resource Include="Resources/Icons/maximize.png" />
 		<Resource Include="Resources/Icons/camera.png" />
 		<Resource Include="Resources/Icons/play.png" />
+		<Resource Include="Resources/Icons/stop.png" />
 	</ItemGroup>
 </Project>

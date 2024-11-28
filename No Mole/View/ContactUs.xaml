@@ -1,0 +1,113 @@
+﻿<Page x:Class="No_Mole.View.ContactUs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:No_Mole.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ContactUs">
+
+    <Grid>
+        <DockPanel VerticalAlignment="Top" Height="40" Background="Black">
+            <Label Content="Help" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0" />
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+                <Button Content="&#x2013;" FontSize="14" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
+
+                <Button Content="&#x2611;" FontSize="14" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
+
+                <Button Content="&#x2715;" FontSize="14" Width="30" Height="30" Background="Transparent" Foreground="White" BorderBrush="Transparent" />
+            </StackPanel>
+        </DockPanel>
+
+        <Grid Margin="20,60,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Canvas Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,39,0,0">
+
+                <Ellipse Width="80" Height="80" Stroke="Purple" StrokeThickness="4" Canvas.Left="38" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="../Resources/Icons/logoAb.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+
+                <Label Content="MOLE" FontSize="18" FontWeight="Bold" Foreground="White" Canvas.Left="48" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+
+            <StackPanel Grid.Column="0" Margin="34,180,0,0">
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="📧" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0" />
+                    <TextBlock FontSize="14" Foreground="White" VerticalAlignment="Center">
+                        <Run Text="info@nutrace.net" />
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <TextBlock Text="📞" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0" />
+                    <TextBlock FontSize="14" Foreground="White" VerticalAlignment="Center">
+                        <Run Text="(866) 681.0944" />
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <TextBlock Text="📍" FontSize="14" Foreground="White" VerticalAlignment="Top" Margin="0,0,10,0" />
+                    <TextBlock FontSize="14" Foreground="White">
+                        <Run Text="4310 Enterprise Dr" />
+                        <LineBreak />
+                        <Run Text="Winston-Salem, NC, 27106" />
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+
+            <Border Background="#1e1e1e" CornerRadius="10" Margin="333,0,-4,0" Padding="20" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                <StackPanel>
+
+                    <TextBlock Text="Contact us" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,10" />
+                    <TextBlock Text="Feel free to contact us" FontSize="12" Foreground="White" Margin="0,0,0,20" />
+
+
+                    <StackPanel Margin="0,10,0,10">
+                        <TextBlock Text="Full Name *" FontSize="14" Foreground="White" Margin="0,0,0,5" />
+                        <TextBox Width="423" Height="35" Background="#0f0f0f" Foreground="White" BorderBrush="Gray" VerticalContentAlignment="Center" Text="Fullname" />
+                    </StackPanel>
+
+
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <TextBlock Text="Email *" FontSize="14" Foreground="White" Margin="0,0,0,5" />
+                            <TextBox Width="189" Height="35" Background="#0f0f0f" Foreground="White" BorderBrush="Gray" VerticalContentAlignment="Center" Text="youremail@gmail.com" />
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Mobile Number *" FontSize="14" Foreground="White" Margin="0,0,0,5" />
+                            <TextBox Width="197" Height="35" Background="#0f0f0f" Foreground="White" BorderBrush="Gray" VerticalContentAlignment="Center" Text="+012231321313" />
+                        </StackPanel>
+                    </Grid>
+
+
+                    <StackPanel Margin="0,10,0,10">
+                        <TextBlock Text="Your Query *" FontSize="14" Foreground="White" Margin="0,0,0,5" />
+                        <TextBox Width="419" Height="80" Background="#0f0f0f" Foreground="White" BorderBrush="Gray" VerticalContentAlignment="Top" Text="Type here.." TextWrapping="Wrap" AcceptsReturn="True"/>
+                    </StackPanel>
+
+                    <Button Content="Send" Width="120" Height="40" Background="#800080" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Page>

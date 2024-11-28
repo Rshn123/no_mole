@@ -61,8 +61,8 @@
 
                         <!-- Serial Number -->
                         <StackPanel Margin="5" Width="200">
-                            <TextBlock Text="Serial Number *"  Foreground="White" FontSize="12" Margin="0,0,0,5" Opacity="0.8"/>
-                            <TextBox Height="30" Background="#0D0D0D" Foreground="White" BorderThickness="1" BorderBrush="Gray" Padding="5"/>
+                        <TextBlock Text="Serial Number *"  Foreground="White" FontSize="12" Margin="0,0,0,5" Opacity="0.8" />
+                        <TextBox  x:Name="SerialNumberTextBox" Height="30" Background="#0D0D0D" Foreground="White" BorderThickness="1" BorderBrush="Gray" Padding="5"/>
                         <TextBlock Text="What is a serial number?" Foreground="#787878" FontSize="10" Margin="0,2,0,0">
                             <TextBlock.ToolTip>
                                 <ToolTip Background="Black">

@@ -20,10 +20,12 @@ namespace No_Mole.Components
     public partial class InspectionDetailModal : Window
     {
         private readonly Button _mainButton;
-        public InspectionDetailModal(Button button)
+        private MainWindow _mainWindow;
+        public InspectionDetailModal(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
             _mainButton = button;
+            _mainWindow = mainWindow;  
         }
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)
@@ -33,11 +35,24 @@ namespace No_Mole.Components
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _mainButton!.Content = "Stop Inspection";
+            if (string.IsNullOrWhiteSpace(SerialNumberTextBox.Text))
+            {
+                MessageBox.Show("Serial Number* Field cannot be empty.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                _mainButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
 
-            _mainButton.Background = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#D43E3E"));
+                _mainWindow.ChangeButtonImage("Resources/Icons/stop.png");
 
-            this.Close();
+                _mainWindow.ChangeText("Stop Inspection");
+
+                MessageBox.Show("Submission successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                this.Close();
+
+            }
+
         }
     }
 }
