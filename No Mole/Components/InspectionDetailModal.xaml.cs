@@ -19,18 +19,25 @@ namespace No_Mole.Components
     /// </summary>
     public partial class InspectionDetailModal : Window
     {
-        public InspectionDetailModal()
+        private readonly Button _mainButton;
+        public InspectionDetailModal(Button button)
         {
             InitializeComponent();
+            _mainButton = button;
         }
-
-
-    
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _mainButton!.Content = "Stop Inspection";
+
+            _mainButton.Background = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#D43E3E"));
+
+            this.Close();
+        }
     }
 }

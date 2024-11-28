@@ -32,7 +32,7 @@
                 </Grid.RowDefinitions>
 
                 <!-- Title -->
-                <DockPanel Grid.Row="0" Margin="0,0,0,10">
+                <DockPanel Grid.Row="0" Margin="0,0,0,5">
                     <TextBlock Text="Device Details" Foreground="White" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" DockPanel.Dock="Left"/>
                     <Button Content="X" Width="30" Height="30" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontSize="14"
                             HorizontalAlignment="Right" VerticalAlignment="Top" Click="ClosePopup_Click"/>
@@ -63,14 +63,25 @@
                         <StackPanel Margin="5" Width="200">
                             <TextBlock Text="Serial Number *"  Foreground="White" FontSize="12" Margin="0,0,0,5" Opacity="0.8"/>
                             <TextBox Height="30" Background="#0D0D0D" Foreground="White" BorderThickness="1" BorderBrush="Gray" Padding="5"/>
-                            <TextBlock Text="What is a serial number?" Foreground="#787878" FontSize="10" Margin="0,2,0,0"/>
-                        </StackPanel>
+                        <TextBlock Text="What is a serial number?" Foreground="#787878" FontSize="10" Margin="0,2,0,0">
+                            <TextBlock.ToolTip>
+                                <ToolTip Background="Black">
+                                    <Border Background="Black" CornerRadius="5" Padding="10" MaxWidth="300" BorderThickness="0">
+                                        <TextBlock Foreground="White" FontSize="12" TextWrapping="Wrap">
+                                            It is a unique identifier assigned by the manufacturer, typically printed on the device itself or included in its documentation. This serial number is used for tracking, support, and warranty purposes.
+                                            If you don't have a serial number, enter your own serial number. It is used for creating a folder name.
+                                        </TextBlock>
+                                    </Border>
+                                </ToolTip>
+                            </TextBlock.ToolTip>
+                        </TextBlock>
+                    </StackPanel>
                     </UniformGrid>
                 </StackPanel>
 
                 <!-- Footer -->
                 <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                    <Button Content="Continue" Width="200" Height="40" Background="#8E44AD" Foreground="White" FontWeight="Bold" BorderBrush="Transparent" Margin="0,10" />
+                    <Button Content="Continue" Width="200" Height="40" Background="#8E44AD" Foreground="White" FontWeight="Bold" BorderBrush="Transparent" Margin="0,10" Click="Button_Click" />
                     <TextBlock Text="Don't have a serial number?" Foreground="#787878" FontSize="12" TextAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
             </Grid>

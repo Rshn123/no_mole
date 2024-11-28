@@ -9,6 +9,9 @@ using Rectangle = System.Drawing.Rectangle;
 using Image = System.Drawing.Image;
 using No_Mole.Components;
 using System.Windows.Media.Effects;
+using System.Windows.Controls;
+using System.Windows.Media;
+using ColorConverter = System.Windows.Media.ColorConverter;
 
 namespace No_Mole
 {
@@ -163,28 +166,38 @@ namespace No_Mole
         {
 
         }
-
+            
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Button? button = sender as Button;
 
-            BlurEffect blur = new BlurEffect
+            if (button!.Content.ToString() == "Stop Inspection")
             {
-                Radius = 10
-            };
-            this.Effect = blur;
-
-            InspectionDetailModal modal = new InspectionDetailModal
+                button.Content = "Start Inspection";
+                button.Background = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#AD42AD"));
+            }
+            else
             {
-                Owner = this,
-                Width = 615,
-                Height = 415
-            };
+                BlurEffect blur = new()
+                {
+                    Radius = 10
+                };
+                this.Effect = blur;
 
-            modal.Left = this.Left + (this.Width - modal.Width) / 2;
-            modal.Top = this.Top + (this.Height - modal.Height) / 2;
-            modal.ShowDialog();
+                InspectionDetailModal modal = new(button!)
+                {
+                    Owner = this,
+                    Width = 615,
+                    Height = 415
+                };
 
-            this.Effect = null;
+                modal.Left = this.Left + (this.Width - modal.Width) / 2;
+                modal.Top = this.Top + (this.Height - modal.Height) / 2;
+                modal.ShowDialog();
+
+                this.Effect = null;
+            }
+          
         }
     }
 }

@@ -7,18 +7,36 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\CameraNotFoundWarning.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\CustomButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FailedInspection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\InspectionDetailModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\VideoEffect.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\CameraNotFoundWarning.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\CustomButton.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Components\FailedInspection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\InspectionDetailModal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\VideoEffect.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
