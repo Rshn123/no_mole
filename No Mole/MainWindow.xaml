@@ -12,11 +12,12 @@
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="1404*"/>
         </Grid.ColumnDefinitions>
+
         <Menu Background="#3B3B3B" Foreground="White" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,-3,0,0">
             <MenuItem Header="Home" />
             <MenuItem Header="Library" />
             <MenuItem Header="Image" />
-            <MenuItem Header="Video" />
+            <MenuItem Header="Video" Click="Video_Click"/>
             <MenuItem Header="About" Click="Click_About" />
             <MenuItem Header="Help" Click="Click_Help" />
         </Menu>
@@ -33,9 +34,9 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <Slider x:Name="BrightnessSlider"
-                    Minimum="1.0" Maximum="4.0" Value="1.0"
-                        Orientation="Vertical"
-                        Height="400"
+                    Minimum="0.0" Maximum="2.0" Value="1.0"
+                    Orientation="Vertical"
+                    Height="400"
                     VerticalAlignment="Bottom" HorizontalAlignment="Right"
                     Width="10" Margin="10"
                     ValueChanged="BrightnessSlider_ValueChanged" />
@@ -53,9 +54,9 @@
 
                 <Slider x:Name="ZoomSlider"
                     Minimum="1.0" Maximum="4.0" Value="1.0"
-                        Orientation="Vertical"
-                        Height="400"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                    Orientation="Vertical"
+                    Height="400"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
                     Width="10" Margin="10"
                     ValueChanged="ZoomSlider_ValueChanged" />
             </StackPanel>
@@ -63,12 +64,12 @@
 
             <!-- 6 Icon Buttons -->
             <UniformGrid Grid.Row="1" Rows="1" HorizontalAlignment="Stretch" Margin="0,15" Width="400" >
-                <components:CustomButton ToolTipText="Sun" ImageSource="../Resources/Icons/sun.png" Loaded="CustomButton_Loaded" Margin="-11,0,11,0"/>
-                <components:CustomButton ImageSource="../Resources/Icons/settings.png" Loaded="CustomButton_Loaded_1" Margin="-8,0,8,0"/>
-                <components:CustomButton ImageSource="../Resources/Icons/scan-search.png" Loaded="CustomButton_Loaded_2" Margin="-4,0,4,0"/>
-                <components:CustomButton ImageSource="../Resources/Icons/maximize.png" Loaded="CustomButton_Loaded_3" Margin="1,0,-1,0"/>
-                <components:CustomButton ImageSource="../Resources/Icons/camera.png" Loaded="CustomButton_Loaded_4" Margin="6,0,-6,0"/>
-                <components:CustomButton ImageSource="../Resources/Icons/recorder.png" Loaded="CustomButton_Loaded_5" Margin="8,0,-8,0"/>
+                <components:CustomButton ToolTipText="Video Enhancement" ImageSource="../Resources/Icons/sun.png" Loaded="CustomButton_Loaded" Margin="-11,0,11,0"/>
+                <components:CustomButton ToolTipText="Settings"  ImageSource="../Resources/Icons/settings.png" Loaded="CustomButton_Loaded_1" Margin="-8,0,8,0"/>
+                <components:CustomButton ToolTipText="Zoom" ImageSource="../Resources/Icons/scan-search.png" Loaded="CustomButton_Loaded_2" Margin="-4,0,4,0"/>
+                <components:CustomButton ToolTipText="Full Screen" ImageSource="../Resources/Icons/maximize.png" Loaded="CustomButton_Loaded_3" Margin="1,0,-1,0"/>
+                <components:CustomButton ToolTipText="Image Capture" ImageSource="../Resources/Icons/camera.png" Loaded="CustomButton_Loaded_4" Margin="6,0,-6,0"/>
+                <components:CustomButton ToolTipText="Video Record" ImageSource="../Resources/Icons/recorder.png" Loaded="CustomButton_Loaded_5" Margin="8,0,-8,0"/>
             </UniformGrid>
 
             <!-- Main Button -->

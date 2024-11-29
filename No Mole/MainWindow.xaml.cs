@@ -15,6 +15,7 @@ using ColorConverter = System.Windows.Media.ColorConverter;
 using System.ComponentModel;
 using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace No_Mole
 {
@@ -80,7 +81,7 @@ namespace No_Mole
             }
 
             // Select the first camera
-            _videoSource = new VideoCaptureDevice(_videoDevices[0].MonikerString);
+            _videoSource = new VideoCaptureDevice(_videoDevices[1].MonikerString);
             _videoSource.NewFrame += VideoSource_NewFrame;
 
             // Start video capture
@@ -89,48 +90,93 @@ namespace No_Mole
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            var bitmap = (Bitmap)eventArgs.Frame.Clone();
-
-            // Apply zoom
-            if (_zoomFactor > 1.0f)
-            {
-                int newWidth = (int)(bitmap.Width / _zoomFactor);
-                int newHeight = (int)(bitmap.Height / _zoomFactor);
-                var cropRect = new Rectangle(
-                    (bitmap.Width - newWidth) / 2,
-                    (bitmap.Height - newHeight) / 2,
-                    newWidth,
-                    newHeight);
-
-                bitmap = bitmap.Clone(cropRect, bitmap.PixelFormat);
-            }
-
-            // Apply brightness
-            if (_brightnessFactor != 1.0f)
-            {
-                AdjustBrightness(bitmap, _brightnessFactor);
-            }
-
-            // Display the frame
-            Dispatcher.Invoke(() =>
-            {
-                CameraImage.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                    bitmap.GetHbitmap(),
-                    IntPtr.Zero,
-                    Int32Rect.Empty,
-                    BitmapSizeOptions.FromEmptyOptions());
-            });
-
-            bitmap.Dispose();
-        }
-
-        private void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
-        {
-            var rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            var data = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
+            Bitmap bitmap = null;
 
             try
             {
+                bitmap = (Bitmap)eventArgs.Frame.Clone();
+
+                // Apply zoom
+                if (_zoomFactor > 1.0f)
+                {
+                    try
+                    {
+                        int newWidth = (int)(bitmap.Width / _zoomFactor);
+                        int newHeight = (int)(bitmap.Height / _zoomFactor);
+                        var cropRect = new Rectangle(
+                            (bitmap.Width - newWidth) / 2,
+                            (bitmap.Height - newHeight) / 2,
+                            newWidth,
+                            newHeight);
+
+                        bitmap = bitmap.Clone(cropRect, bitmap.PixelFormat);
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        // Handle cases where the crop rectangle is invalid
+                        Debug.WriteLine($"Zoom error: {ex.Message}");
+                    }
+                }
+
+                // Apply brightness
+                if (_brightnessFactor != 1.0f)
+                {
+                    try
+                    {
+                        AdjustBrightness(bitmap, _brightnessFactor);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle brightness adjustment errors
+                        Debug.WriteLine($"Brightness adjustment error: {ex.Message}");
+                    }
+                }
+
+                // Display the frame
+                Dispatcher.Invoke(() =>
+                {
+                    try
+                    {
+                        IntPtr hBitmap = bitmap.GetHbitmap();
+                        CameraImage.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                            hBitmap,
+                            IntPtr.Zero,
+                            Int32Rect.Empty,
+                            BitmapSizeOptions.FromEmptyOptions());
+
+                        // Ensure proper cleanup of unmanaged resources
+                        DeleteObject(hBitmap);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle display errors
+                        Debug.WriteLine($"Display error: {ex.Message}");
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle unexpected errors in the overall frame processing
+                Debug.WriteLine($"NewFrame error: {ex.Message}");
+            }
+            finally
+            {
+                // Ensure bitmap resources are released
+                bitmap?.Dispose();
+            }
+        }
+
+        [DllImport("gdi32.dll")]
+        private static extern bool DeleteObject(IntPtr hObject);
+        private void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
+        {
+            var rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+            BitmapData data = null;
+
+            try
+            {
+                data = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
+
                 // Get the total number of bytes in the image
                 int bytesPerPixel = Image.GetPixelFormatSize(data.PixelFormat) / 8;
                 int totalBytes = data.Stride * data.Height;
@@ -150,11 +196,20 @@ namespace No_Mole
                 // Copy the modified pixel data back into the image
                 Marshal.Copy(pixelBuffer, 0, data.Scan0, totalBytes);
             }
+            catch (Exception ex)
+            {
+                // Handle brightness adjustment errors
+                Debug.WriteLine($"AdjustBrightness error: {ex.Message}");
+            }
             finally
             {
-                bitmap.UnlockBits(data);
+                if (data != null)
+                {
+                    bitmap.UnlockBits(data);
+                }
             }
         }
+
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -201,7 +256,7 @@ namespace No_Mole
         {
 
         }
-            
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button? button = sender as Button;
@@ -250,9 +305,9 @@ namespace No_Mole
 
                 this.Effect = null;
             }
-          
+
         }
-    
+
         public void ChangeButtonImage(string imageSource)
 
         {
@@ -261,7 +316,7 @@ namespace No_Mole
 
         public void ChangeRecordingVisibility(bool visible)
         {
-            Recording_Info.Visibility  = visible ? Visibility.Visible : Visibility.Hidden;
+            Recording_Info.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
         }
         public void ChangeText(string text)
 
@@ -311,5 +366,10 @@ namespace No_Mole
             _timer.Stop();
         }
 
+        private void Video_Click(object sender, RoutedEventArgs e)
+        {
+            OpenModal(new VideoEffect(), 300, 450);
+
+        }
     }
 }

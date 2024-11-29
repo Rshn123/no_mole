@@ -13,8 +13,8 @@
         <!-- Clip the window to create rounded corners -->
         <VisualBrush>
             <VisualBrush.Visual>
-                <Border Width="615" 
-                    Height="415" 
+                <Border Width="450" 
+                    Height="300" 
                     CornerRadius="10" 
                     Background="White" />
             </VisualBrush.Visual>
@@ -42,7 +42,7 @@
     </Window.Resources>
 
     <Grid>
-        <Border Background="#1F1F1F" BorderBrush="#00BFFF" BorderThickness="2" CornerRadius="10" Padding="20" Width="450" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Background="#1F1F1F" BorderBrush="#00BFFF" BorderThickness="0" CornerRadius="10" Padding="20" Width="450" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
