@@ -12,6 +12,7 @@
             Height="48"
             Width="48"
             Background="White"
+            ToolTip="{Binding ToolTipText, ElementName=root}"
             >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

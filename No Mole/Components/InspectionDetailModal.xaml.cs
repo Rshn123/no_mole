@@ -47,7 +47,9 @@ namespace No_Mole.Components
 
                 _mainWindow.ChangeText("Stop Inspection");
 
-                MessageBox.Show("Submission successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                _mainWindow.ChangeRecordingVisibility(true);
+
+                _mainWindow.StartTimer();
 
                 this.Close();
 

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace No_Mole.Components
 {
@@ -21,6 +22,10 @@ namespace No_Mole.Components
     {
         private readonly Button? _mainButton;
         private MainWindow _mainWindow;
+
+        private DispatcherTimer _timer;        // Timer for updating the clock
+        private TimeSpan _elapsedTime;        // Tracks elapsed time
+        private TimeSpan _durationLimit;      // Duration limit (15 seconds)
         public FailedInspection(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
@@ -48,6 +53,8 @@ namespace No_Mole.Components
             _mainButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AD42AD"));
             _mainWindow.ChangeText("Start Inspection");
             _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
+            _mainWindow.ChangeRecordingVisibility(false);
+            _mainWindow.StopTimer();
             this.Close();
         }
     }

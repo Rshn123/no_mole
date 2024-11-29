@@ -36,5 +36,14 @@ namespace No_Mole.Components
             }
             set {SetValue(ImageSourceProperty, value); }
         }
+
+        public string ToolTipText
+        {
+            get { return (string)GetValue(ToolTipTextProperty); }
+            set { SetValue(ToolTipTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty ToolTipTextProperty =
+            DependencyProperty.Register(nameof(ToolTipText), typeof(string), typeof(CustomButton), new PropertyMetadata(string.Empty));
     }
 }

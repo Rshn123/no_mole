@@ -14,6 +14,7 @@ using System.Windows.Media;
 using ColorConverter = System.Windows.Media.ColorConverter;
 using System.ComponentModel;
 using Color = System.Windows.Media.Color;
+using System.Windows.Threading;
 
 namespace No_Mole
 {
@@ -27,6 +28,11 @@ namespace No_Mole
         private FilterInfoCollection _videoDevices;
         private VideoCaptureDevice _videoSource;
 
+
+        private DispatcherTimer _timer;        // Timer for updating the clock
+        private TimeSpan _elapsedTime;        // Tracks elapsed time
+        private TimeSpan _durationLimit;      // Duration limit (15 seconds)
+
         private float _brightnessFactor = 1.0f; // Default value (no brightness change)
         private float _zoomFactor = 1.0f;
 
@@ -34,10 +40,35 @@ namespace No_Mole
         {
             InitializeComponent();
             DataContext = this;
+            Recording_Info.Visibility = Visibility.Hidden;
+            // Initialize the timer
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
+            _timer.Tick += Timer_Tick;
+
+            // Set the duration limit to 15 seconds
+            _durationLimit = TimeSpan.FromSeconds(15);
+
+            // Initialize elapsed time
+            _elapsedTime = TimeSpan.Zero;
+
             StartLive();
         }
 
-  
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            _elapsedTime = _elapsedTime.Add(TimeSpan.FromSeconds(1)); // Increment elapsed time
+            TimerText.Text = _elapsedTime.ToString(@"mm\:ss") + "s";  // Update the display
+
+            // Stop the timer if the elapsed time reaches the limit
+            if (_elapsedTime >= _durationLimit)
+            {
+                StopTimer();
+                MessageBox.Show("Recording finished!");  // Optional: Show a message box or update UI
+            }
+        }
+
         private void StartLive()
         {
             // Enumerate cameras
@@ -228,6 +259,10 @@ namespace No_Mole
             ButtonImage.Source = new BitmapImage(new Uri(imageSource, UriKind.Relative));
         }
 
+        public void ChangeRecordingVisibility(bool visible)
+        {
+            Recording_Info.Visibility  = visible ? Visibility.Visible : Visibility.Hidden;
+        }
         public void ChangeText(string text)
 
         {
@@ -265,6 +300,16 @@ namespace No_Mole
             OpenModal(new ContactUs(), 450, 800);
         }
 
-       
+        public void StartTimer()
+        {
+            _timer.Start();
+        }
+
+        public void StopTimer()
+        {
+            _elapsedTime = TimeSpan.Zero;
+            _timer.Stop();
+        }
+
     }
 }

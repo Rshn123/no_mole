@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="View\**" />
+    <EmbeddedResource Remove="View\**" />
+    <None Remove="View\**" />
+    <Page Remove="View\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AForge.Video" Version="2.2.5" />
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
@@ -26,9 +33,5 @@
 		<Resource Include="Resources/Icons/stop.png" />
 		<Resource Include="Resources/Icons/no_mole_logo.png" />
 		
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="View\" />
 	</ItemGroup>
 </Project>
