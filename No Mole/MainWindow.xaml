@@ -22,7 +22,14 @@
         </Menu>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="467,0,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <!-- Recording Button -->
+                <Ellipse Width="19" Height="19" Fill="Red" Stroke="White" StrokeThickness="3" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center"/>
 
+                <!-- Timer Text -->
+                <TextBlock x:Name="TimerText" Text="00:00s" FontSize="13" FontWeight="Bold" Foreground="White"
+                   HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <Slider x:Name="BrightnessSlider"
