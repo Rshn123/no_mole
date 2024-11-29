@@ -5,9 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:No_Mole.Components"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
         Title="VideoEffect">
+    <Window.OpacityMask>
+        <!-- Clip the window to create rounded corners -->
+        <VisualBrush>
+            <VisualBrush.Visual>
+                <Border Width="615" 
+                    Height="415" 
+                    CornerRadius="10" 
+                    Background="White" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.OpacityMask>
     <Window.Resources>
-
+        
         <ControlTemplate x:Key="CustomSlider" TargetType="Slider">
             <Grid>
 
@@ -26,17 +40,7 @@
             </Grid>
         </ControlTemplate>
     </Window.Resources>
-    <Window.OpacityMask>
-        <!-- Clip the window to create rounded corners -->
-        <VisualBrush>
-            <VisualBrush.Visual>
-                <Border Width="615" 
-                     Height="415" 
-                     CornerRadius="10" 
-                     Background="Black" />
-            </VisualBrush.Visual>
-        </VisualBrush>
-    </Window.OpacityMask>
+
     <Grid>
         <Border Background="#1F1F1F" BorderBrush="#00BFFF" BorderThickness="2" CornerRadius="10" Padding="20" Width="450" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
