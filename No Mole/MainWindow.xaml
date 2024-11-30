@@ -5,7 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:No_Mole" xmlns:components="clr-namespace:No_Mole.Components"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="716" Width="1435" Background="#3B3B3B">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Style/WindowResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
 
     <Grid Margin="10" >
         <Grid.ColumnDefinitions>
@@ -13,14 +22,162 @@
             <ColumnDefinition Width="1404*"/>
         </Grid.ColumnDefinitions>
 
-        <Menu Background="#3B3B3B" Foreground="White" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,-3,0,0">
-            <MenuItem Header="Home" />
-            <MenuItem Header="Library" />
-            <MenuItem Header="Image" />
-            <MenuItem Header="Video" Click="Video_Click"/>
-            <MenuItem Header="About" Click="Click_About" />
-            <MenuItem Header="Help" Click="Click_Help" />
-        </Menu>
+        <Border Grid.ColumnSpan="2" Margin="0,0,0,0" Height="30" VerticalAlignment="Top">
+            <Menu Height="30"
+              Width="630"
+              Background="#3B3B3B"
+              VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+              Margin="0,0,0,0">
+
+                <!--// Home //-->
+                <MenuItem Header="Home"
+                      Margin="10 0 10 0 "
+                      Style="{StaticResource Main_MenuItem}">
+                    <MenuItem.Icon>
+                        <Image 
+                           Stretch="Uniform" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <!--// About Us //-->
+                <MenuItem Header="Library"
+                      Margin="10 0 10 0 "
+                      Style="{StaticResource Main_MenuItem}">
+                    <MenuItem.Icon>
+                        <Image 
+                           Stretch="Uniform" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <!--// About Us //-->
+                <MenuItem Header="Image"
+                    Margin="10 0 10 0 "
+                    Style="{StaticResource Main_MenuItem}">
+                    
+                    </MenuItem>
+                <!--// Services //-->
+                <MenuItem Header="Video"  Margin="10 0 10 0 "
+                      Style="{StaticResource MenuItem_With_Dropdown}">
+                    <MenuItem.Icon>
+                        <Image
+                           Stretch="Uniform" />
+                    </MenuItem.Icon>
+
+                    <MenuItem Header="Web Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                        <MenuItem.Icon>
+                            <Image 
+                               Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="UI / UX Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                        <MenuItem.Icon>
+                            <Image
+                               Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Graphic Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                        <MenuItem.Icon>
+                            <Image 
+                               Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem Header="Mobile App"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Mobile_App_MenuItem_With_Dropdown}">
+                        <MenuItem.Icon>
+                            <Image 
+                               Stretch="Uniform" />
+                        </MenuItem.Icon>
+
+                        <MenuItem Header="Android App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image 
+                                   Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="iOS App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image 
+                                   Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header=".NET MAUI App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image 
+                                   Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Flutter App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image
+                                   Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Unity App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image 
+                                   Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                    </MenuItem>
+
+                </MenuItem>
+
+                <!--// Portfolio //-->
+                <MenuItem Header="About"
+                        Margin="10 0 10 0 " Click="Click_About"
+                      Style="{StaticResource Main_MenuItem}">
+                    <MenuItem.Icon>
+                        <Image 
+                           Stretch="Uniform" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <!--// Contact //-->
+                <MenuItem Header="Contact" Click="Click_Help"
+                 Margin="10 0 10 0 "
+                      Style="{StaticResource Main_MenuItem}">
+                    <MenuItem.Icon>
+                        <Image
+                           Stretch="Uniform" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </Menu>
+        </Border>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="467,0,0,0">
             <StackPanel x:Name ="Recording_Info" Orientation="Horizontal" HorizontalAlignment="Center">

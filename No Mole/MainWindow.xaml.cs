@@ -352,7 +352,7 @@ namespace No_Mole
 
         private void Click_Help(object sender, RoutedEventArgs e)
         {
-            OpenModal(new ContactUs(), 450, 800);
+            OpenModal(new ContactUs(), 550, 800);
         }
 
         public void StartTimer()
