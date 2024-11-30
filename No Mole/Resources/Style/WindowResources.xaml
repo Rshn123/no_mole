@@ -34,7 +34,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Border x:Name="border" Background="#3B3B3B" BorderThickness="0" Height="30">
+                    <Border x:Name="border" Background="#3B3B3B" BorderThickness="0" Height="30" Width="60">
                         <Grid HorizontalAlignment="Center">
                             <!-- Text -->
                             <ContentPresenter ContentSource="Header"
@@ -50,7 +50,7 @@
                                    IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
                                    Placement="Bottom"
                                    PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
-                                <Border x:Name="SubMenuBorder" Background="#484546" BorderBrush="#484546">
+                                <Border x:Name="SubMenuBorder" Background="#484546" BorderBrush="#484546" MaxWidth="auto">
                                     <ScrollViewer x:Name="SubMenuScrollViewer"
                                                   Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
                                         <Grid RenderOptions.ClearTypeHint="Enabled">
@@ -192,8 +192,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="Purple" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="Purple" />
+                            <Setter Property="Background" TargetName="border" Value="#AD42AD" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#AD42AD" />
                             <Setter Property="Visibility" TargetName="Highlighter" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
