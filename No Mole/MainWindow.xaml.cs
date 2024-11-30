@@ -81,7 +81,7 @@ namespace No_Mole
             }
 
             // Select the first camera
-            _videoSource = new VideoCaptureDevice(_videoDevices[1].MonikerString);
+            _videoSource = new VideoCaptureDevice(_videoDevices[0].MonikerString);
             _videoSource.NewFrame += VideoSource_NewFrame;
 
             // Start video capture

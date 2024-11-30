@@ -26,7 +26,7 @@ namespace No_Mole.Components
 
         private void CloseDialog_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
