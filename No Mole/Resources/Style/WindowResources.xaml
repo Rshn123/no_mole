@@ -20,8 +20,8 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="Purple" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="Purple" />
+                            <Setter Property="Background" TargetName="border" Value="#AD42AD" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#AD42AD"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -90,13 +90,13 @@
                                               TextBlock.FontSize="15"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
-                                              Margin="35,0,0,0" />
+                                              Margin="0,0,0,0" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="Purple" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="Purple" />
+                            <Setter Property="Background" TargetName="border" Value="#AD42AD" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#AD42AD" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -118,10 +118,10 @@
                                               TextBlock.FontSize="15"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
-                                              Margin="35,0,0,0" />
+                                              Margin="8,0,0,0" />
                             <Grid x:Name="Highlighter"
                                   Height="35"
-                                  Width="2"
+                                  Width="0"
                                   Background="#FFFFFF"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Center"
@@ -149,8 +149,8 @@
                             <Setter Property="PopupAnimation" TargetName="PART_Popup" Value="None" />
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="Purple" />
-                            <Setter Property="BorderBrush" TargetName="border" Value="Purple" />
+                            <Setter Property="Background" TargetName="border" Value="#AD42AD" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="#AD42AD" />
                             <Setter Property="Visibility" TargetName="Highlighter" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -171,7 +171,7 @@
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
                                               Height="18"
-                                              Width="18"
+                                              Width="35"
                                               Margin="8,0,0,0" />
                             <!-- Text -->
                             <ContentPresenter ContentSource="Header"
