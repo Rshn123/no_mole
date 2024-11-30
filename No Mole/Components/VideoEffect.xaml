@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:No_Mole.Components"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
         AllowsTransparency="True"
-        Title="VideoEffect">
+        Title="VideoEffect"
+        MinWidth="450" MinHeight="300" Background="Transparent">
     <Window.OpacityMask>
         <!-- Clip the window to create rounded corners -->
         <VisualBrush>
@@ -20,82 +20,124 @@
             </VisualBrush.Visual>
         </VisualBrush>
     </Window.OpacityMask>
+
     <Window.Resources>
-        
+        <!-- Custom Slider Template -->
         <ControlTemplate x:Key="CustomSlider" TargetType="Slider">
             <Grid>
-
+                <!-- Slider Background -->
                 <Border Background="Transparent" Height="4" VerticalAlignment="Center">
                     <Border>
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                <GradientStop Color="#8E44AD" Offset="0.0"/>
-                                <GradientStop Color="Gray" Offset="1.0"/>
+                                <GradientStop Color="#8E44AD" Offset="0.0" />
+                                <GradientStop Color="Gray" Offset="1.0" />
                             </LinearGradientBrush>
                         </Border.Background>
                     </Border>
                 </Border>
 
-                <Thumb Width="14" Height="14" Background="White" BorderBrush="#8E44AD" BorderThickness="2" VerticalAlignment="Center"/>
+                <!-- Slider Track and Thumb -->
+                <Track x:Name="PART_Track" Focusable="False" VerticalAlignment="Center">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Command="Slider.DecreaseLarge" Visibility="Collapsed" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Command="Slider.IncreaseLarge" Visibility="Collapsed" />
+                    </Track.IncreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Width="14" Height="14" Background="White" BorderBrush="#8E44AD" BorderThickness="2" VerticalAlignment="Center">
+                            <Thumb.Style>
+                                <Style TargetType="Thumb">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="BorderBrush" Value="#8E44AD" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#8E44AD" />
+                                            <Setter Property="BorderBrush" Value="White" />
+                                        </Trigger>
+                                        <Trigger Property="IsDragging" Value="True">
+                                            <Setter Property="Background" Value="DarkMagenta" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Thumb.Style>
+                        </Thumb>
+                    </Track.Thumb>
+                </Track>
             </Grid>
         </ControlTemplate>
+
+        <!-- Button Style with Hover -->
+        <Style x:Key="HoverButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#8E44AD" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="DarkMagenta" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
 
     <Grid>
+        <!-- Main Dialog -->
         <Border Background="#1F1F1F" BorderBrush="#00BFFF" BorderThickness="0" CornerRadius="10" Padding="20" Width="450" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Black" Opacity="0.5" />
+            </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-
-                    <RowDefinition Height="*"/>
-
-                    <RowDefinition Height="Auto"/>
-
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-
+                <!-- Title and Close Button -->
                 <DockPanel Grid.Row="0" Margin="0,0,0,10">
-                    <TextBlock Text="Video Effects" Foreground="White" FontSize="16" FontWeight="Bold" DockPanel.Dock="Left"/>
-                    <Button Content="X" Width="30" Height="30" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontSize="14"
-                            HorizontalAlignment="Right" Click="CloseDialog_Click"/>
+                    <TextBlock Text="Video Effects" Foreground="White" FontSize="16" FontWeight="Bold" DockPanel.Dock="Left" />
+                    <Button Content="X" Width="30" Height="30" Style="{StaticResource HoverButtonStyle}"
+                            HorizontalAlignment="Right" Click="CloseDialog_Click" />
                 </DockPanel>
 
-
+                <!-- Sliders -->
                 <Grid Grid.Row="1" Margin="0,10">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <TextBlock Text="Brightness" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,10" />
+                    <Slider Grid.Row="0" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10" />
 
-                    <TextBlock Text="Brightness" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,10"/>
-                    <Slider Grid.Row="0" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10"/>
+                    <TextBlock Text="Contrast" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,10,10" />
+                    <Slider Grid.Row="1" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10" />
 
+                    <TextBlock Text="Saturation" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="0,0,10,10" />
+                    <Slider Grid.Row="2" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10" />
 
-                    <TextBlock Text="Contrast" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,10,10"/>
-                    <Slider Grid.Row="1" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10"/>
-
-
-                    <TextBlock Text="Saturation" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="0,0,10,10"/>
-                    <Slider Grid.Row="2" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" Margin="0,0,0,10"/>
-
-                    <TextBlock Text="Hue" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="0,0,10,0"/>
-                    <Slider Grid.Row="3" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50"/>
+                    <TextBlock Text="Hue" Foreground="White" FontSize="14" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="0,0,10,0" />
+                    <Slider Grid.Row="3" Grid.Column="1" Template="{StaticResource CustomSlider}" Minimum="0" Maximum="100" Value="50" />
                 </Grid>
 
-
+                <!-- Buttons -->
                 <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="0,20,0,0">
-                    <Button Content="Reset" Width="80" Height="30" Background="Transparent" Foreground="White" BorderBrush="White" FontWeight="Bold" Margin="0,0,10,0" Click="ResetButton_Click"/>
-                    <Button Content="Save" Width="80" Height="30" Background="#8E44AD" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Click="SaveButton_Click"/>
+                    <Button Content="Reset" Width="80" Height="30" Style="{StaticResource HoverButtonStyle}" Margin="0,0,10,0" Click="ResetButton_Click" />
+                    <Button Content="Save" Width="80" Height="30" Background="#8E44AD" Foreground="White" BorderBrush="Transparent" FontWeight="Bold" Click="SaveButton_Click" />
                 </StackPanel>
             </Grid>
         </Border>
     </Grid>
-
 </Window>
