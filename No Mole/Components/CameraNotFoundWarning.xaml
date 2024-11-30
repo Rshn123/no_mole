@@ -10,34 +10,21 @@
 
     <Grid>
         <Border Background="#333333" CornerRadius="20" Padding="20">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
 
-                <Viewbox Width="120" Height="120" HorizontalAlignment="Center">
-                    <Canvas Width="100" Height="100">
+                <!-- Warning Icon -->
+                <Image Source="/Resources/Icons/redicon.png" Width="104" Height="105" HorizontalAlignment="Center" />
 
-                        <Path Data="M 40,10 
-                                    Q 55,5 60,10 
-                                    L 90,75 
-                                    Q 95,80 90,90 
-                                    L 10,90 
-                                    Q 5,80 10,75 
-                                    Z" 
-                              Fill="Red" Stroke="White" StrokeThickness="5" HorizontalAlignment="Center" Height="82" Stretch="Fill" Canvas.Top="10" VerticalAlignment="Top" />
+                <!-- Main Text -->
+                <TextBlock Text="No Device is connected" FontSize="16" FontWeight="Bold" 
+                           Foreground="White" TextAlignment="Center" Margin="0,10,0,0" />
 
-
-                        <TextBlock Text="!" FontSize="40" FontWeight="Bold" Foreground="White" 
-                                   Canvas.Left="38" Canvas.Top="25" RenderTransformOrigin="0.509,0.162" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    </Canvas>
-                </Viewbox>
-
-
-                <TextBlock Text="No Device is connected" FontSize="16" Foreground="White" 
-                           TextAlignment="Center" Margin="0,10,0,0" />
+                <!-- Subtext -->
                 <TextBlock Text="Please connect the device to your computer" 
                            FontSize="12" Foreground="Gray" TextAlignment="Center" Margin="0,5,0,10" />
 
-
-                <Button Content="Retry" Width="100" HorizontalAlignment="Center" />
+                <!-- Retry Button -->
+                <Button Content="Retry" Width="100" HorizontalAlignment="Center" Background="#ad42ad" Foreground="White" />
             </StackPanel>
         </Border>
     </Grid>
