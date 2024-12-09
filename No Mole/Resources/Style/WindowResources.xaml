@@ -17,7 +17,7 @@
                                                TextBlock.FontSize="15"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
-                                               Margin="0,0,0,0" />
+                                               Margin="10 0 10 0" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -54,7 +54,7 @@
                                                TextBlock.FontSize="15"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
-                                               Margin="0,0,0,0" />
+                                               Margin="10,0,10,0" />
 
                             <!--// Popup //-->
                             <Popup x:Name="PART_Popup"
@@ -116,7 +116,7 @@
                     <Border x:Name="border"
                              Background="#363435"
                              BorderThickness="0">
-                        <Grid HorizontalAlignment="Center">
+                        <Grid HorizontalAlignment="Left">
                            
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
@@ -125,7 +125,8 @@
                                                TextBlock.FontSize="15"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
-                                               Margin="35,0,0,0" />
+                                              Margin="20 0 0 0"
+                                              />
 
                         </Grid>
                     </Border>
@@ -139,7 +140,6 @@
                                      TargetName="border"
                                      Value="#3E3C3D" />
                             <Setter Property="Visibility"
-                                     
                                      Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>

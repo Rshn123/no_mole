@@ -25,14 +25,9 @@
 
             <Canvas Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,39,0,0">
 
-                <Ellipse Width="80" Height="80" Stroke="Purple" StrokeThickness="4" Canvas.Left="38" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="../Resources/Icons/settings.png" />
-                    </Ellipse.Fill>
-                </Ellipse>
-
-
-                <Label Content="MOLE" FontSize="18" FontWeight="Bold" Foreground="White" Canvas.Left="48" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="../Resources/Icons/no_mole_logo.png" Width="140" Height="140"/>
+                </StackPanel>
             </Canvas>
 
             <StackPanel Grid.Column="0" Margin="34,180,0,0">
