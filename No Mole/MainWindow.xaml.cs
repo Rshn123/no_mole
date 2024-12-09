@@ -28,7 +28,7 @@ namespace No_Mole
         private int zoomLevel = 100; // Default zoom percentage (100% = no zoom)
         private FilterInfoCollection _videoDevices;
         private VideoCaptureDevice _videoSource;
-
+        private bool recordingVisibility = false;
 
         private DispatcherTimer _timer;        // Timer for updating the clock
         private TimeSpan _elapsedTime;        // Tracks elapsed time
@@ -252,8 +252,20 @@ namespace No_Mole
 
         }
 
-        private void CustomButton_Loaded_5(object sender, RoutedEventArgs e)
+        private void RecordButtonClicked(object sender, RoutedEventArgs e)
         {
+            if (recordingVisibility)
+            {
+                ChangeRecordingVisibility(false);
+                recordingVisibility = false;
+                StopTimer();
+            }
+            else
+            {
+                ChangeRecordingVisibility(true);
+                recordingVisibility = true;
+                StartTimer();
+            }
 
         }
 
@@ -369,7 +381,6 @@ namespace No_Mole
         private void Video_Click(object sender, RoutedEventArgs e)
         {
             OpenModal(new VideoEffect(), 300, 450);
-
         }
     }
 }

@@ -9,12 +9,12 @@
                              Background="#3B3B3B"
                              BorderThickness="0">
                         <Grid HorizontalAlignment="Center">
-                            
+
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
                                                TextBlock.Foreground="#D3D7DC"
                                                TextBlock.FontFamily="Rubik Medium"
-                                               TextBlock.FontSize="15"
+                                               TextBlock.FontSize="14"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                Margin="10 0 10 0" />
@@ -51,7 +51,7 @@
                             <ContentPresenter ContentSource="Header"
                                                TextBlock.Foreground="#D3D7DC"
                                                TextBlock.FontFamily="Rubik Medium"
-                                               TextBlock.FontSize="15"
+                                               TextBlock.FontSize="14"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                Margin="10,0,10,0" />
@@ -108,7 +108,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Services_Sub_MenuItem"
+    <Style x:Key="Sub_MenuItem"
             TargetType="MenuItem">
         <Setter Property="Template">
             <Setter.Value>
@@ -116,18 +116,89 @@
                     <Border x:Name="border"
                              Background="#363435"
                              BorderThickness="0">
-                        <Grid HorizontalAlignment="Left">
-                           
+                        <Grid HorizontalAlignment="Left" Margin="20 0 0 0">
+                            <UniformGrid Grid.Row="1" Rows="1" HorizontalAlignment="Stretch" Width="150" >
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                    TextBlock.Foreground="#D3D7DC"
+                                    TextBlock.FontFamily="Rubik Medium"
+                                    TextBlock.FontSize="13"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                                />
+                                <Image Source="../Icons/arrow-down.png" HorizontalAlignment="Right" Width="10" Height="10" Margin="0 0 10 0"></Image>
+
+                            </UniformGrid>
+
+                            <Popup x:Name="PART_Popup"
+                                    AllowsTransparency="True"
+                                    IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Placement="Right"
+                                    PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                <Border x:Name="SubMenuBorder"
+                                         Background="#484546"
+                                         BorderBrush="#484546">
+
+                                    <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                   Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                        <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                            <Canvas HorizontalAlignment="Left"
+                                                     VerticalAlignment="Top" />
+
+                                            <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                        </Grid>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsSuspendingPopupAnimation"
+                           Value="True">
+                            <Setter Property="PopupAnimation"
+                              TargetName="PART_Popup"
+                              Value="None" />
+                        </Trigger>
+                        <Trigger Property="IsHighlighted"
+                                  Value="True">
+                            <Setter Property="Background"
+                                     TargetName="border"
+                                     Value="#3E3C3D" />
+                            <Setter Property="BorderBrush"
+                                     TargetName="border"
+                                     Value="#3E3C3D" />
+                            <Setter Property="Visibility"
+                                     Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Sub_MenuItem_Without"
+            TargetType="MenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="border"
+                             Background="#363435"
+                             BorderThickness="0">
+                        <Grid HorizontalAlignment="Left" Margin="20 0 0 0">
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"
-                                               TextBlock.Foreground="#D3D7DC"
-                                               TextBlock.FontFamily="Rubik Medium"
-                                               TextBlock.FontSize="15"
-                                               HorizontalAlignment="Left"
-                                               VerticalAlignment="Center"
-                                              Margin="20 0 0 0"
-                                              />
-
+                                    TextBlock.Foreground="#D3D7DC"
+                                    TextBlock.FontFamily="Rubik Medium"
+                                    TextBlock.FontSize="13"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                                />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -148,7 +219,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Mobile_App_MenuItem_With_Dropdown"
+
+    <Style x:Key="Menu_Item_With_Dropdown"
             TargetType="MenuItem">
         <Setter Property="Template">
             <Setter.Value>
@@ -157,7 +229,7 @@
                              Background="#363435"
                              BorderThickness="0">
                         <Grid HorizontalAlignment="Center">
-                         
+
 
                             <!--// Text //-->
                             <ContentPresenter ContentSource="Header"

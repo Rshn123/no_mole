@@ -20,13 +20,21 @@ namespace No_Mole.Components
     /// </summary>
     public partial class CustomButton : UserControl
     {
+        public event RoutedEventHandler? ButtonClick;
+
         public CustomButton()
         {
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Raise the custom event when the button is clicked
+            ButtonClick?.Invoke(this, e);
+        }
+
         public static readonly DependencyProperty ImageSourceProperty =
-            DependencyProperty.Register("ImageSource", typeof(string), typeof(CustomButton), 
+            DependencyProperty.Register("ImageSource", typeof(string), typeof(CustomButton),
                 new PropertyMetadata("../Resources/Icons/settings.png"));
         public string ImageSource
         {
@@ -34,7 +42,7 @@ namespace No_Mole.Components
             {
                 return (string)GetValue(ImageSourceProperty);
             }
-            set {SetValue(ImageSourceProperty, value); }
+            set { SetValue(ImageSourceProperty, value); }
         }
 
         public string ToolTipText

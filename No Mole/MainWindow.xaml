@@ -40,6 +40,7 @@
                 </MenuItem>
 
                 <!--// About Us //-->
+
                 <MenuItem Header="Library"
                       Style="{StaticResource Main_MenuItem}">
                     <MenuItem.Icon>
@@ -63,7 +64,7 @@
                     <MenuItem Header="Resolution"
                           Height="35"
                           Width="175"
-                          Style="{StaticResource Services_Sub_MenuItem}">
+                          Style="{StaticResource Sub_MenuItem}">
                         <MenuItem.Icon>
                             <Image 
                                Stretch="Uniform" />
@@ -73,7 +74,7 @@
                     <MenuItem Header="Frame Rate"
                           Height="35"
                           Width="175"
-                          Style="{StaticResource Services_Sub_MenuItem}">
+                          Style="{StaticResource Sub_MenuItem}">
                         <MenuItem.Icon>
                             <Image
                                Stretch="Uniform" />
@@ -83,7 +84,7 @@
                     <MenuItem Header="Zoom"
                           Height="35"
                           Width="175"
-                          Style="{StaticResource Services_Sub_MenuItem}">
+                          Style="{StaticResource Sub_MenuItem}">
                         <MenuItem.Icon>
                             <Image 
                                Stretch="Uniform" />
@@ -93,64 +94,7 @@
                     <MenuItem Header="Video Effect"
                           Height="35"
                           Width="175"
-                          Style="{StaticResource Mobile_App_MenuItem_With_Dropdown}">
-                        <MenuItem.Icon>
-                            <Image 
-                               Stretch="Uniform" />
-                        </MenuItem.Icon>
-
-                        <MenuItem Header="Android App"
-                              Height="35"
-                              Width="160"
-                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
-                            <MenuItem.Icon>
-                                <Image 
-                                   Stretch="Uniform" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-
-                        <MenuItem Header="iOS App"
-                              Height="35"
-                              Width="160"
-                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
-                            <MenuItem.Icon>
-                                <Image 
-                                   Stretch="Uniform" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-
-                        <MenuItem Header=".NET MAUI App"
-                              Height="35"
-                              Width="160"
-                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
-                            <MenuItem.Icon>
-                                <Image 
-                                   Stretch="Uniform" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-
-                        <MenuItem Header="Flutter App"
-                              Height="35"
-                              Width="160"
-                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
-                            <MenuItem.Icon>
-                                <Image
-                                   Stretch="Uniform" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-
-                        <MenuItem Header="Unity App"
-                              Height="35"
-                              Width="160"
-                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
-                            <MenuItem.Icon>
-                                <Image 
-                                   Stretch="Uniform" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-
-                    </MenuItem>
-
+                          Style="{StaticResource Sub_MenuItem_Without}" Click="Video_Click"/>
                 </MenuItem>
 
                 <!--// Portfolio //-->
@@ -222,7 +166,7 @@
                 <components:CustomButton ToolTipText="Zoom" ImageSource="../Resources/Icons/scan-search.png" Loaded="CustomButton_Loaded_2" Margin="-4,0,4,0"/>
                 <components:CustomButton ToolTipText="Full Screen" ImageSource="../Resources/Icons/maximize.png" Loaded="CustomButton_Loaded_3" Margin="1,0,-1,0"/>
                 <components:CustomButton ToolTipText="Image Capture" ImageSource="../Resources/Icons/camera.png" Loaded="CustomButton_Loaded_4" Margin="6,0,-6,0"/>
-                <components:CustomButton ToolTipText="Video Record" ImageSource="../Resources/Icons/recorder.png" Loaded="CustomButton_Loaded_5" Margin="8,0,-8,0"/>
+                <components:CustomButton ToolTipText="Video Record" ImageSource="../Resources/Icons/recorder.png" ButtonClick="RecordButtonClicked"  Margin="8,0,-8,0"/>
             </UniformGrid>
 
             <!-- Main Button -->

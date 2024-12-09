@@ -32,6 +32,7 @@
 		<Resource Include="Resources/Icons/play.png" />
 		<Resource Include="Resources/Icons/stop.png" />
 		<Resource Include="Resources/Icons/no_mole_logo.png" />
+		<Resource Include="Resources/Icons/arrow-down.png" />
 		
 	</ItemGroup>
 </Project>

@@ -47,10 +47,6 @@ namespace No_Mole.Components
 
                 _mainWindow.ChangeText("Stop Inspection");
 
-                _mainWindow.ChangeRecordingVisibility(true);
-
-                _mainWindow.StartTimer();
-
                 this.Close();
 
             }
