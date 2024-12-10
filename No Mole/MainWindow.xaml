@@ -3,186 +3,306 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:No_Mole" xmlns:components="clr-namespace:No_Mole.Components"
+        xmlns:local="clr-namespace:No_Mole"
+        xmlns:components="clr-namespace:No_Mole.Components"
+        xmlns:local1="clr-namespace:No_Mole.Converters"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="716" Width="1435" Background="#3B3B3B">
+        Title="MainWindow"
+        Height="716"
+        Width="1435"
+        Background="#3B3B3B">
 
     <Window.Resources>
         <ResourceDictionary>
+            <local1:SliderValueToHeightConverter x:Key="SliderValueToHeightConverter"/>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Style/WindowResources.xaml" />
+                <ResourceDictionary Source="Resources/Style/WindowResources.xaml"/>
+                <ResourceDictionary Source="Resources/Style/SliderTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Margin="10" >
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="1404*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.ColumnSpan="2" Margin="0,0,0,0" Height="30" VerticalAlignment="Top">
+        <Border Grid.ColumnSpan="2"
+                Margin="0,0,0,0"
+                Height="30"
+                VerticalAlignment="Top">
             <Menu Height="30"
-              Width="630"
-              Background="#3B3B3B"
-              VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-              Margin="0,0,0,0">
+                  Width="630"
+                  Background="#3B3B3B"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="0,0,0,0">
 
                 <!--// Home //-->
                 <MenuItem Header="Home"
-                      Style="{StaticResource Main_MenuItem}">
-                    <MenuItem.Icon>
-                        <Image 
-                           Stretch="Uniform" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                          Style="{StaticResource Main_MenuItem}"/>
 
-                <!--// About Us //-->
-
+                <!--// Library //-->
                 <MenuItem Header="Library"
-                      Style="{StaticResource Main_MenuItem}">
-                    <MenuItem.Icon>
-                        <Image 
-                           Stretch="Uniform" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                          Style="{StaticResource Main_MenuItem}"/>
 
-                <!--// About Us //-->
+                <!--// Image //-->
                 <MenuItem Header="Image"
-                    Style="{StaticResource Main_MenuItem}">
-                </MenuItem>
-                <!--// Services //-->
+                          Style="{StaticResource Main_MenuItem}"/>
+
+                <!--// Video //-->
                 <MenuItem Header="Video"
-                      Style="{StaticResource MenuItem_With_Dropdown}">
-                    <MenuItem.Icon>
-                        <Image
-                           Stretch="Uniform" />
-                    </MenuItem.Icon>
+                          Style="{StaticResource MenuItem_With_Dropdown}">
 
                     <MenuItem Header="Resolution"
-                          Height="35"
-                          Width="175"
-                          Style="{StaticResource Sub_MenuItem}">
-                        <MenuItem.Icon>
-                            <Image 
-                               Stretch="Uniform" />
-                        </MenuItem.Icon>
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem}">
+                        <MenuItem Header="400x400"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="500x500"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="600x600"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
                     </MenuItem>
 
                     <MenuItem Header="Frame Rate"
-                          Height="35"
-                          Width="175"
-                          Style="{StaticResource Sub_MenuItem}">
-                        <MenuItem.Icon>
-                            <Image
-                               Stretch="Uniform" />
-                        </MenuItem.Icon>
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem}">
+                        <MenuItem Header="15 fps"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="24 fps"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="30 fps"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
                     </MenuItem>
 
                     <MenuItem Header="Zoom"
-                          Height="35"
-                          Width="175"
-                          Style="{StaticResource Sub_MenuItem}">
-                        <MenuItem.Icon>
-                            <Image 
-                               Stretch="Uniform" />
-                        </MenuItem.Icon>
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem}">
+                        <MenuItem Header="1:1 Original"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="1:2 Half"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                        <MenuItem Header="1:3 Quarter"
+                                  Height="35"
+                                  Width="100"
+                                  Style="{StaticResource Sub_MenuItem_Without}"/>
                     </MenuItem>
 
                     <MenuItem Header="Video Effect"
-                          Height="35"
-                          Width="175"
-                          Style="{StaticResource Sub_MenuItem_Without}" Click="Video_Click"/>
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem_Without}"
+                              Click="Video_Click"/>
+
+                    <MenuItem Header="Full Screen"
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem_Without}">
+                    </MenuItem>
+
+                    <MenuItem Header="Image Capture "
+                              Height="35"
+                              Style="{StaticResource Sub_MenuItem_Without}">
+                    </MenuItem>
                 </MenuItem>
 
                 <!--// Portfolio //-->
                 <MenuItem Header="About"
-                       Click="Click_About"
-                      Style="{StaticResource Main_MenuItem}">
-                    <MenuItem.Icon>
-                        <Image 
-                           Stretch="Uniform" />
-                    </MenuItem.Icon>
+                          Click="Click_About"
+                          Style="{StaticResource Main_MenuItem}">
                 </MenuItem>
 
                 <!--// Contact //-->
-                <MenuItem Header="Contact" Click="Click_Help"
-                 
-                      Style="{StaticResource Main_MenuItem}">
-                    <MenuItem.Icon>
-                        <Image
-                           Stretch="Uniform" />
-                    </MenuItem.Icon>
+                <MenuItem Header="Contact"
+                          Click="Click_Help"
+                          Style="{StaticResource Main_MenuItem}">
+
                 </MenuItem>
             </Menu>
         </Border>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="467,0,0,0">
-            <StackPanel x:Name ="Recording_Info" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Margin="467,0,0,0">
+            <StackPanel x:Name="Recording_Info"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
                 <!-- Recording Button -->
-                <Ellipse Width="19" Height="19" Fill="Red" Stroke="White" StrokeThickness="3" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <Ellipse Width="19"
+                         Height="19"
+                         Fill="Red"
+                         Stroke="White"
+                         StrokeThickness="3"
+                         HorizontalAlignment="Left"
+                         Margin="0,0,0,0"
+                         VerticalAlignment="Center"/>
 
                 <!-- Timer Text -->
-                <TextBlock x:Name="TimerText" Text="00:00s" FontSize="13" FontWeight="Bold" Foreground="White"
-                   HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <TextBlock x:Name="TimerText"
+                           Text="00:00s"
+                           FontSize="13"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Left"
+                           Margin="10,0,0,0"
+                           VerticalAlignment="Center"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Height="400">
 
-                <Slider x:Name="BrightnessSlider"
-                    Minimum="0.0" Maximum="2.0" Value="1.0"
-                    Orientation="Vertical"
-                    Height="400"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                    Width="10" Margin="10"
-                    ValueChanged="BrightnessSlider_ValueChanged" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Brightness"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Foreground="White">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="-90"/>
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                    <Slider
+                        Style="{StaticResource RoundedThumbSliderStyle}"
+                        x:Name="BrightnessSlider"
+                        Minimum="0.0"
+                        Maximum="2.0"
+                        Value="1.0"
+                        Orientation="Vertical"
+                        Height="400"
+                        Width="20"
+                        Margin="0 0 10 0"
+                        ValueChanged="BrightnessSlider_ValueChanged">
+
+                    </Slider>
+
+                </StackPanel>
 
                 <!-- Camera View -->
-                <Border Grid.Row="0" CornerRadius="10" BorderBrush="Gray" BorderThickness="2" Width="400" Height="400" Background="White">
-                    <Image x:Name="CameraImage" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill">
+                <Border Grid.Row="0"
+                        CornerRadius="10"
+                        BorderBrush="Gray"
+                        BorderThickness="2"
+                        Width="400"
+                        Height="400"
+                        Background="White">
+                    <Image x:Name="CameraImage"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch"
+                           Stretch="UniformToFill">
                         <Image.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
+                                <Setter Property="CornerRadius"
+                                        Value="10"/>
                             </Style>
                         </Image.Resources>
                     </Image>
                 </Border>
 
-                <Slider x:Name="ZoomSlider"
-                    Minimum="1.0" Maximum="4.0" Value="1.0"
-                    Orientation="Vertical"
-                    Height="400"
-                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                    Width="10" Margin="10"
-                    ValueChanged="ZoomSlider_ValueChanged" />
+                <StackPanel Orientation="Horizontal">
+                    <Slider x:Name="ZoomSlider"
+                            Minimum="1.0"
+                            Maximum="4.0"
+                            Value="1.0"
+                            Orientation="Vertical"
+                            Height="400 "
+                            Width="20"
+                            Margin="10 0 0 0"
+                            Style="{StaticResource RoundedThumbSliderStyle}"
+                            ValueChanged="ZoomSlider_ValueChanged">
+
+                    </Slider>
+                    <TextBlock Text="Zoom"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Foreground="White">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="-90"/>
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </StackPanel>
+
             </StackPanel>
 
 
             <!-- 6 Icon Buttons -->
-            <UniformGrid Grid.Row="1" Rows="1" HorizontalAlignment="Stretch" Margin="0,15" Width="400" >
-                <components:CustomButton ToolTipText="Video Enhancement" ImageSource="../Resources/Icons/sun.png" Loaded="CustomButton_Loaded" Margin="-11,0,11,0"/>
-                <components:CustomButton ToolTipText="Settings"  ImageSource="../Resources/Icons/settings.png" Loaded="CustomButton_Loaded_1" Margin="-8,0,8,0"/>
-                <components:CustomButton ToolTipText="Zoom" ImageSource="../Resources/Icons/scan-search.png" Loaded="CustomButton_Loaded_2" Margin="-4,0,4,0"/>
-                <components:CustomButton ToolTipText="Full Screen" ImageSource="../Resources/Icons/maximize.png" Loaded="CustomButton_Loaded_3" Margin="1,0,-1,0"/>
-                <components:CustomButton ToolTipText="Image Capture" ImageSource="../Resources/Icons/camera.png" Loaded="CustomButton_Loaded_4" Margin="6,0,-6,0"/>
-                <components:CustomButton ToolTipText="Video Record" ImageSource="../Resources/Icons/recorder.png" ButtonClick="RecordButtonClicked"  Margin="8,0,-8,0"/>
+            <UniformGrid Grid.Row="1"
+                         Rows="1"
+                         HorizontalAlignment="Stretch"
+                         Margin="0,15"
+                         Width="400">
+                <components:CustomButton ToolTipText="Video Enhancement"
+                                         ImageSource="../Resources/Icons/sun.png"
+                                         Loaded="CustomButton_Loaded"
+                                         Margin="-11,0,11,0"/>
+                <components:CustomButton ToolTipText="Settings"
+                                         ImageSource="../Resources/Icons/settings.png"
+                                         Loaded="CustomButton_Loaded_1"
+                                         Margin="-8,0,8,0"/>
+                <components:CustomButton ToolTipText="Zoom"
+                                         ImageSource="../Resources/Icons/scan-search.png"
+                                         Loaded="CustomButton_Loaded_2"
+                                         Margin="-4,0,4,0"/>
+                <components:CustomButton ToolTipText="Full Screen"
+                                         ImageSource="../Resources/Icons/maximize.png"
+                                         Loaded="CustomButton_Loaded_3"
+                                         Margin="1,0,-1,0"/>
+                <components:CustomButton ToolTipText="Image Capture"
+                                         ImageSource="../Resources/Icons/camera.png"
+                                         Loaded="CustomButton_Loaded_4"
+                                         Margin="6,0,-6,0"/>
+                <components:CustomButton ToolTipText="Video Record"
+                                         ImageSource="../Resources/Icons/recorder.png"
+                                         ButtonClick="RecordButtonClicked"
+                                         Margin="8,0,-8,0"/>
             </UniformGrid>
 
             <!-- Main Button -->
-            <Button Grid.Row="2" Height="48" Width="400" Margin="0,10" 
-                HorizontalAlignment="Center" Background="#ad42ad" Foreground="White" 
-                FontWeight="Bold" BorderBrush="Transparent" FontSize="16" Click="Button_Click">
+            <Button Grid.Row="2"
+                    Height="48"
+                    Width="400"
+                    Margin="0,10"
+                    HorizontalAlignment="Center"
+                    Background="#ad42ad"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderBrush="Transparent"
+                    FontSize="16"
+                    Click="Button_Click">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="ButtonImage" Source="Resources/Icons/play.png" Width="18" Height="18" Margin="0 0 10 0"/>
-                        <TextBlock x:Name="ButtonText" Text="Start Inspection"/>
+                        <Image x:Name="ButtonImage"
+                               Source="Resources/Icons/play.png"
+                               Width="18"
+                               Height="18"
+                               Margin="0 0 10 0"/>
+                        <TextBlock x:Name="ButtonText"
+                                   Text="Start Inspection"/>
                     </StackPanel>
                 </Button.Content>
 
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="10"/>
+                        <Setter Property="CornerRadius"
+                                Value="10"/>
                     </Style>
                 </Button.Resources>
             </Button>
