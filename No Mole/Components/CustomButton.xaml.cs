@@ -53,5 +53,14 @@ namespace No_Mole.Components
 
         public static readonly DependencyProperty ToolTipTextProperty =
             DependencyProperty.Register(nameof(ToolTipText), typeof(string), typeof(CustomButton), new PropertyMetadata(string.Empty));
+
+        public string ButtonText
+        {
+            get { return (string)GetValue(ButtonTextProperty); }
+            set { SetValue(ButtonTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty ButtonTextProperty =
+            DependencyProperty.Register(nameof(ButtonText), typeof(string), typeof(CustomButton), new PropertyMetadata(string.Empty));
     }
 }

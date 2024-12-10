@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\resources\\style\\slidertemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:resources\\style\\slidertemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\custombutton.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\resources\\style\\slidertemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:resources\\style\\slidertemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\converters\\slidervaluetoheightconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -40,14 +48,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\contactus.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\contactus.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\custombutton.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|d:\\roshan workspace\\no_mole\\no mole\\components\\inspectiondetailmodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -96,68 +96,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "VideoEffect.xaml.cs",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\VideoEffect.xaml.cs",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml.cs",
-              "RelativeToolTip": "Components\\VideoEffect.xaml.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T05:09:21.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "XamlReader.cs",
-              "DocumentMoniker": "C:\\Users\\rshre\\AppData\\Local\\Temp\\.vsdbgsrc\\0a84cc53936b314ba955b54f50bf4796d8234943f3fd7b93873381b45d404026\\XamlReader.cs",
-              "ToolTip": "C:\\Users\\rshre\\AppData\\Local\\Temp\\.vsdbgsrc\\0a84cc53936b314ba955b54f50bf4796d8234943f3fd7b93873381b45d404026\\XamlReader.cs [Read Only]",
-              "ViewState": "AgIAALABAAAAAAAAAAAewLUBAAACAAAAAQAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T05:16:36.008Z",
-              "EditorCaption": " [Read Only]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGwBAAAAAAAAAIA2wIABAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T06:15:17.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VideoEffect.xaml",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml",
-              "RelativeDocumentMoniker": "Components\\VideoEffect.xaml",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml",
-              "RelativeToolTip": "Components\\VideoEffect.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-10T05:09:25.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SliderValueToHeightConverter.cs",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Converters\\SliderValueToHeightConverter.cs",
-              "RelativeDocumentMoniker": "Converters\\SliderValueToHeightConverter.cs",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Converters\\SliderValueToHeightConverter.cs",
-              "RelativeToolTip": "Converters\\SliderValueToHeightConverter.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAswBkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T05:50:58.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 15,
               "Title": "About.xaml",
               "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\About.xaml",
@@ -170,6 +108,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CustomButton.xaml",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
+              "RelativeDocumentMoniker": "Components\\CustomButton.xaml",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
+              "RelativeToolTip": "Components\\CustomButton.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T13:47:24.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\rshre\\AppData\\Local\\Temp\\.vsdbgsrc\\0a84cc53936b314ba955b54f50bf4796d8234943f3fd7b93873381b45d404026\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\rshre\\AppData\\Local\\Temp\\.vsdbgsrc\\0a84cc53936b314ba955b54f50bf4796d8234943f3fd7b93873381b45d404026\\XamlReader.cs [Read Only]",
+              "ViewState": "AgIAALABAAAAAAAAAAAewLUBAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T05:16:36.008Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomButton.xaml.cs",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\CustomButton.xaml.cs",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml.cs",
+              "RelativeToolTip": "Components\\CustomButton.xaml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:48:26.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAAwO8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T06:15:17.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SliderValueToHeightConverter.cs",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Converters\\SliderValueToHeightConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\SliderValueToHeightConverter.cs",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Converters\\SliderValueToHeightConverter.cs",
+              "RelativeToolTip": "Converters\\SliderValueToHeightConverter.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswBkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T05:50:58.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VideoEffect.xaml",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml",
+              "RelativeDocumentMoniker": "Components\\VideoEffect.xaml",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml",
+              "RelativeToolTip": "Components\\VideoEffect.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-10T05:09:25.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VideoEffect.xaml.cs",
+              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\VideoEffect.xaml.cs",
+              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\VideoEffect.xaml.cs",
+              "RelativeToolTip": "Components\\VideoEffect.xaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T05:09:21.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SliderTemplate.xaml",
               "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Resources\\Style\\SliderTemplate.xaml",
               "RelativeDocumentMoniker": "Resources\\Style\\SliderTemplate.xaml",
@@ -181,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "No Mole",
               "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\No Mole.csproj",
               "RelativeDocumentMoniker": "No Mole.csproj",
@@ -205,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "WindowResources.xaml",
               "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Resources\\Style\\WindowResources.xaml",
               "RelativeDocumentMoniker": "Resources\\Style\\WindowResources.xaml",
@@ -240,32 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CustomButton.xaml.cs",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\CustomButton.xaml.cs",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml.cs",
-              "RelativeToolTip": "Components\\CustomButton.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T13:48:26.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "CustomButton.xaml",
-              "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
-              "RelativeDocumentMoniker": "Components\\CustomButton.xaml",
-              "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
-              "RelativeToolTip": "Components\\CustomButton.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-09T13:47:24.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ContactUs.xaml.cs",
               "DocumentMoniker": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\ContactUs.xaml.cs",
               "RelativeDocumentMoniker": "Components\\ContactUs.xaml.cs",

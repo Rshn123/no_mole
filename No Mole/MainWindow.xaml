@@ -247,32 +247,27 @@
             <UniformGrid Grid.Row="1"
                          Rows="1"
                          HorizontalAlignment="Stretch"
-                         Margin="0,15"
+                         Margin="0,10"
                          Width="400">
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
                                          Loaded="CustomButton_Loaded"
-                                         Margin="-11,0,11,0"/>
-                <components:CustomButton ToolTipText="Settings"
-                                         ImageSource="../Resources/Icons/settings.png"
-                                         Loaded="CustomButton_Loaded_1"
-                                         Margin="-8,0,8,0"/>
+                                         ButtonText="Brightness"
+                                         />
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
                                          Loaded="CustomButton_Loaded_2"
-                                         Margin="-4,0,4,0"/>
-                <components:CustomButton ToolTipText="Full Screen"
-                                         ImageSource="../Resources/Icons/maximize.png"
-                                         Loaded="CustomButton_Loaded_3"
-                                         Margin="1,0,-1,0"/>
+                                         ButtonText="Zoom"
+                                         />
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
                                          Loaded="CustomButton_Loaded_4"
-                                         Margin="6,0,-6,0"/>
+                                         ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
                                          ButtonClick="RecordButtonClicked"
-                                         Margin="8,0,-8,0"/>
+                                         ButtonText="Record"
+                                        />
             </UniformGrid>
 
             <!-- Main Button -->

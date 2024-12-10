@@ -11,7 +11,7 @@
     <Grid>
         <Button
             Height="48"
-            Width="48"
+            Width="95"
             Background="White"
             ToolTip="{Binding ToolTipText, ElementName=root}"
             Click="Button_Click">
@@ -21,9 +21,13 @@
                             Value="10"/>
                 </Style>
             </Button.Resources>
-            <Image Source="{Binding ImageSource,ElementName=root}"
-                    Width="24"
-                    Height="24"/>
+            <StackPanel Orientation="Vertical">
+                <Image Source="{Binding ImageSource,ElementName=root}"
+        Width="24"
+        Height="24"/>
+                <TextBlock Text="{Binding ButtonText, ElementName=root}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+
 
         </Button>
     </Grid>
