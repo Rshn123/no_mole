@@ -46,7 +46,7 @@ namespace No_Mole
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
             _timer.Tick += Timer_Tick!;
             record_btn.IsEnabled = true;
-            CameraViewBorder.Width = 500;
+            CameraViewBorder.Width = 400;
             // Set the duration limit to 15 seconds
             _durationLimit = TimeSpan.FromSeconds(15);
 
@@ -227,6 +227,20 @@ namespace No_Mole
             _videoSource = null;
         }
 
+        private void To_400(object sender, RoutedEventArgs e)
+        {
+            CameraViewBorder.Width = 400;
+        }
+
+        private void To_500(object sender, RoutedEventArgs e)
+        {
+            CameraViewBorder.Width = 500;
+        }
+
+        private void To_600(object sender, RoutedEventArgs e)
+        {
+            CameraViewBorder.Width = 600;
+        }
         private void BrightnessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _brightnessFactor = (float)e.NewValue;

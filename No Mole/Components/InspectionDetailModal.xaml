@@ -39,7 +39,7 @@
             <!-- Title -->
             <DockPanel Grid.Row="0"
                        Margin="0,0,0,5">
-                <TextBlock Text="Device Details"
+                <TextBlock Text="Instrument Details"
                            Foreground="White"
                            FontSize="16"
                            FontWeight="Bold"
@@ -101,7 +101,7 @@
                     <!-- Batch -->
                     <StackPanel Margin="5"
                                 Width="200">
-                        <TextBlock Text="Batch"
+                        <TextBlock Text="Set Number"
                                    Foreground="White"
                                    FontSize="12"
                                    Margin="0,0,0,5"

@@ -62,16 +62,20 @@
                         <MenuItem Header="400x400"
                                   Height="35"
                                   Width="100"
-                                  Click="Change_Resolution"
+                                  Click="To_400"
                                   Style="{StaticResource Sub_MenuItem_Without}"/>
                         <MenuItem Header="400x500"
                                   Height="35"
+                                  Click="To_500"
                                   Width="100"
                                   Style="{StaticResource Sub_MenuItem_Without}"/>
                         <MenuItem Header="400x600"
                                   Height="35"
                                   Width="100"
-                                  Style="{StaticResource Sub_MenuItem_Without}"/>
+                                  Style="{StaticResource Sub_MenuItem_Without}"
+                                                                    Click="To_600"
+
+                                  />
                     </MenuItem>
 
                     <MenuItem Header="Frame Rate"
@@ -146,7 +150,9 @@
                     Margin="467,0,0,0">
             <StackPanel x:Name="Recording_Info"
                         Orientation="Horizontal"
-                        HorizontalAlignment="Center">
+                        HorizontalAlignment="Center"
+                        Margin="0,5"
+                        >
                 <!-- Recording Button -->
                 <Ellipse Width="19"
                          Height="19"
@@ -159,14 +165,13 @@
 
                 <!-- Timer Text -->
                 <TextBlock x:Name="TimerText"
-                           Text=""
+                           Text="recording..."
                            FontSize="13"
                            FontWeight="Bold"
                            Foreground="White"
                            HorizontalAlignment="Center"
                            Margin="10,0,0,0"
-                           VerticalAlignment="Center"
-                           />
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -255,13 +260,11 @@
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
                                          Loaded="CustomButton_Loaded"
-                                         ButtonText="Brightness"
-                                         />
+                                         ButtonText="Brightness"/>
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
                                          Loaded="CustomButton_Loaded_2"
-                                         ButtonText="Zoom"
-                                         />
+                                         ButtonText="Zoom"/>
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
                                          Loaded="CustomButton_Loaded_4"
@@ -271,8 +274,7 @@
                                          ImageSource="../Resources/Icons/recorder.png"
                                          ButtonClick="RecordButtonClicked"
                                          ButtonText="Record"
-                                         x:Name="record_btn"
-                                        />
+                                         x:Name="record_btn"/>
             </UniformGrid>
 
             <!-- Main Button -->
