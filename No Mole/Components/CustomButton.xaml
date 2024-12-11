@@ -27,8 +27,6 @@
         Height="24"/>
                 <TextBlock Text="{Binding ButtonText, ElementName=root}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
-
-
         </Button>
     </Grid>
 </UserControl>

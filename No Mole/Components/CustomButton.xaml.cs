@@ -62,5 +62,15 @@ namespace No_Mole.Components
 
         public static readonly DependencyProperty ButtonTextProperty =
             DependencyProperty.Register(nameof(ButtonText), typeof(string), typeof(CustomButton), new PropertyMetadata(string.Empty));
+
+
+        public string ButtonName
+        {
+            get { return (string)GetValue(ButtonNameProperty); }
+            set { SetValue(ButtonNameProperty, value); }
+        }
+
+        public static readonly DependencyProperty ButtonNameProperty =
+            DependencyProperty.Register(nameof(ButtonName), typeof(string), typeof(CustomButton), new PropertyMetadata(string.Empty));
     }
 }

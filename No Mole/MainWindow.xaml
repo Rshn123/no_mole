@@ -62,12 +62,13 @@
                         <MenuItem Header="400x400"
                                   Height="35"
                                   Width="100"
+                                  Click="Change_Resolution"
                                   Style="{StaticResource Sub_MenuItem_Without}"/>
-                        <MenuItem Header="500x500"
+                        <MenuItem Header="400x500"
                                   Height="35"
                                   Width="100"
                                   Style="{StaticResource Sub_MenuItem_Without}"/>
-                        <MenuItem Header="600x600"
+                        <MenuItem Header="400x600"
                                   Height="35"
                                   Width="100"
                                   Style="{StaticResource Sub_MenuItem_Without}"/>
@@ -158,13 +159,14 @@
 
                 <!-- Timer Text -->
                 <TextBlock x:Name="TimerText"
-                           Text="00:00s"
+                           Text=""
                            FontSize="13"
                            FontWeight="Bold"
                            Foreground="White"
-                           HorizontalAlignment="Left"
+                           HorizontalAlignment="Center"
                            Margin="10,0,0,0"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center"
+                           />
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -203,6 +205,7 @@
                         BorderThickness="2"
                         Width="400"
                         Height="400"
+                        x:Name="CameraViewBorder"
                         Background="White">
                     <Image x:Name="CameraImage"
                            HorizontalAlignment="Stretch"
@@ -262,11 +265,13 @@
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
                                          Loaded="CustomButton_Loaded_4"
+                                         x:Name="capture_btn"
                                          ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
                                          ButtonClick="RecordButtonClicked"
                                          ButtonText="Record"
+                                         x:Name="record_btn"
                                         />
             </UniformGrid>
 

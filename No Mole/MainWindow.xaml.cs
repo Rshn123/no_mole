@@ -25,9 +25,8 @@ namespace No_Mole
     public partial class MainWindow : Window
     {
 
-        private int zoomLevel = 100; // Default zoom percentage (100% = no zoom)
-        private FilterInfoCollection _videoDevices;
-        private VideoCaptureDevice _videoSource;
+        private FilterInfoCollection? _videoDevices;
+        private VideoCaptureDevice? _videoSource;
         private bool recordingVisibility = false;
 
         private DispatcherTimer _timer;        // Timer for updating the clock
@@ -45,8 +44,9 @@ namespace No_Mole
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
-            _timer.Tick += Timer_Tick;
-
+            _timer.Tick += Timer_Tick!;
+            record_btn.IsEnabled = true;
+            CameraViewBorder.Width = 500;
             // Set the duration limit to 15 seconds
             _durationLimit = TimeSpan.FromSeconds(15);
 
@@ -60,11 +60,20 @@ namespace No_Mole
         private void Timer_Tick(object sender, EventArgs e)
         {
             _elapsedTime = _elapsedTime.Add(TimeSpan.FromSeconds(1)); // Increment elapsed time
-            TimerText.Text = _elapsedTime.ToString(@"mm\:ss") + "s";  // Update the display
-
+            TimerText.Text = "recording...";  // Update the display
+                                              // Toggle the visibility of the TextBlock
+            if (TimerText.Visibility == Visibility.Visible)
+            {
+                TimerText.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                TimerText.Visibility = Visibility.Visible;
+            }
             // Stop the timer if the elapsed time reaches the limit
             if (_elapsedTime >= _durationLimit)
             {
+                TimerText.Visibility = Visibility.Visible;
                 StopTimer();
                 MessageBox.Show("Recording finished!");  // Optional: Show a message box or update UI
             }
@@ -90,7 +99,7 @@ namespace No_Mole
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap bitmap = null;
+            Bitmap? bitmap = null;
 
             try
             {
@@ -171,7 +180,7 @@ namespace No_Mole
         private void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
         {
             var rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            BitmapData data = null;
+            BitmapData? data = null;
 
             try
             {
@@ -213,7 +222,7 @@ namespace No_Mole
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            _videoSource.SignalToStop();
+            _videoSource!.SignalToStop();
             _videoSource.WaitForStop();
             _videoSource = null;
         }
@@ -252,6 +261,10 @@ namespace No_Mole
 
         }
 
+        private void Change_Resolution(int resolution)
+        {
+            CameraViewBorder.Width = resolution;
+        }
         private void RecordButtonClicked(object sender, RoutedEventArgs e)
         {
             if (recordingVisibility)

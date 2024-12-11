@@ -23,9 +23,7 @@ namespace No_Mole.Components
         private readonly Button? _mainButton;
         private MainWindow _mainWindow;
 
-        private DispatcherTimer _timer;        // Timer for updating the clock
-        private TimeSpan _elapsedTime;        // Tracks elapsed time
-        private TimeSpan _durationLimit;      // Duration limit (15 seconds)
+           // Duration limit (15 seconds)
         public FailedInspection(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
