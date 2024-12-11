@@ -252,7 +252,7 @@
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
                                          Loaded="CustomButton_Loaded"
-                                         Margin="-11,0,11,0"/>
+                                         Margin="-24,0,0,0" HorizontalAlignment="Left" Width="83"/>
                 <components:CustomButton ToolTipText="Settings"
                                          ImageSource="../Resources/Icons/settings.png"
                                          Loaded="CustomButton_Loaded_1"

@@ -25,10 +25,10 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#AD42AD"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -95,11 +95,12 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#AD42AD"/>
                         </Trigger>
+                        
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -175,10 +176,10 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="Visibility"
                                     Value="Visible"/>
                         </Trigger>
@@ -212,10 +213,10 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="Visibility"
                                     Value="Visible"/>
                         </Trigger>
@@ -349,10 +350,10 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#AD42AD"/>
                             <Setter Property="Visibility"
                                     TargetName="Highlighter"
                                     Value="Visible"/>

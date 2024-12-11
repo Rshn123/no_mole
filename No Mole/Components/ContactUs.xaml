@@ -41,76 +41,17 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-
-            <Canvas Grid.Column="0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="28,39,0,0">
-
-                <StackPanel Grid.Column="0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                    <Image Source="../Resources/Icons/no_mole_logo.png"
-                           Width="140"
-                           Height="140"/>
-                </StackPanel>
-            </Canvas>
-
-            <StackPanel Grid.Column="0"
-                        Margin="34,180,0,0">
-                <StackPanel Orientation="Horizontal"
-                            Margin="0,10,0,0">
-                    <TextBlock Text="📧"
-                               FontSize="14"
-                               Foreground="White"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
-                    <TextBlock FontSize="14"
-                               Foreground="White"
-                               VerticalAlignment="Center">
-                        <Run Text="info@nutrace.net"/>
-                    </TextBlock>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            Margin="0,15,0,0">
-                    <TextBlock Text="📞"
-                               FontSize="14"
-                               Foreground="White"
-                               VerticalAlignment="Center"
-                               Margin="0,0,10,0"/>
-                    <TextBlock FontSize="14"
-                               Foreground="White"
-                               VerticalAlignment="Center">
-                        <Run Text="(866) 681 0944"/>
-                    </TextBlock>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal"
-                            Margin="0,15,0,0">
-                    <TextBlock Text="📍"
-                               FontSize="14"
-                               Foreground="White"
-                               VerticalAlignment="Top"
-                               Margin="0,0,10,0"/>
-                    <TextBlock FontSize="14"
-                               Foreground="White">
-                        <Run Text="4310 Enterprise Dr"/>
-                        <LineBreak/>
-                        <Run Text="Winston-Salem, NC, 27106"/>
-                    </TextBlock>
-                </StackPanel>
-            </StackPanel>
+            <!-- Address Panel (Left Side) -->
+    
 
 
+            <!-- Contact Form (Right Side) -->
             <Border Background="#212121"
                     CornerRadius="10"
-                    Margin="333,0,-4,0"
                     Padding="20"
                     VerticalAlignment="Center"
-                    Grid.ColumnSpan="2">
+                    Grid.Column="1">
                 <StackPanel>
-
                     <TextBlock Text="Contact us"
                                FontSize="20"
                                FontWeight="Bold"
@@ -120,7 +61,6 @@
                                FontSize="12"
                                Foreground="White"
                                Margin="0,0,0,20"/>
-
 
                     <StackPanel Margin="0,10,0,10">
                         <TextBlock Text="Full Name *"
@@ -136,13 +76,11 @@
                                  Text="Fullname"/>
                     </StackPanel>
 
-
                     <Grid Margin="0,10,0,10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-
 
                         <StackPanel Grid.Column="0"
                                     Margin="0,0,10,0">
@@ -159,7 +97,6 @@
                                      Text="youremail@gmail.com"/>
                         </StackPanel>
 
-
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Mobile Number *"
                                        FontSize="14"
@@ -174,7 +111,6 @@
                                      Text="+012231321313"/>
                         </StackPanel>
                     </Grid>
-
 
                     <StackPanel Margin="0,10,0,10">
                         <TextBlock Text="Your Query *"
@@ -192,7 +128,6 @@
                                  AcceptsReturn="True"/>
                     </StackPanel>
 
-
                     <Button Content="Send"
                             Width="120"
                             Height="40"
@@ -204,6 +139,5 @@
                 </StackPanel>
             </Border>
         </Grid>
-
     </Grid>
 </Window>

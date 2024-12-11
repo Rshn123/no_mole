@@ -10,6 +10,9 @@
     <Compile Update="Components\About.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\AddressPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\CameraNotFoundWarning.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Components\About.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\AddressPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\CameraNotFoundWarning.xaml">

@@ -10,6 +10,85 @@
         WindowStyle="None"
         Title="FailedInspection">
 
+    <Window.Resources>
+        <!-- ControlTemplate for Pass Button -->
+        <ControlTemplate x:Key="PassButtonTemplate" TargetType="Button">
+            <Border x:Name="border"
+                    Background="#292929"
+                    CornerRadius="5"
+                    BorderBrush="Transparent"
+                    BorderThickness="0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <Grid Width="30"
+                          Height="30"
+                          Margin="0,0,10,0">
+                        <Ellipse Fill="Transparent"
+                                 Stroke="#00C853"
+                                 StrokeThickness="2"/>
+                        <TextBlock Text="✔"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="#00C853"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Margin="0,1,0,0"/>
+                    </Grid>
+                    <TextBlock Text="Pass"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Foreground="White"/>
+                </StackPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#00C853"/>
+                    <!-- Green hover -->
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!-- ControlTemplate for Fail Button -->
+        <ControlTemplate x:Key="FailButtonTemplate" TargetType="Button">
+            <Border x:Name="border"
+                    Background="#292929"
+                    CornerRadius="5"
+                    BorderBrush="Transparent"
+                    BorderThickness="0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <Grid Width="30"
+                          Height="30"
+                          Margin="0,0,10,0">
+                        <Ellipse Fill="Transparent"
+                                 Stroke="Red"
+                                 StrokeThickness="2"/>
+                        <TextBlock Text="✖"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="Red"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                    <TextBlock Text="Fail"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Foreground="White"/>
+                </StackPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="Red"/>
+                    <!-- Red hover -->
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
     <Window.OpacityMask>
         <!-- Clip the window to create rounded corners -->
         <VisualBrush>
@@ -28,7 +107,6 @@
             Height="490"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-        <!-- Title -->
         <Grid Margin="20">
             <StackPanel Orientation="Vertical">
                 <!-- Title -->
@@ -75,69 +153,14 @@
                         <Button x:Name="PassButton"
                                 Width="140"
                                 Height="50"
-                                Margin="0,0,10,0"
-                                FontWeight="Bold"
-                                Background="#292929"
-                                Foreground="White"
-                                BorderBrush="Transparent"
-                                Click="PassButton_Click">
-                            <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center">
-                                <Grid Width="30"
-                                      Height="30"
-                                      Margin="0,0,10,0">
-                                    <Ellipse Fill="Transparent"
-                                             Stroke="#00C853"
-                                             StrokeThickness="2"/>
-                                    <TextBlock Text="✔"
-                                               FontSize="16"
-                                               FontWeight="Bold"
-                                               Foreground="#00C853"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Top"
-                                               Margin="0,1,0,0"/>
-                                </Grid>
-                                <TextBlock Text="Pass"
-                                           VerticalAlignment="Center"
-                                           FontSize="14"
-                                           Foreground="White"/>
-                            </StackPanel>
-                        </Button>
-
+                                Template="{StaticResource PassButtonTemplate}"
+                                Click="PassButton_Click"/>
                         <Button x:Name="FailButton"
                                 Width="140"
                                 Height="50"
+                                Template="{StaticResource FailButtonTemplate}"
                                 Margin="10,0,0,0"
-                                FontWeight="Bold"
-                                Background="#292929"
-                                Foreground="White"
-                                BorderBrush="Transparent"
-                                Click="FailButton_Click">
-                            <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center">
-                                <Grid Width="30"
-                                      Height="30"
-                                      Margin="0,0,10,0">
-                                    <Ellipse Fill="Transparent"
-                                             Stroke="Red"
-                                             StrokeThickness="2"/>
-                                    <TextBlock Text="✖"
-                                               FontSize="16"
-                                               FontWeight="Bold"
-                                               Foreground="Red"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
-                                </Grid>
-
-                                <TextBlock Text="Fail"
-                                           VerticalAlignment="Center"
-                                           FontSize="14"
-                                           Foreground="White"/>
-                            </StackPanel>
-                        </Button>
-
+                                Click="FailButton_Click"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="2"
