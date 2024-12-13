@@ -19,13 +19,11 @@ namespace No_Mole.Components
     /// </summary>
     public partial class InspectionDetailModal : Window
     {
-        private readonly Button _mainButton;
-        private MainWindow _mainWindow;
-        public InspectionDetailModal(Button button, MainWindow mainWindow)
+        private FailedInspection _mainWindow;
+        public InspectionDetailModal(FailedInspection mainWindow)
         {
             InitializeComponent();
-            _mainButton = button;
-            _mainWindow = mainWindow;  
+            _mainWindow = mainWindow;
         }
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)
@@ -41,14 +39,7 @@ namespace No_Mole.Components
             }
             else
             {
-                _mainButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
-
-                _mainWindow.ChangeButtonImage("Resources/Icons/stop.png");
-
-                _mainWindow.ChangeText("Stop Inspection");
-
                 this.Close();
-
             }
 
         }

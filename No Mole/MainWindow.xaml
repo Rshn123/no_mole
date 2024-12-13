@@ -73,9 +73,7 @@
                                   Height="35"
                                   Width="100"
                                   Style="{StaticResource Sub_MenuItem_Without}"
-                                                                    Click="To_600"
-
-                                  />
+                                  Click="To_600"/>
                     </MenuItem>
 
                     <MenuItem Header="Frame Rate"
@@ -151,8 +149,7 @@
             <StackPanel x:Name="Recording_Info"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        Margin="0,5"
-                        >
+                        Margin="0,5">
                 <!-- Recording Button -->
                 <Ellipse Width="19"
                          Height="19"
@@ -259,16 +256,14 @@
                          Width="400">
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
-                                         Loaded="CustomButton_Loaded"
                                          ButtonText="Brightness"/>
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
-                                         Loaded="CustomButton_Loaded_2"
                                          ButtonText="Zoom"/>
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
-                                         Loaded="CustomButton_Loaded_4"
                                          x:Name="capture_btn"
+                                         ButtonClick="CaptureButtonClicked"
                                          ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
@@ -297,7 +292,7 @@
                                Height="18"
                                Margin="0 0 10 0"/>
                         <TextBlock x:Name="ButtonText"
-                                   Text="Start Inspection"/>
+                                   Text="Start RVI"/>
                     </StackPanel>
                 </Button.Content>
 

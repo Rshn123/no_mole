@@ -32,7 +32,7 @@ namespace No_Mole
         private DispatcherTimer _timer;        // Timer for updating the clock
         private TimeSpan _elapsedTime;        // Tracks elapsed time
         private TimeSpan _durationLimit;      // Duration limit (15 seconds)
-
+        private bool _failOrPass;
         private float _brightnessFactor = 1.0f; // Default value (no brightness change)
         private float _zoomFactor = 1.0f;
 
@@ -325,24 +325,11 @@ namespace No_Mole
             }
             else
             {
-                BlurEffect blur = new()
-                {
-                    Radius = 10
-                };
-                this.Effect = blur;
+                button!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
 
-                InspectionDetailModal modal = new(button!, this)
-                {
-                    Owner = this,
-                    Width = 615,
-                    Height = 415
-                };
+                ChangeButtonImage("Resources/Icons/stop.png");
 
-                modal.Left = this.Left + (this.Width - modal.Width) / 2;
-                modal.Top = this.Top + (this.Height - modal.Height) / 2;
-                modal.ShowDialog();
-
-                this.Effect = null;
+                ChangeText("Stop Inspection");
             }
 
         }

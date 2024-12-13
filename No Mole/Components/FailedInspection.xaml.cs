@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
@@ -22,8 +23,9 @@ namespace No_Mole.Components
     {
         private readonly Button? _mainButton;
         private MainWindow _mainWindow;
+        private bool _failOrPass = false;
 
-           // Duration limit (15 seconds)
+        // Duration limit (15 seconds)
         public FailedInspection(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
@@ -33,12 +35,16 @@ namespace No_Mole.Components
 
         private void PassButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FailButton.Background = new BrushConverter().ConvertFromString("#292929") as Brush;
+            PassButton.Background = Brushes.Purple;
+            _failOrPass = false;
         }
 
         private void FailButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FailButton.Background = Brushes.Purple;
+            PassButton.Background = new BrushConverter().ConvertFromString("#292929") as Brush;
+            _failOrPass = true;
         }
 
         private void Close_Button(object sender, RoutedEventArgs e)
@@ -48,6 +54,28 @@ namespace No_Mole.Components
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (_failOrPass)
+            {
+                BlurEffect blur = new()
+                {
+                    Radius = 10
+                };
+                this.Effect = blur;
+
+                InspectionDetailModal modal = new(this)
+                {
+                    Owner = this,
+                    Width = 615,
+                    Height = 415
+                };
+
+                modal.Left = this.Left + (this.Width - modal.Width) / 2;
+                modal.Top = this.Top + (this.Height - modal.Height) / 2;
+
+                modal.ShowDialog();
+
+                this.Effect = null;
+            }
             _mainButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AD42AD"));
             _mainWindow.ChangeText("Start Inspection");
             _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
