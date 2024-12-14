@@ -1,31 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace No_Mole.Components
 {
-    /// <summary>
-    /// Interaction logic for InspectionDetailModal.xaml
-    /// </summary>
     public partial class InspectionDetailModal : Window
     {
         private readonly Button _mainButton;
-        private MainWindow _mainWindow;
+        private readonly MainWindow _mainWindow;
+
+        private static readonly SolidColorBrush PlaceholderColor = new SolidColorBrush(Colors.Gray);
+        private static readonly SolidColorBrush ActiveTextColor = new SolidColorBrush(Colors.White);
+
+        private readonly Dictionary<string, string> _placeholders = new Dictionary<string, string>
+        {
+            { "DeviceNameTextBox", "Enter device name" },
+            { "ManufacturerTextBox", "Enter manufacturer name" },
+            { "BatchTextBox", "Enter batch ID" },
+            { "SerialNumberTextBox", "Enter serial number" }
+        };
+
         public InspectionDetailModal(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
-            _mainButton = button;
-            _mainWindow = mainWindow;  
+            _mainButton = button ?? throw new ArgumentNullException(nameof(button));
+            _mainWindow = mainWindow ?? throw new ArgumentNullException(nameof(mainWindow));
+
+            InitializePlaceholders();
+        }
+
+        private void InitializePlaceholders()
+        {
+            foreach (var placeholder in _placeholders)
+            {
+                var textBox = FindName(placeholder.Key) as TextBox;
+                if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholder.Value;
+                    textBox.Foreground = PlaceholderColor;
+                }
+            }
         }
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)
@@ -35,22 +51,42 @@ namespace No_Mole.Components
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SerialNumberTextBox.Text))
+            if (string.IsNullOrWhiteSpace(SerialNumberTextBox.Text) || SerialNumberTextBox.Text == _placeholders["SerialNumberTextBox"])
             {
-                MessageBox.Show("Serial Number* Field cannot be empty.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            else
-            {
-                _mainButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
-
-                _mainWindow.ChangeButtonImage("Resources/Icons/stop.png");
-
-                _mainWindow.ChangeText("Stop Inspection");
-
-                this.Close();
-
+                ValidationErrorText.Visibility = Visibility.Visible;
+                return;
             }
 
+            ValidationErrorText.Visibility = Visibility.Collapsed;
+
+            _mainButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
+            _mainWindow.ChangeButtonImage("Resources/Icons/stop.png");
+            _mainWindow.ChangeText("Stop Inspection");
+            this.Close();
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && _placeholders.TryGetValue(textBox.Name, out var placeholder))
+            {
+                if (textBox.Text == placeholder)
+                {
+                    textBox.Text = string.Empty;
+                    textBox.Foreground = ActiveTextColor;
+                }
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox textBox && _placeholders.TryGetValue(textBox.Name, out var placeholder))
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholder;
+                    textBox.Foreground = PlaceholderColor;
+                }
+            }
         }
     }
 }

@@ -1,16 +1,13 @@
 ﻿<Window x:Class="No_Mole.Components.ContactUs"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:No_Mole.Components"
-        mc:Ignorable="d"
+        Title="Contact Us"
         ResizeMode="NoResize"
         AllowsTransparency="True"
-        Title="HelpInfo"
-        Background="#212121"
-        WindowStyle="None">
+        WindowStyle="None"
+        Background="#212121">
     <Grid>
+        <!-- Top Bar -->
         <DockPanel VerticalAlignment="Top"
                    Height="40"
                    Background="Black">
@@ -19,38 +16,32 @@
                    Foreground="White"
                    VerticalAlignment="Center"
                    Margin="20,0,20,0"/>
-            <StackPanel Orientation="Horizontal"
-                        DockPanel.Dock="Right"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center">
-                <Button Margin="20,0,20,0"
-                        Content="&#x2715;"
-                        FontSize="14"
-                        Width="30"
-                        Height="30"
-                        Background="Transparent"
-                        Foreground="White"
-                        BorderBrush="Transparent"
-                        Click="Contact_Us_Close_BTN"/>
-            </StackPanel>
+            <Button Content="&#x2715;"
+                    FontSize="14"
+                    Width="30"
+                    Height="30"
+                    Background="Transparent"
+                    Foreground="White"
+                    BorderBrush="Transparent"
+                    DockPanel.Dock="Right"
+                    HorizontalAlignment="Right"
+                    Click="Contact_Us_Close_BTN"/>
         </DockPanel>
 
+        <!-- Content -->
         <Grid Margin="20,60,20,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Address Panel (Left Side) -->
-    
-
-
-            <!-- Contact Form (Right Side) -->
+            <!-- Contact Form -->
             <Border Background="#212121"
                     CornerRadius="10"
                     Padding="20"
                     VerticalAlignment="Center"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Margin="0,0,10,0">
                 <StackPanel>
                     <TextBlock Text="Contact us"
                                FontSize="20"
@@ -62,72 +53,89 @@
                                Foreground="White"
                                Margin="0,0,0,20"/>
 
+                    <!-- Full Name -->
                     <StackPanel Margin="0,10,0,10">
                         <TextBlock Text="Full Name *"
                                    FontSize="14"
                                    Foreground="White"
                                    Margin="0,0,0,5"/>
-                        <TextBox Width="423"
+                        <TextBox x:Name="FullNameTextBox"
+                                 Width="537"
                                  Height="35"
                                  Background="#0f0f0f"
-                                 Foreground="White"
+                                 Foreground="Gray"
                                  BorderBrush="Gray"
                                  VerticalContentAlignment="Center"
-                                 Text="Fullname"/>
+                                 Text="Fullname"
+                                 GotFocus="TextBox_GotFocus"
+                                 LostFocus="TextBox_LostFocus"/>
                     </StackPanel>
 
+                    <!-- Email and Mobile Number -->
                     <Grid Margin="0,10,0,10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Grid.Column="0"
-                                    Margin="0,0,10,0">
+                        <!-- Email -->
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
                             <TextBlock Text="Email *"
                                        FontSize="14"
                                        Foreground="White"
                                        Margin="0,0,0,5"/>
-                            <TextBox Width="189"
+                            <TextBox x:Name="EmailTextBox"
+                                     Width="258"
                                      Height="35"
                                      Background="#0f0f0f"
-                                     Foreground="White"
+                                     Foreground="Gray"
                                      BorderBrush="Gray"
                                      VerticalContentAlignment="Center"
-                                     Text="youremail@gmail.com"/>
+                                     Text="youremail@gmail.com"
+                                     GotFocus="TextBox_GotFocus"
+                                     LostFocus="TextBox_LostFocus"/>
                         </StackPanel>
 
+                        <!-- Mobile Number -->
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Mobile Number *"
                                        FontSize="14"
                                        Foreground="White"
                                        Margin="0,0,0,5"/>
-                            <TextBox Width="197"
+                            <TextBox x:Name="MobileNumberTextBox"
+                                     Width="268"
                                      Height="35"
                                      Background="#0f0f0f"
-                                     Foreground="White"
+                                     Foreground="Gray"
                                      BorderBrush="Gray"
                                      VerticalContentAlignment="Center"
-                                     Text="+012231321313"/>
+                                     Text="+012231321313"
+                                     GotFocus="TextBox_GotFocus"
+                                     LostFocus="TextBox_LostFocus"/>
                         </StackPanel>
                     </Grid>
 
+                    <!-- Your Query -->
                     <StackPanel Margin="0,10,0,10">
                         <TextBlock Text="Your Query *"
                                    FontSize="14"
                                    Foreground="White"
                                    Margin="0,0,0,5"/>
-                        <TextBox Width="419"
+                        <TextBox x:Name="QueryTextBox"
+                                 Width="539"
                                  Height="80"
                                  Background="#0f0f0f"
-                                 Foreground="White"
+                                 Foreground="Gray"
                                  BorderBrush="Gray"
                                  VerticalContentAlignment="Top"
-                                 Text="Type here.."
+                                 Text="Your query.."
                                  TextWrapping="Wrap"
-                                 AcceptsReturn="True"/>
+                                 AcceptsReturn="True"
+                                 GotFocus="TextBox_GotFocus"
+                                 LostFocus="TextBox_LostFocus"/>
                     </StackPanel>
 
+                    <!-- Submit Button -->
                     <Button Content="Send"
                             Width="120"
                             Height="40"

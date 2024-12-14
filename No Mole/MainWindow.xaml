@@ -249,6 +249,7 @@
                          HorizontalAlignment="Stretch"
                          Margin="0,15"
                          Width="400">
+                
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
                                          Loaded="CustomButton_Loaded"

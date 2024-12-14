@@ -22,6 +22,9 @@
     <Compile Update="Components\CustomButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\CustomInput.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\FailedInspection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\CustomButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\CustomInput.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\FailedInspection.xaml">

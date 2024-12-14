@@ -3,28 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:No_Mole.Components"
              mc:Ignorable="d"
              x:Name="root"
              d:DesignHeight="450"
-        d:DesignWidth="800">    
+             d:DesignWidth="800">
     <Grid>
         <Button
-            Height="48"
-            Width="48"
-            Background="White"
             ToolTip="{Binding ToolTipText, ElementName=root}"
-            Click="Button_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius"
-                            Value="10"/>
-                </Style>
-            </Button.Resources>
-            <Image Source="{Binding ImageSource,ElementName=root}"
-                    Width="24"
-                    Height="24"/>
+            Click="Button_Click"
+            Height="48"
+            Width="48">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <!-- Background Rectangle -->
+                        <Border
+                            x:Name="ButtonBorder"
+                            Background="White"
+                            CornerRadius="10">
+                        </Border>
 
+                        <!-- Image -->
+                        <Image Source="{Binding ImageSource, ElementName=root}"
+                               Width="24"
+                               Height="24"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#AD42AD" />
+                        </Trigger>
+                        <!-- Pressed Effect -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="DarkGray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
     </Grid>
 </UserControl>
