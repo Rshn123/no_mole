@@ -270,7 +270,7 @@ namespace No_Mole
 
         }
 
-        private void CustomButton_Loaded_4(object sender, RoutedEventArgs e)
+        private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
 
         }

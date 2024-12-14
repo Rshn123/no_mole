@@ -11,19 +11,8 @@
         Background="Transparent"
         Title="InspectionDetailModal">
 
-    <Window.OpacityMask>
-        <!-- Clip the window to create rounded corners -->
-        <VisualBrush>
-            <VisualBrush.Visual>
-                <Border Width="615"
-                        Height="415"
-                        CornerRadius="10"
-                        Background="White"/>
-            </VisualBrush.Visual>
-        </VisualBrush>
-    </Window.OpacityMask>
     <!-- Popup Container -->
-    <Border Height="415"
+    <Border Height="300"
             Width="615"
             Background="#1F1F1F"
             BorderBrush="Gray"
@@ -32,8 +21,9 @@
         <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="75.96"/>
             </Grid.RowDefinitions>
 
             <!-- Title -->
@@ -60,44 +50,11 @@
             <!-- Form -->
             <StackPanel Grid.Row="1"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Margin="10,0,10,0">
+                        HorizontalAlignment="Center" Height="100" Width="420">
                 <UniformGrid Rows="2"
                              Columns="2"
                              HorizontalAlignment="Stretch"
-                             Margin="0,0,0,10">
-                    <!-- Device Name -->
-                    <StackPanel Margin="5"
-                                Width="200">
-                        <TextBlock Text="Device Name"
-                                   Foreground="White"
-                                   FontSize="12"
-                                   Margin="0,0,0,5"
-                                   Opacity="0.8"/>
-                        <TextBox Height="30"
-                                 Background="#0D0D0D"
-                                 Foreground="Gray"
-                                 BorderThickness="1"
-                                 BorderBrush="Gray"
-                                 Padding="5"/>
-                    </StackPanel>
-
-                    <!-- Manufacturer -->
-                    <StackPanel Margin="5"
-                                Width="200">
-                        <TextBlock Text="Manufacturer"
-                                   Foreground="White"
-                                   FontSize="12"
-                                   Margin="0,0,0,5"
-                                   Opacity="0.8"/>
-                        <TextBox Height="30"
-                                 Background="#0D0D0D"
-                                 Foreground="Gray"
-                                 BorderThickness="1"
-                                 BorderBrush="Gray"
-                                 Padding="5"/>
-                    </StackPanel>
-
+                             >
                     <!-- Batch -->
                     <StackPanel Margin="5"
                                 Width="200">
@@ -155,9 +112,9 @@
             </StackPanel>
 
             <!-- Footer -->
-            <StackPanel Grid.Row="2"
+            <StackPanel Grid.Row="3"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom">
+                        VerticalAlignment="Center" Height="76" Width="200">
                 <Button Content="Continue"
                         Width="200"
                         Height="40"
@@ -165,13 +122,12 @@
                         Foreground="White"
                         FontWeight="Bold"
                         BorderBrush="Transparent"
-                        Margin="0,10"
                         Click="Button_Click"/>
                 <TextBlock Text="Don't have a serial number?"
                            Foreground="#787878"
                            FontSize="12"
                            TextAlignment="Center"
-                           Margin="0,5,0,0"/>
+                           />
             </StackPanel>
         </Grid>
     </Border>
