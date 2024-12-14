@@ -25,6 +25,9 @@
     <Compile Update="Components\InspectionDetailModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\UdiOrNonUdiModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\VideoEffect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\InspectionDetailModal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UdiOrNonUdiModal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\VideoEffect.xaml">

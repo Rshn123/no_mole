@@ -12,7 +12,7 @@
         Title="InspectionDetailModal">
 
     <!-- Popup Container -->
-    <Border Height="300"
+    <Border Height="415"
             Width="615"
             Background="#1F1F1F"
             BorderBrush="Gray"
@@ -110,9 +110,8 @@
                     </StackPanel>
                 </UniformGrid>
             </StackPanel>
-
             <!-- Footer -->
-            <StackPanel Grid.Row="3"
+            <StackPanel Grid.Row="4"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center" Height="76" Width="200">
                 <Button Content="Continue"
