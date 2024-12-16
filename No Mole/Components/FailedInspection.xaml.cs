@@ -62,7 +62,7 @@ namespace No_Mole.Components
                 };
                 this.Effect = blur;
 
-                InspectionDetailModal modal = new(this)
+                UdiOrNonUdiModal modal = new(this)
                 {
                     Owner = this,
                     Width = 615,

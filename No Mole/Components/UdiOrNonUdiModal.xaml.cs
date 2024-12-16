@@ -19,12 +19,22 @@ namespace No_Mole.Components
     /// </summary>
     public partial class UdiOrNonUdiModal : Window
     {
-        public UdiOrNonUdiModal()
+        public UdiOrNonUdiModal(FailedInspection failedInspection)
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Close_Button(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void UDI_Button_Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Non_UDI_Button_Clicked(object sender, RoutedEventArgs e)
         {
 
         }
