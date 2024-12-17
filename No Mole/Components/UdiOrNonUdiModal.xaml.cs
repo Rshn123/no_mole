@@ -48,6 +48,9 @@ namespace No_Mole.Components
 
             // Remove blur effect
             RemoveBlurEffect();
+
+            //Close Modal
+            Close();
         }
 
         private void UDI_Button_Clicked(object sender, RoutedEventArgs e)
@@ -61,5 +64,7 @@ namespace No_Mole.Components
             // Create and show the Non-UDI modal
             ShowModal(new InspectionDetailModal(this), 615, 415);
         }
+
+        
     }
 }
