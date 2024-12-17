@@ -23,5 +23,15 @@ namespace No_Mole.Components
         {
             InitializeComponent();
         }
+
+        private void Close_Button(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

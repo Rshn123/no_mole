@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,16 @@ namespace No_Mole.Components
         public SpecialIfAny()
         {
             InitializeComponent();
+        }
+
+        private void Close_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
