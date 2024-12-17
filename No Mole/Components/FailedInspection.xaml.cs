@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace No_Mole.Components
 {
@@ -21,67 +11,93 @@ namespace No_Mole.Components
     /// </summary>
     public partial class FailedInspection : Window
     {
-        private readonly Button? _mainButton;
-        private MainWindow _mainWindow;
         private bool _failOrPass = false;
-
-        // Duration limit (15 seconds)
+        private bool _errorMessageFlag = true;
+        private readonly Button? _mainButton;
+        private readonly MainWindow? _mainWindow;
         public FailedInspection(Button button, MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainButton = button;
             _mainWindow = mainWindow;
-            _mainButton = button!;
-        }
-
-        private void PassButton_Click(object sender, RoutedEventArgs e)
-        {
-            FailButton.Background = new BrushConverter().ConvertFromString("#292929") as Brush;
-            PassButton.Background = Brushes.Purple;
-            _failOrPass = false;
-        }
-
-        private void FailButton_Click(object sender, RoutedEventArgs e)
-        {
-            FailButton.Background = Brushes.Purple;
-            PassButton.Background = new BrushConverter().ConvertFromString("#292929") as Brush;
-            _failOrPass = true;
+            Error_Message.Visibility = Visibility.Hidden;
         }
 
         private void Close_Button(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void SetButtonStates(Button activeButton, Button inactiveButton, bool failOrPassValue)
+        {
+            _errorMessageFlag = false;
+            Error_Message.Visibility = Visibility.Hidden;
+            activeButton.Background = Brushes.Purple;
+            inactiveButton.Background = new BrushConverter().ConvertFromString("#292929") as Brush;
+            _failOrPass = failOrPassValue;
+        }
+
+        private void PassButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetButtonStates(PassButton, FailButton, false);
+        }
+
+        private void FailButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetButtonStates(FailButton, PassButton, true);
+        }
+
+        private void ApplyBlurEffect()
+        {
+            this.Effect = new BlurEffect { Radius = 10 };
+        }
+
+        private void RemoveBlurEffect()
+        {
+            this.Effect = null;
+        }
+
+        private void ShowModal(Window modal, double width, double height)
+        {
+            ApplyBlurEffect();
+
+            modal.Owner = this;
+            modal.Width = width;
+            modal.Height = height;
+
+            modal.Left = this.Left + (this.Width - modal.Width) / 2;
+            modal.Top = this.Top + (this.Height - modal.Height) / 2;
+
+            modal.ShowDialog();
+
+            RemoveBlurEffect();
         }
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (_errorMessageFlag)
+            {
+                Error_Message.Visibility = Visibility.Visible;
+                return;
+            }
+
             if (_failOrPass)
             {
-                BlurEffect blur = new()
-                {
-                    Radius = 10
-                };
-                this.Effect = blur;
-
-                UdiOrNonUdiModal modal = new(this)
-                {
-                    Owner = this,
-                    Width = 615,
-                    Height = 415
-                };
-
-                modal.Left = this.Left + (this.Width - modal.Width) / 2;
-                modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-                modal.ShowDialog();
-
-                this.Effect = null;
+                var modal = new UdiOrNonUdiModal(this);
+                ShowModal(modal, 615, 415);
+                Close();
             }
-            _mainButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AD42AD"));
-            _mainWindow.ChangeText("Start Inspection");
-            _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
-            _mainWindow.ChangeRecordingVisibility(false);
-            _mainWindow.StopTimer();
-            this.Close();
+            else
+            {
+                _mainButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AD42AD"));
+                _mainWindow!.ChangeText("Start Inspection");
+                _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
+                _mainWindow.ChangeRecordingVisibility(false);
+                _mainWindow.StopTimer();
+                Close();
+            }
+
+
         }
     }
 }

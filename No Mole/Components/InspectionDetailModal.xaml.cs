@@ -19,11 +19,9 @@ namespace No_Mole.Components
     /// </summary>
     public partial class InspectionDetailModal : Window
     {
-        private FailedInspection _mainWindow;
-        public InspectionDetailModal(FailedInspection mainWindow)
+        public InspectionDetailModal(UdiOrNonUdiModal mainWindow)
         {
             InitializeComponent();
-            _mainWindow = mainWindow;
         }
 
         private void ClosePopup_Click(object sender, RoutedEventArgs e)

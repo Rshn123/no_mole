@@ -25,6 +25,15 @@
     <Compile Update="Components\InspectionDetailModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\ReasonForFailureModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\SpecialIfAny.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UDIEnterModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\UdiOrNonUdiModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +58,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\InspectionDetailModal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\ReasonForFailureModal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\SpecialIfAny.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UDIEnterModal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\UdiOrNonUdiModal.xaml">
