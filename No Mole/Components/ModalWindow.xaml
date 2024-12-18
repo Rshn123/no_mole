@@ -8,6 +8,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
 Background="#1F1F1F"          WindowStyle="None"
+        Height="450"
         Title="ModalWindow">
     <Grid>
         <DockPanel Grid.Row="0"
@@ -23,7 +24,7 @@ Background="#1F1F1F"          WindowStyle="None"
             VerticalAlignment="Top"
             Click="Close_Popup_Click"/>
         </DockPanel>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Height="350"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Height="415" Width="615" Margin="0 29"/>
 
     </Grid>
 </Window>

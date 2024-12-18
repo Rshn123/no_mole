@@ -17,17 +17,15 @@ namespace No_Mole.Components
     /// <summary>
     /// Interaction logic for InspectionDetailModal.xaml
     /// </summary>
-    public partial class InspectionDetailModal : Window
+    public partial class InspectionDetailModal
     {
-        public InspectionDetailModal(UdiOrNonUdiModal mainWindow)
+        private readonly ModalWindow _modalWindow;
+        public InspectionDetailModal(ModalWindow modalWindow)
         {
+            _modalWindow = modalWindow;
             InitializeComponent();
         }
 
-        private void ClosePopup_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -37,7 +35,7 @@ namespace No_Mole.Components
             }
             else
             {
-                this.Close();
+                _modalWindow.MainFrame.Navigate(new ReasonForFailureModal(_modalWindow));
             }
 
         }

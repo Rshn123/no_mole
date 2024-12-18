@@ -20,19 +20,17 @@ namespace No_Mole.Components
     /// </summary>
     public partial class SpecialIfAny
     {
-        public SpecialIfAny()
+        private readonly Window _modalWindow;
+        private readonly MainWindow _mainWindow;
+        public SpecialIfAny(ModalWindow modalWindow)
         {
+            _mainWindow = new MainWindow();
+            _modalWindow = modalWindow;
             InitializeComponent();
         }
-
-        private void Close_Button(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            _modalWindow.Close();
         }
     }
 }

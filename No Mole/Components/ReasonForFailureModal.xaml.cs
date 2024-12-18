@@ -31,7 +31,7 @@ namespace No_Mole.Components
         {
             if (NotesTextBox.Text.Length > 0)
             {
-                _modalWindow.MainFrame.Navigate(new SpecialIfAny());
+                _modalWindow.MainFrame.Navigate(new SpecialIfAny(_modalWindow));
             }
             else
             {

@@ -44,32 +44,6 @@ namespace No_Mole.Components
             SetButtonStates(FailButton, PassButton, true);
         }
 
-        private void ApplyBlurEffect()
-        {
-            this.Effect = new BlurEffect { Radius = 10 };
-        }
-
-        private void RemoveBlurEffect()
-        {
-            this.Effect = null;
-        }
-
-        //private void ShowModal(Window modal, double width, double height)
-        //{
-        //    ApplyBlurEffect();
-
-        //    modal.Owner = this;
-        //    modal.Width = width;
-        //    modal.Height = height;
-
-        //    modal.Left = this.Left + (this.Width - modal.Width) / 2;
-        //    modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-        //    modal.ShowDialog();
-
-        //    RemoveBlurEffect();
-        //}
-
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
             if (_errorMessageFlag)
@@ -89,6 +63,7 @@ namespace No_Mole.Components
                 _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
                 _mainWindow.ChangeRecordingVisibility(false);
                 _mainWindow.StopTimer();
+                _modalWindow!.Close();
             }
 
 
