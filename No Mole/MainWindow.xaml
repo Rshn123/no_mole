@@ -142,10 +142,10 @@
         </Border>
 
         <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="center"
                     VerticalAlignment="Center"
                     Grid.Column="1"
-                    Margin="467,0,0,0">
+                    Margin="0,0,0,0">
             <StackPanel x:Name="Recording_Info"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -174,8 +174,8 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Height="400">
-
-                <StackPanel Orientation="Horizontal">
+                <components:CustomIcons ImageSource="../Resources/Icons/sun.png" />
+                <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Brightness"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -194,9 +194,7 @@
                         Height="400"
                         Width="20"
                         Margin="0 0 10 0"
-                        ValueChanged="BrightnessSlider_ValueChanged">
-
-                    </Slider>
+                        ValueChanged="BrightnessSlider_ValueChanged"/>
 
                 </StackPanel>
 
@@ -232,9 +230,7 @@
                             Width="20"
                             Margin="10 0 0 0"
                             Style="{StaticResource RoundedThumbSliderStyle}"
-                            ValueChanged="ZoomSlider_ValueChanged">
-
-                    </Slider>
+                            ValueChanged="ZoomSlider_ValueChanged"/>
                     <TextBlock Text="Zoom"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -243,6 +239,7 @@
                             <RotateTransform Angle="-90"/>
                         </TextBlock.LayoutTransform>
                     </TextBlock>
+                    <components:CustomIcons ImageSource="../Resources/Icons/VideFolder"/>
                 </StackPanel>
 
             </StackPanel>

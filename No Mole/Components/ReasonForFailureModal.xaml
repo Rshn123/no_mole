@@ -42,6 +42,13 @@
                     FontWeight="Bold"
                     BorderBrush="Transparent"
                     Click="Submit_Button_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 Submit
             </Button>
 

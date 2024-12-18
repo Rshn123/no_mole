@@ -200,7 +200,15 @@
                             Foreground="White"
                             BorderBrush="Transparent"
                             HorizontalAlignment="Center"
-                            Margin="0,20,0,0"/>
+                            Margin="0,20,0,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </StackPanel>
             </Border>
         </Grid>

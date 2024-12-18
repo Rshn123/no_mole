@@ -69,7 +69,17 @@
                         FontWeight="Bold"
                         BorderBrush="Transparent"
                         Click="Continue_Button"
-                       />
+                       >
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
                 <TextBlock Text="Don't have a serial number?"
                            Foreground="#787878"
                            FontSize="12"

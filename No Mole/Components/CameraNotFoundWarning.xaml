@@ -67,7 +67,16 @@
 
                 <Button Content="Retry"
                         Width="100"
-                        HorizontalAlignment="Center"/>
+                        HorizontalAlignment="Center">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
             </StackPanel>
         </Border>
     </Grid>

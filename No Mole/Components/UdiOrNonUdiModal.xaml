@@ -25,13 +25,27 @@
                             Click="UDI_Button_Clicked"
                             Background="Green"
                             Foreground="White"
-                            Margin="30 0">UDI</Button>
+                            Margin="30 0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template> UDI</Button>
                     <Button Height="40"
                             FontSize="15"
                             Click="Non_UDI_Button_Clicked"
                             Background="Purple"
                             Foreground="White"
-                            Margin="30 0">Non UDI</Button>
+                            Margin="30 0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template> Non UDI</Button>
                 </UniformGrid>
             </StackPanel>
         </Border>

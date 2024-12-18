@@ -393,5 +393,10 @@ namespace No_Mole
         {
             OpenModal(new VideoEffect(), 300, 450);
         }
+
+        private void CustomIcons_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
