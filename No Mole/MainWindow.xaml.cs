@@ -308,7 +308,7 @@ namespace No_Mole
                 };
                 this.Effect = blur;
 
-                FailedInspection modal = new(button!, this)
+               ModalWindow modal = new(this, button!)
                 {
                     Owner = this,
                     Width = 615,

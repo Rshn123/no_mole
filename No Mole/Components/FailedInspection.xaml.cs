@@ -9,23 +9,20 @@ namespace No_Mole.Components
     /// <summary>
     /// Interaction logic for FailedInspection.xaml
     /// </summary>
-    public partial class FailedInspection : Window
+    public partial class FailedInspection
     {
         private bool _failOrPass = false;
         private bool _errorMessageFlag = true;
         private readonly Button? _mainButton;
         private readonly MainWindow? _mainWindow;
-        public FailedInspection(Button button, MainWindow mainWindow)
+        private readonly ModalWindow? _modalWindow;
+        public FailedInspection(Button button, MainWindow mainWindow, ModalWindow modalWindow)
         {
             InitializeComponent();
             _mainButton = button;
             _mainWindow = mainWindow;
+            _modalWindow = modalWindow;
             Error_Message.Visibility = Visibility.Hidden;
-        }
-
-        private void Close_Button(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
 
         private void SetButtonStates(Button activeButton, Button inactiveButton, bool failOrPassValue)
@@ -57,21 +54,21 @@ namespace No_Mole.Components
             this.Effect = null;
         }
 
-        private void ShowModal(Window modal, double width, double height)
-        {
-            ApplyBlurEffect();
+        //private void ShowModal(Window modal, double width, double height)
+        //{
+        //    ApplyBlurEffect();
 
-            modal.Owner = this;
-            modal.Width = width;
-            modal.Height = height;
+        //    modal.Owner = this;
+        //    modal.Width = width;
+        //    modal.Height = height;
 
-            modal.Left = this.Left + (this.Width - modal.Width) / 2;
-            modal.Top = this.Top + (this.Height - modal.Height) / 2;
+        //    modal.Left = this.Left + (this.Width - modal.Width) / 2;
+        //    modal.Top = this.Top + (this.Height - modal.Height) / 2;
 
-            modal.ShowDialog();
+        //    modal.ShowDialog();
 
-            RemoveBlurEffect();
-        }
+        //    RemoveBlurEffect();
+        //}
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -83,9 +80,7 @@ namespace No_Mole.Components
 
             if (_failOrPass)
             {
-                var modal = new UdiOrNonUdiModal(this);
-                ShowModal(modal, 615, 415);
-                Close();
+                _modalWindow!.MainFrame.Navigate( new UdiOrNonUdiModal(_modalWindow));
             }
             else
             {
@@ -94,7 +89,6 @@ namespace No_Mole.Components
                 _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
                 _mainWindow.ChangeRecordingVisibility(false);
                 _mainWindow.StopTimer();
-                Close();
             }
 
 
