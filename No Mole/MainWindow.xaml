@@ -313,6 +313,8 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
+        <components:CustomIcons ImageSource="/Resources/Icons/RecordVideo.png"/>
+
         <Button Grid.Column="1" HorizontalAlignment="Left" Margin="1001,176,0,0" VerticalAlignment="Top" Height="77" Width="164">
             <StackPanel Orientation="Vertical">
                 <Image Source="/RecordVideo.png" Height="81" Width="186"/>
