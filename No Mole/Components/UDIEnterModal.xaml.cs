@@ -18,54 +18,18 @@ namespace No_Mole.Components
     /// <summary>
     /// Interaction logic for UDIEnterModal.xaml
     /// </summary>
-    public partial class UDIEnterModal : Window
+    public partial class UDIEnterModal
     {
-        public UDIEnterModal(UdiOrNonUdiModal udiOrNonUdiModal)
+        readonly ModalWindow _modalWindow;
+        public UDIEnterModal(ModalWindow modalWindow)
         {
             InitializeComponent();
-        }
-
-        private void UDI_Modal_Close(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            _modalWindow = modalWindow;
         }
 
         private void Continue_Button(object sender, RoutedEventArgs e)
         {
-            ShowModal(new ReasonForFailureModal(), 615,415);
-        }
-
-        private void ApplyBlurEffect()
-        {
-            this.Effect = new BlurEffect { Radius = 10 };
-        }
-
-        private void RemoveBlurEffect()
-        {
-            this.Effect = null;
-        }
-
-        private void ShowModal(Window modal, double width, double height)
-        {
-            // Apply blur effect to the current window
-            ApplyBlurEffect();
-
-            // Set modal properties
-            modal.Owner = this;
-            modal.Width = width;
-            modal.Height = height;
-
-            // Center modal over the parent window
-            modal.Left = this.Left + (this.Width - modal.Width) / 2;
-            modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-            // Show modal as a dialog
-            modal.ShowDialog();
-
-            // Remove blur effect
-            RemoveBlurEffect();
-
-            Close();
+            _modalWindow.MainFrame.Navigate(new ReasonForFailureModal(_modalWindow));
         }
     }
 }

@@ -310,7 +310,7 @@ namespace No_Mole
                 {
                     Owner = this,
                     Width = 615,
-                    Height = 415
+                    Height = 430
                 };
 
                 modal.Left = this.Left + (this.Width - modal.Width) / 2;

@@ -29,5 +29,10 @@ namespace No_Mole.Components
             InitializeComponent();
             MainFrame.Navigate(new FailedInspection(_button, _mainWindow, this));
         }
+
+        public void Close_Popup_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

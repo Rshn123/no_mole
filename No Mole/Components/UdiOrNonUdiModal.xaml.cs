@@ -19,7 +19,7 @@ namespace No_Mole.Components
         private void UDI_Button_Clicked(object sender, RoutedEventArgs e)
         {
             // Create and show the UDI modal
-            _modalWindow.MainFrame.Navigate( new UDIEnterModal(this));
+            _modalWindow.MainFrame.Navigate( new UDIEnterModal(_modalWindow));
         }
 
         private void Non_UDI_Button_Clicked(object sender, RoutedEventArgs e)

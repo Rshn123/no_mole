@@ -18,24 +18,20 @@ namespace No_Mole.Components
     /// <summary>
     /// Interaction logic for ReasonForFailureModal.xaml
     /// </summary>
-    public partial class ReasonForFailureModal : Window
+    public partial class ReasonForFailureModal
     {
-        public ReasonForFailureModal()
+        ModalWindow _modalWindow;
+        public ReasonForFailureModal(ModalWindow modalWindow)
         {
             InitializeComponent();
+            _modalWindow = modalWindow;
             Error_Message.Visibility = Visibility.Hidden;
         }
-
-        private void Close_Button(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
             if (NotesTextBox.Text.Length > 0)
             {
-                ShowModal(new SpecialIfAny(), 615, 415);
+                _modalWindow.MainFrame.Navigate(new SpecialIfAny());
             }
             else
             {
@@ -43,37 +39,6 @@ namespace No_Mole.Components
             }
         }
 
-        private void ApplyBlurEffect()
-        {
-            this.Effect = new BlurEffect { Radius = 10 };
-        }
-
-        private void RemoveBlurEffect()
-        {
-            this.Effect = null;
-        }
-
-        private void ShowModal(Window modal, double width, double height)
-        {
-            // Apply blur effect to the current window
-            ApplyBlurEffect();
-
-            // Set modal properties
-            modal.Owner = this;
-            modal.Width = width;
-            modal.Height = height;
-
-            // Center modal over the parent window
-            modal.Left = this.Left + (this.Width - modal.Width) / 2;
-            modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-            // Show modal as a dialog
-            modal.ShowDialog();
-
-            // Remove blur effect
-            RemoveBlurEffect();
-
-            Close();
-        }
+      
     }
 }

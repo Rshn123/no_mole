@@ -1,4 +1,4 @@
-﻿<Window x:Class="No_Mole.Components.UDIEnterModal"
+﻿<Page x:Class="No_Mole.Components.UDIEnterModal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:No_Mole.Components"
         mc:Ignorable="d"
         Title="UDIEnterModal"
-        ResizeMode="NoResize"
-        WindowStyle="None"
-        AllowsTransparency="True"
         Background="Transparent"
         Width="800">
     <Border Height="415"
@@ -24,28 +21,6 @@
                 <RowDefinition Height="0"/>
                 <RowDefinition Height="75.96"/>
             </Grid.RowDefinitions>
-
-            <!-- Title -->
-            <DockPanel Grid.Row="0"
-                       Margin="0,0,0,5">
-                <TextBlock Text="Instrument Details"
-                           Foreground="White"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           VerticalAlignment="Center"
-                           DockPanel.Dock="Left"/>
-                <Button Content="X"
-                        Width="30"
-                        Height="30"
-                        Foreground="White"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        FontSize="14"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Click="UDI_Modal_Close"
-                        />
-            </DockPanel>
 
             <!-- Form -->
             <StackPanel Grid.Row="1"
@@ -105,4 +80,4 @@
         </Grid>
     </Border>
 
-</Window>
+</Page>

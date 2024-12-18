@@ -3,56 +3,44 @@
   "WorkspaceRootPath": "C:\\workspace\\no_mole\\No Mole\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udiornonudimodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udiornonudimodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\failedinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\failedinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\modalwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\modalwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udiornonudimodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udiornonudimodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\modalwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\modalwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\no mole.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:no mole.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\inspectiondetailmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\inspectiondetailmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udientermodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udientermodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\specialifany.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\specialifany.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udientermodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udientermodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udiornonudimodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udiornonudimodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\specialifany.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\specialifany.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udientermodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udientermodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\inspectiondetailmodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\inspectiondetailmodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\specialifany.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\specialifany.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\reasonforfailuremodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,8 +51,24 @@
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\reasonforfailuremodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udientermodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udientermodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\failedinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\failedinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\udiornonudimodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\udiornonudimodal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\workspace\\no_mole\\no mole\\components\\inspectiondetailmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\inspectiondetailmodal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,23 +78,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UdiOrNonUdiModal.xaml",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml",
-              "RelativeDocumentMoniker": "Components\\UdiOrNonUdiModal.xaml",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml",
-              "RelativeToolTip": "Components\\UdiOrNonUdiModal.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T04:20:52.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ModalWindow.xaml",
               "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\ModalWindow.xaml",
               "RelativeDocumentMoniker": "Components\\ModalWindow.xaml",
@@ -102,25 +94,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FailedInspection.xaml",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml",
-              "RelativeDocumentMoniker": "Components\\FailedInspection.xaml",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml",
-              "RelativeToolTip": "Components\\FailedInspection.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-17T08:39:55.262Z",
+              "DocumentIndex": 5,
+              "Title": "UDIEnterModal.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\UDIEnterModal.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml.cs",
+              "RelativeToolTip": "Components\\UDIEnterModal.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T05:33:58.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "ModalWindow.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\ModalWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\ModalWindow.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\ModalWindow.xaml.cs",
+              "RelativeToolTip": "Components\\ModalWindow.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAtwCAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T04:04:31.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "No Mole.csproj",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\No Mole.csproj",
+              "RelativeDocumentMoniker": "No Mole.csproj",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\No Mole.csproj",
+              "RelativeToolTip": "No Mole.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-11T16:53:14.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAABsBAAAAAAAAAAAUwDgBAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T04:15:07.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UdiOrNonUdiModal.xaml.cs",
               "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml.cs",
               "RelativeDocumentMoniker": "Components\\UdiOrNonUdiModal.xaml.cs",
               "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml.cs",
               "RelativeToolTip": "Components\\UdiOrNonUdiModal.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwEQAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA3wBUAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T05:53:09.6Z",
               "EditorCaption": ""
@@ -128,83 +160,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAAAewD4BAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T04:15:07.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FailedInspection.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\FailedInspection.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
-              "RelativeToolTip": "Components\\FailedInspection.xaml.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAMwFIAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T06:35:58.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ModalWindow.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\ModalWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\ModalWindow.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\ModalWindow.xaml.cs",
-              "RelativeToolTip": "Components\\ModalWindow.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAIAwwB0AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T04:04:31.797Z",
+              "Title": "UDIEnterModal.xaml",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml",
+              "RelativeDocumentMoniker": "Components\\UDIEnterModal.xaml",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml",
+              "RelativeToolTip": "Components\\UDIEnterModal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-16T02:07:57.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CustomButton.xaml",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
-              "RelativeDocumentMoniker": "Components\\CustomButton.xaml",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
-              "RelativeToolTip": "Components\\CustomButton.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T04:09:04.979Z",
+              "Title": "SpecialIfAny.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\SpecialIfAny.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml.cs",
+              "RelativeToolTip": "Components\\SpecialIfAny.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T06:13:45.891Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "No Mole.csproj",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\No Mole.csproj",
-              "RelativeDocumentMoniker": "No Mole.csproj",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\No Mole.csproj",
-              "RelativeToolTip": "No Mole.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-11T16:53:14.167Z",
+              "Title": "InspectionDetailModal.xaml",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml",
+              "RelativeDocumentMoniker": "Components\\InspectionDetailModal.xaml",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml",
+              "RelativeToolTip": "Components\\InspectionDetailModal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-18T06:51:21.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "InspectionDetailModal.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\InspectionDetailModal.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml.cs",
-              "RelativeToolTip": "Components\\InspectionDetailModal.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T06:35:50.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "SpecialIfAny.xaml",
               "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml",
               "RelativeDocumentMoniker": "Components\\SpecialIfAny.xaml",
@@ -216,46 +208,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SpecialIfAny.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\SpecialIfAny.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml.cs",
-              "RelativeToolTip": "Components\\SpecialIfAny.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T06:13:45.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "ReasonForFailureModal.xaml.cs",
               "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\ReasonForFailureModal.xaml.cs",
               "RelativeDocumentMoniker": "Components\\ReasonForFailureModal.xaml.cs",
               "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\ReasonForFailureModal.xaml.cs",
               "RelativeToolTip": "Components\\ReasonForFailureModal.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAuwE8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T06:05:34.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UDIEnterModal.xaml.cs",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml.cs",
-              "RelativeDocumentMoniker": "Components\\UDIEnterModal.xaml.cs",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml.cs",
-              "RelativeToolTip": "Components\\UDIEnterModal.xaml.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwEEAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T05:33:58.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "ReasonForFailureModal.xaml",
               "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\ReasonForFailureModal.xaml",
               "RelativeDocumentMoniker": "Components\\ReasonForFailureModal.xaml",
@@ -267,14 +233,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UDIEnterModal.xaml",
-              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml",
-              "RelativeDocumentMoniker": "Components\\UDIEnterModal.xaml",
-              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml",
-              "RelativeToolTip": "Components\\UDIEnterModal.xaml",
+              "DocumentIndex": 12,
+              "Title": "FailedInspection.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\FailedInspection.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
+              "RelativeToolTip": "Components\\FailedInspection.xaml.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAmwFIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T06:35:58.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FailedInspection.xaml",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml",
+              "RelativeDocumentMoniker": "Components\\FailedInspection.xaml",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml",
+              "RelativeToolTip": "Components\\FailedInspection.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-16T02:07:57.726Z",
+              "WhenOpened": "2024-12-17T08:39:55.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UdiOrNonUdiModal.xaml",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml",
+              "RelativeDocumentMoniker": "Components\\UdiOrNonUdiModal.xaml",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\UdiOrNonUdiModal.xaml",
+              "RelativeToolTip": "Components\\UdiOrNonUdiModal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-18T04:20:52.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomButton.xaml",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
+              "RelativeDocumentMoniker": "Components\\CustomButton.xaml",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
+              "RelativeToolTip": "Components\\CustomButton.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-18T04:09:04.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "InspectionDetailModal.xaml.cs",
+              "DocumentMoniker": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\InspectionDetailModal.xaml.cs",
+              "ToolTip": "C:\\workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml.cs",
+              "RelativeToolTip": "Components\\InspectionDetailModal.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T06:35:50.123Z",
               "EditorCaption": ""
             }
           ]

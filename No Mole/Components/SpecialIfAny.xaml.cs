@@ -18,7 +18,7 @@ namespace No_Mole.Components
     /// <summary>
     /// Interaction logic for SpecialIfAny.xaml
     /// </summary>
-    public partial class SpecialIfAny : Window
+    public partial class SpecialIfAny
     {
         public SpecialIfAny()
         {
