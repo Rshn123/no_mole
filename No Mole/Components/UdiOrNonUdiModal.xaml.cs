@@ -48,6 +48,8 @@ namespace No_Mole.Components
 
             // Remove blur effect
             RemoveBlurEffect();
+
+            Close();
         }
 
         private void UDI_Button_Clicked(object sender, RoutedEventArgs e)

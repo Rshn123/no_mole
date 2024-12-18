@@ -32,7 +32,6 @@ namespace No_Mole
         private DispatcherTimer _timer;        // Timer for updating the clock
         private TimeSpan _elapsedTime;        // Tracks elapsed time
         private TimeSpan _durationLimit;      // Duration limit (15 seconds)
-        private bool _failOrPass;
         private float _brightnessFactor = 1.0f; // Default value (no brightness change)
         private float _zoomFactor = 1.0f;
 
@@ -177,7 +176,7 @@ namespace No_Mole
 
         [DllImport("gdi32.dll")]
         private static extern bool DeleteObject(IntPtr hObject);
-        private void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
+        private static void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
         {
             var rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             BitmapData? data = null;
@@ -218,7 +217,6 @@ namespace No_Mole
                 }
             }
         }
-
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -333,7 +331,6 @@ namespace No_Mole
             }
 
         }
-
         public void ChangeButtonImage(string imageSource)
 
         {

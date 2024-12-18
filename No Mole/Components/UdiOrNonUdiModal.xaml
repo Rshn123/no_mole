@@ -11,10 +11,9 @@
         AllowsTransparency="True"
         Title="UdiOrNonUdiModal">
     <Grid>
-        <Border Height="300"
+        <Border Height="415"
                 Width="615"
                 Background="#1F1F1F"
-                BorderBrush="Gray"
                 CornerRadius="10"
                 BorderThickness="1">
             <StackPanel Orientation="Vertical">

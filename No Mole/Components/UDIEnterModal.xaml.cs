@@ -64,6 +64,8 @@ namespace No_Mole.Components
 
             // Remove blur effect
             RemoveBlurEffect();
+
+            Close();
         }
     }
 }
