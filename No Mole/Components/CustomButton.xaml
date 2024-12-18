@@ -20,7 +20,12 @@
                         <Border
                             x:Name="ButtonBorder"
                             Background="White"
-                            CornerRadius="10">
+                            CornerRadius="10"
+                            RenderTransformOrigin="0.5,0.5">
+                            <!-- ScaleTransform for animation -->
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </Border.RenderTransform>
                         </Border>
 
                         <!-- Image -->
@@ -35,9 +40,32 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="ButtonBorder" Property="Background" Value="#AD42AD" />
                         </Trigger>
-                        <!-- Pressed Effect -->
+
+                        <!-- Pressed Effect with Scale Animation -->
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="DarkGray" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Scale Down -->
+                                        <DoubleAnimation Storyboard.TargetName="ButtonBorder"
+                                                         Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="0.9" Duration="0:0:0.6"
+                                                         AutoReverse="True">
+                                            <DoubleAnimation.EasingFunction>
+                                                <SineEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ButtonBorder"
+                                                         Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="0.9" Duration="0:0:0.2"
+                                                         AutoReverse="True">
+                                            <DoubleAnimation.EasingFunction>
+                                                <SineEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

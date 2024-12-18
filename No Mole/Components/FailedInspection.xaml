@@ -10,6 +10,11 @@
         WindowStyle="None"
         Title="FailedInspection">
 
+    <!-- Background Image -->
+    <Window.Background>
+        <ImageBrush ImageSource="/Components/BackGround.png" Stretch="Fill"/>
+    </Window.Background>
+
     <Window.Resources>
         <!-- ControlTemplate for Pass Button -->
         <ControlTemplate x:Key="PassButtonTemplate" TargetType="Button">
@@ -44,7 +49,6 @@
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" TargetName="border" Value="#00C853"/>
-                    <!-- Green hover -->
                     <Setter Property="TextBlock.Foreground" Value="White"/>
                 </Trigger>
             </ControlTemplate.Triggers>
@@ -82,24 +86,13 @@
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" TargetName="border" Value="Red"/>
-                    <!-- Red hover -->
                     <Setter Property="TextBlock.Foreground" Value="White"/>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
 
-    <Window.OpacityMask>
-        <!-- Clip the window to create rounded corners -->
-        <VisualBrush>
-            <VisualBrush.Visual>
-                <Border Width="615"
-                        Height="415"
-                        CornerRadius="10"
-                        Background="White"/>
-            </VisualBrush.Visual>
-        </VisualBrush>
-    </Window.OpacityMask>
+    <!-- Content -->
     <Border Background="#1F1F1F"
             CornerRadius="10"
             Padding="20"
@@ -112,7 +105,7 @@
                 <!-- Title -->
                 <DockPanel Grid.Row="0"
                            Margin="0,10,0,15">
-                    <TextBlock Text=""
+                    <TextBlock Text="Failed Inspection"
                                Foreground="White"
                                FontSize="16"
                                FontWeight="Bold"
@@ -129,11 +122,12 @@
                             VerticalAlignment="Top"
                             Click="Close_Button"/>
                 </DockPanel>
+
+                <!-- Inspection Result -->
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Height="378">
-
                     <TextBlock Text="Inspection Result:"
                                Foreground="White"
                                FontSize="18"
@@ -143,12 +137,11 @@
                                Foreground="White"
                                FontSize="14"
                                HorizontalAlignment="Center"
-                               Grid.Row="1"
                                Margin="0,5,0,0"/>
 
+                    <!-- Buttons -->
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Center"
-                                Grid.Row="1"
                                 Margin="0,40,0,20">
                         <Button x:Name="PassButton"
                                 Width="140"
@@ -163,8 +156,8 @@
                                 Click="FailButton_Click"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="2"
-                                Margin="0,10,0,30">
+                    <!-- Notes Section -->
+                    <StackPanel Margin="0,10,0,30">
                         <TextBlock Text="Note"
                                    Foreground="White"
                                    FontSize="14"
@@ -180,6 +173,7 @@
                                  Padding="5"/>
                     </StackPanel>
 
+                    <!-- Submit Button -->
                     <Button Content="Submit"
                             Width="100"
                             Height="40"

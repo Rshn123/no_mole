@@ -114,7 +114,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
-                            Background="#363435"
+                            Background="Transparent"
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Left"
                               Margin="20 0 0 0">
@@ -233,7 +233,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
-                            Background="#363435"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Center">
 
@@ -263,8 +264,8 @@
                                    PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
 
                                 <Border x:Name="SubMenuBorder"
-                                        Background="#484546"
-                                        BorderBrush="#484546">
+                                        Background="Transparent"
+                                        BorderBrush="Transparent">
 
                                     <ScrollViewer x:Name="SubMenuScrollViewer"
                                                   Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
@@ -295,7 +296,7 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="transparent"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#3E3C3D"/>
@@ -316,7 +317,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
-                            Background="#363435"
+                            Background="Transparent"
                             BorderThickness="0">
                         <Grid>
                             <!--// Icon //-->

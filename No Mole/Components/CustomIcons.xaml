@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="No_Mole.Components.CustomIcons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="root"
+             d:DesignHeight="450"
+             d:DesignWidth="777">
+
+    <UserControl.Resources>
+        <!-- Reusable Button Template -->
+        <ControlTemplate x:Key="CustomIconTemplate" TargetType="Button">
+            <Grid>
+                <!-- Background Rectangle -->
+                <Border
+                    x:Name="ButtonBorder"
+                    Background="White"
+                    CornerRadius="10"
+                    RenderTransformOrigin="0.5,0.5">
+                    <!-- ScaleTransform for animation -->
+                    <Border.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Border.RenderTransform>
+                </Border>
+
+                <!-- Image -->
+                <Image Source="{Binding IconSource, RelativeSource={RelativeSource TemplatedParent}}"
+                       Width="48"
+                       Height="48"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <!-- Hover Effect -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ButtonBorder" Property="Background" Value="#AD42AD" />
+                </Trigger>
+                <!-- Pressed Effect with Scale Animation -->
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!-- Scale Down -->
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder"
+                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                                 To="0.9" Duration="0:0:0.2"
+                                                 AutoReverse="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <SineEase EasingMode="EaseInOut" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation Storyboard.TargetName="ButtonBorder"
+                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                                 To="0.9" Duration="0:0:0.2"
+                                                 AutoReverse="True">
+                                    <DoubleAnimation.EasingFunction>
+                                        <SineEase EasingMode="EaseInOut" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+</UserControl>

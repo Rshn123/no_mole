@@ -17,12 +17,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="BackGround.png" />
+    <None Remove="Components\BackGround.png" />
+    <None Remove="Components\eyeclos.png" />
+    <None Remove="Components\eyeclose.png" />
+    <None Remove="Components\no_mole_logo.png" />
+    <None Remove="ImageFolder.png" />
+    <None Remove="RecordImage.png" />
+    <None Remove="RecordVideo.png" />
+    <None Remove="transfer.png" />
+    <None Remove="VideoFolder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AForge.Video" Version="2.2.5" />
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
   </ItemGroup>
 
 	<ItemGroup>
+		<Resource Include="BackGround.png" />
+		<Resource Include="Components\BackGround.png" />
+		<Resource Include="Components\eyeclos.png" />
+		<Resource Include="Components\eyeclose.png" />
+		<Resource Include="Components\no_mole_logo.png" />
+		<Resource Include="ImageFolder.png" />
+		<Resource Include="RecordImage.png" />
+		<Resource Include="RecordVideo.png" />
 		<Resource Include="Resources/Icons/settings.png" />
 		<Resource Include="Resources/Icons/sun.png" />
 		<Resource Include="Resources/Icons/recorder.png" />
@@ -33,6 +54,8 @@
 		<Resource Include="Resources/Icons/stop.png" />
 		<Resource Include="Resources/Icons/no_mole_logo.png" />
 		<Resource Include="Resources/Icons/arrow-down.png" />
+		<Resource Include="transfer.png" />
+		<Resource Include="VideoFolder.png" />
 		
 	</ItemGroup>
 </Project>

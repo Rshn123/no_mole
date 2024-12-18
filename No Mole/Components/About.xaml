@@ -10,8 +10,13 @@
         Title="About"
         Height="350"
         Width="800"
-        Background="#212121"
         WindowStyle="None">
+
+  
+    <Window.Background>
+        <ImageBrush ImageSource="/Components/BackGround.png" Stretch="Fill"/>
+    </Window.Background>
+
     <Grid>
         <DockPanel VerticalAlignment="Top"
                    Height="40"
@@ -37,13 +42,11 @@
             </StackPanel>
         </DockPanel>
 
-
         <Grid Margin="20,60,20,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-
 
             <StackPanel Grid.Column="0"
                         HorizontalAlignment="Center"
@@ -52,7 +55,6 @@
                        Width="140"
                        Height="140"/>
             </StackPanel>
-
 
             <StackPanel Grid.Column="1"
                         HorizontalAlignment="Left"

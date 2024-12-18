@@ -8,9 +8,7 @@ namespace No_Mole.Components
 {
     public partial class InspectionDetailModal : Window
     {
-        private readonly Button _mainButton;
-        private readonly MainWindow _mainWindow;
-
+        // This dictionary will store the placeholder text for each textbox.
         private static readonly SolidColorBrush PlaceholderColor = new SolidColorBrush(Colors.Gray);
         private static readonly SolidColorBrush ActiveTextColor = new SolidColorBrush(Colors.White);
 
@@ -22,17 +20,15 @@ namespace No_Mole.Components
             { "SerialNumberTextBox", "Enter serial number" }
         };
 
-        public InspectionDetailModal(Button button, MainWindow mainWindow)
+        public InspectionDetailModal()
         {
             InitializeComponent();
-            _mainButton = button ?? throw new ArgumentNullException(nameof(button));
-            _mainWindow = mainWindow ?? throw new ArgumentNullException(nameof(mainWindow));
-
             InitializePlaceholders();
         }
 
         private void InitializePlaceholders()
         {
+            // Initialize placeholders for each textbox.
             foreach (var placeholder in _placeholders)
             {
                 var textBox = FindName(placeholder.Key) as TextBox;
@@ -51,17 +47,15 @@ namespace No_Mole.Components
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Validate Serial Number TextBox
             if (string.IsNullOrWhiteSpace(SerialNumberTextBox.Text) || SerialNumberTextBox.Text == _placeholders["SerialNumberTextBox"])
             {
-                ValidationErrorText.Visibility = Visibility.Visible;
+                MessageBox.Show("Serial Number is required.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            ValidationErrorText.Visibility = Visibility.Collapsed;
 
-            _mainButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
-            _mainWindow.ChangeButtonImage("Resources/Icons/stop.png");
-            _mainWindow.ChangeText("Stop Inspection");
+            MessageBox.Show("Details saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
 
