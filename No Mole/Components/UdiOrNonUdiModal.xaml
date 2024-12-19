@@ -21,6 +21,7 @@
                            Margin="0 20"/>
                 <UniformGrid Margin="40">
                     <Button Height="40"
+                            Cursor="Hand"
                             FontSize="15"
                             Click="UDI_Button_Clicked"
                             Background="Green"
@@ -35,6 +36,7 @@
                         </Button.Template> UDI</Button>
                     <Button Height="40"
                             FontSize="15"
+                            Cursor="Hand"
                             Click="Non_UDI_Button_Clicked"
                             Background="Purple"
                             Foreground="White"

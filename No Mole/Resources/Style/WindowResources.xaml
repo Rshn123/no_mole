@@ -7,6 +7,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
                             Background="#3B3B3B"
+                            Cursor="Hand"
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Center">
 
@@ -25,7 +26,7 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#ad42ad"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#524E4F"/>
@@ -44,6 +45,7 @@
                     <Border x:Name="border"
                             Background="#3B3B3B"
                             BorderThickness="0"
+                            Cursor="Hand"
                             Height="30">
                         <Grid HorizontalAlignment="Center">
                             <!--// Text //-->
@@ -95,7 +97,7 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#524E4F"/>
+                                    Value="#ad42ad"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#524E4F"/>
@@ -114,6 +116,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
                             Background="#363435"
+                            Cursor='Hand'
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Left"
                               Margin="20 0 0 0">
@@ -175,7 +178,7 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#ad42ad"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#3E3C3D"/>
@@ -195,6 +198,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
                             Background="#363435"
+                            Cursor="Hand"
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Left"
                               Margin="20 0 0 0">
@@ -212,7 +216,7 @@
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#ad42ad"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#3E3C3D"/>
@@ -233,6 +237,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
                             Background="#363435"
+                            Cursor="Hand"
                             BorderThickness="0">
                         <Grid HorizontalAlignment="Center">
 
@@ -263,6 +268,7 @@
 
                                 <Border x:Name="SubMenuBorder"
                                         Background="#484546"
+                                        Cursor="Hand"
                                         BorderBrush="#484546">
 
                                     <ScrollViewer x:Name="SubMenuScrollViewer"
@@ -288,13 +294,14 @@
                                  Value="True">
                             <Setter Property="PopupAnimation"
                                     TargetName="PART_Popup"
+                                    
                                     Value="None"/>
                         </Trigger>
                         <Trigger Property="IsHighlighted"
                                  Value="True">
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#3E3C3D"/>
+                                    Value="#ad42ad"/>
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="#3E3C3D"/>
@@ -316,6 +323,7 @@
                 <ControlTemplate TargetType="{x:Type MenuItem}">
                     <Border x:Name="border"
                             Background="#363435"
+                            Cursor="Hand"
                             BorderThickness="0">
                         <Grid>
                             <!--// Icon //-->

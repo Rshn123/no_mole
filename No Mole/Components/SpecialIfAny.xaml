@@ -27,6 +27,7 @@
 
             <Button Content="Submit"
                  Width="300"
+                    Cursor="Hand"
                  Height="40 "
                  Background="#8E44AD"
                  Foreground="White"

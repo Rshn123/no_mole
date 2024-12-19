@@ -40,5 +40,8 @@
 		<Resource Include="Resources/Icons/VideoFolder.png"/>
 		<Resource Include="Resources/Icons/ImageFolder.png"/>
 		<Resource Include="Resources/Icons/eyeclose.png"/>
+		<Resource Include="Resources/Icons/transfer.png"/>
+		
+
 	</ItemGroup>
 </Project>

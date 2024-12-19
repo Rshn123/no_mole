@@ -37,6 +37,7 @@
             <Button
                     Width="300"
                     Height="40 "
+                Cursor="Hand"
                     Background="#8E44AD"
                     Foreground="White"
                     FontWeight="Bold"
