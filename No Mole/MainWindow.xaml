@@ -175,7 +175,7 @@
                         VerticalAlignment="Center"
                         Height="400">
 
-                <StackPanel Orientation="Horizontal" x:Name="ZoomSliderUI">
+                <StackPanel Orientation="Horizontal" x:Name="BrightnessSliderUI">
                     <TextBlock Text="Brightness"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -217,7 +217,7 @@
                     </Image>
                 </Border>
 
-                <StackPanel Orientation="Horizontal" x:Name="BrightnessSliderUI">
+                <StackPanel Orientation="Horizontal" x:Name="ZoomSliderUI">
                     <Slider x:Name="ZoomSlider"
                             Minimum="1.0"
                             Maximum="4.0"
@@ -253,10 +253,12 @@
                                          ImageSource="../Resources/Icons/sun.png"
                                          CustomButtonBackground="#ffffff"
                                          ButtonClick="BrightnessButtonClicked"
+                                         x:Name="BrightnessButton"
                                          ButtonText="Brightness"/>
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
                                          CustomButtonBackground="#ffffff"
+                                         x:Name="ZoomSliderButton"
                                          ButtonClick="ZoomButtonClicked"
                                          ButtonText="Zoom"/>
                 <components:CustomButton ToolTipText="Image Capture"

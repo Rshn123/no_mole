@@ -254,45 +254,47 @@ namespace No_Mole
             _zoomFactor = (float)e.NewValue;
         }
       
-        private void Change_Resolution(int resolution)
-        {
-            CameraViewBorder.Width = resolution;
-        }
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
+        {
+            visibilityFlag = !visibilityFlag;
+            uiElement.Visibility = visibilityFlag ? Visibility.Visible : Visibility.Hidden;
+            button.CustomButtonBackground = visibilityFlag ? "#AD42AD" : "#ffffff";
+        }
+
         private void ZoomButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            ToggleUIElement(ref zoomSliderVisibility, ZoomSliderUI, ZoomSliderButton);
         }
 
         private void BrightnessButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            ToggleUIElement(ref brightnessSliderVisibility, BrightnessSliderUI, BrightnessButton);
         }
+
         private void RecordButtonClicked(object sender, RoutedEventArgs e)
         {
-            
+            recordingVisibility = !recordingVisibility;
+            ChangeRecordingVisibility(recordingVisibility);
+            Record_Button.ImageSource = recordingVisibility
+                ? "../Resources/Icons/stop.png"
+                : "../Resources/Icons/recorder.png";
+            Record_Button.CustomButtonBackground = recordingVisibility ? "#AD42AD" : "#ffffff";
+
             if (recordingVisibility)
             {
-                ChangeRecordingVisibility(false); 
-                Record_Button.ImageSource = "../Resources/Icons/recorder.png";
-                recordingVisibility = false;
-                Record_Button!.CustomButtonBackground = "#ffffff";
-                StopTimer();
+                StartTimer();
             }
             else
             {
-                ChangeRecordingVisibility(true);
-                recordingVisibility = true;
-                Record_Button.ImageSource = "../Resources/Icons/stop.png";
-                Record_Button!.CustomButtonBackground = "#AD42AD";
-                StartTimer();
+                StopTimer();
             }
-
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

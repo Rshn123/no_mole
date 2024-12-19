@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\users\\rshre\\onedrive\\desktop\\workspace\\no_mole\\no mole\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\users\\rshre\\onedrive\\desktop\\workspace\\no_mole\\no mole\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\users\\rshre\\onedrive\\desktop\\workspace\\no_mole\\no mole\\components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:components\\failedinspection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\users\\rshre\\onedrive\\desktop\\workspace\\no_mole\\no mole\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0644CBCF-4F9B-4061-BFA7-42A6F260CCEB}|No Mole.csproj|c:\\users\\rshre\\onedrive\\desktop\\workspace\\no_mole\\no mole\\components\\custombutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -42,11 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "FailedInspection.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
+              "RelativeDocumentMoniker": "Components\\FailedInspection.xaml.cs",
+              "ToolTip": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\FailedInspection.xaml.cs",
+              "RelativeToolTip": "Components\\FailedInspection.xaml.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAqwD0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:47:04.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CustomButton.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml.cs",
               "RelativeDocumentMoniker": "Components\\CustomButton.xaml.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CustomButton.xaml",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
               "RelativeDocumentMoniker": "Components\\CustomButton.xaml",
@@ -71,20 +88,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAewCoAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAAwAUBAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T06:49:38.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SpecialIfAny.xaml",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml",
               "RelativeDocumentMoniker": "Components\\SpecialIfAny.xaml",
@@ -96,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -108,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SpecialIfAny.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\Components\\SpecialIfAny.xaml.cs",
               "RelativeDocumentMoniker": "Components\\SpecialIfAny.xaml.cs",
@@ -121,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -133,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\rshre\\OneDrive\\Desktop\\workspace\\no_mole\\No Mole\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
