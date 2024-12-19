@@ -12,10 +12,11 @@ using System.Windows.Media.Effects;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ColorConverter = System.Windows.Media.ColorConverter;
-using System.ComponentModel;
 using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
 using System.Diagnostics;
+using System.IO;
+using System.Formats.Asn1;
 
 namespace No_Mole
 {
@@ -29,6 +30,11 @@ namespace No_Mole
         private VideoCaptureDevice? _videoSource;
         private bool recordingVisibility = false;
 
+        private bool _isRecording = false;
+        private Process? _ffmpegProcess;
+        private string _outputFileName = $"video_{DateTime.Now:yyyyMMdd_HHmmss}.mp4";
+        private bool _isCaptureRequested = false;
+        private string _captureImagePath = string.Empty;
         private DispatcherTimer _timer;        // Timer for updating the clock
         private TimeSpan _elapsedTime;        // Tracks elapsed time
         private TimeSpan _durationLimit;      // Duration limit (15 seconds)
@@ -37,13 +43,15 @@ namespace No_Mole
         private bool zoomSliderVisibility = false;
         private bool brightnessSliderVisibility = false;
 
+        private string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
             Recording_Info.Visibility = Visibility.Hidden;
             ZoomSliderUI.Visibility = Visibility.Hidden;
-            BrightnessSliderUI.Visibility = Visibility.Hidden;    
+            BrightnessSliderUI.Visibility = Visibility.Hidden;
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
@@ -130,6 +138,23 @@ namespace No_Mole
                     }
                 }
 
+                // Check if an image capture was requested
+                if (_isCaptureRequested)
+                {
+                    // Save the frame as an image
+                    string imagePath = $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg";
+                    bitmap.Save(imagePath, ImageFormat.Jpeg);
+
+                    // Reset the capture request flag
+                    _isCaptureRequested = false;
+
+                    // Notify the user
+                    Dispatcher.Invoke(() =>
+                    {
+                        MessageBox.Show($"Image saved to {imagePath}");
+                    });
+                }
+
                 // Apply brightness
                 if (_brightnessFactor != 1.0f)
                 {
@@ -144,17 +169,37 @@ namespace No_Mole
                     }
                 }
 
+                if (_isRecording && _ffmpegProcess != null)
+                {
+                    using var ms = new MemoryStream();
+                    bitmap.Save(ms, ImageFormat.Bmp);
+                    var bmpData = ms.ToArray();
+
+                    if (_ffmpegProcess.StandardInput.BaseStream.CanWrite)
+                    {
+                        _ffmpegProcess.StandardInput.BaseStream.Write(bmpData, 0, bmpData.Length);
+                        _ffmpegProcess.StandardInput.BaseStream.Flush();
+                    }
+                }
+
                 // Display the frame
                 Dispatcher.Invoke(() =>
                 {
                     try
                     {
                         IntPtr hBitmap = bitmap.GetHbitmap();
-                        CameraImage.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                        var bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
                             hBitmap,
                             IntPtr.Zero,
                             Int32Rect.Empty,
                             BitmapSizeOptions.FromEmptyOptions());
+
+                        // Ensure the image is centered and scaled to maintain aspect ratio
+                        CameraImage.Source = bitmapSource;
+
+                        // Optionally adjust the layout properties (to center the image within the container)
+                        CameraImage.HorizontalAlignment = HorizontalAlignment.Center;
+                        CameraImage.VerticalAlignment = VerticalAlignment.Center;
 
                         // Ensure proper cleanup of unmanaged resources
                         DeleteObject(hBitmap);
@@ -178,6 +223,40 @@ namespace No_Mole
             }
         }
 
+        private void StartRecording()
+        {
+            _isRecording = true;
+            _ffmpegProcess = new Process
+            {
+                StartInfo =
+            {
+                FileName = "ffmpeg",
+                Arguments = $"-y -f rawvideo -pix_fmt bgr24 -s {640}x{480} -r 30 -i pipe:0 -c:v libx264 {_outputFileName}",
+                UseShellExecute = false,
+                RedirectStandardInput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            }
+            };
+            _ffmpegProcess.Start();
+        }
+
+        private void StopRecording()
+        {
+            if (_ffmpegProcess != null && !_ffmpegProcess.HasExited)
+            {
+                _ffmpegProcess.StandardInput.Close();
+                _ffmpegProcess.WaitForExit();
+                _ffmpegProcess.Dispose();
+            }
+            _isRecording = false;
+            MessageBox.Show($"Video saved as {_outputFileName}");
+        }
+
+        private void CaptureButtonClicked()
+        {
+            _isCaptureRequested = true; // Set the flag to capture the next frame
+        }
 
         [DllImport("gdi32.dll")]
         private static extern bool DeleteObject(IntPtr hObject);
@@ -253,7 +332,7 @@ namespace No_Mole
         {
             _zoomFactor = (float)e.NewValue;
         }
-      
+
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
 
@@ -288,10 +367,12 @@ namespace No_Mole
             if (recordingVisibility)
             {
                 StartTimer();
+                StartRecording();
             }
             else
             {
                 StopTimer();
+                StopRecording();
             }
         }
 
@@ -308,7 +389,7 @@ namespace No_Mole
                 };
                 this.Effect = blur;
 
-               ModalWindow modal = new(this, button!)
+                ModalWindow modal = new(this, button!)
                 {
                     Owner = this,
                     Width = 615,
