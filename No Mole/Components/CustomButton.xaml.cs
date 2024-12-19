@@ -45,6 +45,18 @@ namespace No_Mole.Components
             set { SetValue(ImageSourceProperty, value); }
         }
 
+        public static readonly DependencyProperty CustomButtonBackgroundProperty =
+            DependencyProperty.Register("CustomButtonBackground", typeof(string), typeof(CustomButton),
+                new PropertyMetadata("#ffffff"));
+        public string CustomButtonBackground
+        {
+            get
+            {
+                return (string)GetValue(CustomButtonBackgroundProperty);
+            }
+            set { SetValue(CustomButtonBackgroundProperty, value); }
+        }
+
         public string ToolTipText
         {
             get { return (string)GetValue(ToolTipTextProperty); }

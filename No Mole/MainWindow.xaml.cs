@@ -34,17 +34,21 @@ namespace No_Mole
         private TimeSpan _durationLimit;      // Duration limit (15 seconds)
         private float _brightnessFactor = 1.0f; // Default value (no brightness change)
         private float _zoomFactor = 1.0f;
+        private bool zoomSliderVisibility = false;
+        private bool brightnessSliderVisibility = false;
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
             Recording_Info.Visibility = Visibility.Hidden;
+            ZoomSliderUI.Visibility = Visibility.Hidden;
+            BrightnessSliderUI.Visibility = Visibility.Hidden;    
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
             _timer.Tick += Timer_Tick!;
-            record_btn.IsEnabled = true;
+            Record_Button.IsEnabled = true;
             CameraViewBorder.Width = 400;
             // Set the duration limit to 15 seconds
             _durationLimit = TimeSpan.FromSeconds(15);
@@ -174,6 +178,7 @@ namespace No_Mole
             }
         }
 
+
         [DllImport("gdi32.dll")]
         private static extern bool DeleteObject(IntPtr hObject);
         private static void AdjustBrightness(Bitmap bitmap, float brightnessFactor)
@@ -248,47 +253,42 @@ namespace No_Mole
         {
             _zoomFactor = (float)e.NewValue;
         }
-        private void CustomButton_Loaded(object sender, RoutedEventArgs e)
+      
+        private void Change_Resolution(int resolution)
         {
-
+            CameraViewBorder.Width = resolution;
         }
-
-        private void CustomButton_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CustomButton_Loaded_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CustomButton_Loaded_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Change_Resolution(int resolution)
+        private void ZoomButtonClicked(object sender, RoutedEventArgs e)
         {
-            CameraViewBorder.Width = resolution;
+
+        }
+
+        private void BrightnessButtonClicked(object sender, RoutedEventArgs e)
+        {
+
         }
         private void RecordButtonClicked(object sender, RoutedEventArgs e)
         {
+            
             if (recordingVisibility)
             {
-                ChangeRecordingVisibility(false);
+                ChangeRecordingVisibility(false); 
+                Record_Button.ImageSource = "../Resources/Icons/recorder.png";
                 recordingVisibility = false;
+                Record_Button!.CustomButtonBackground = "#ffffff";
                 StopTimer();
             }
             else
             {
                 ChangeRecordingVisibility(true);
                 recordingVisibility = true;
+                Record_Button.ImageSource = "../Resources/Icons/stop.png";
+                Record_Button!.CustomButtonBackground = "#AD42AD";
                 StartTimer();
             }
 

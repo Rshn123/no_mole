@@ -175,7 +175,7 @@
                         VerticalAlignment="Center"
                         Height="400">
 
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" x:Name="ZoomSliderUI">
                     <TextBlock Text="Brightness"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -202,27 +202,22 @@
 
                 <!-- Camera View -->
                 <Border Grid.Row="0"
-                        CornerRadius="10"
+                        CornerRadius="2"
                         BorderBrush="Gray"
                         BorderThickness="2"
                         Width="400"
                         Height="400"
                         x:Name="CameraViewBorder"
-                        Background="White">
+                        ClipToBounds="True"
+                        Background="White" Padding="2">
                     <Image x:Name="CameraImage"
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            Stretch="UniformToFill">
-                        <Image.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius"
-                                        Value="10"/>
-                            </Style>
-                        </Image.Resources>
                     </Image>
                 </Border>
 
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" x:Name="BrightnessSliderUI">
                     <Slider x:Name="ZoomSlider"
                             Minimum="1.0"
                             Maximum="4.0"
@@ -256,20 +251,26 @@
                          Width="400">
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
+                                         CustomButtonBackground="#ffffff"
+                                         ButtonClick="BrightnessButtonClicked"
                                          ButtonText="Brightness"/>
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
+                                         CustomButtonBackground="#ffffff"
+                                         ButtonClick="ZoomButtonClicked"
                                          ButtonText="Zoom"/>
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
                                          x:Name="capture_btn"
                                          ButtonClick="CaptureButtonClicked"
+                                         CustomButtonBackground="#ffffff"
                                          ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
                                          ButtonClick="RecordButtonClicked"
                                          ButtonText="Record"
-                                         x:Name="record_btn"/>
+                                         CustomButtonBackground="#ffffff"
+                                         x:Name="Record_Button"/>
             </UniformGrid>
 
             <!-- Main Button -->

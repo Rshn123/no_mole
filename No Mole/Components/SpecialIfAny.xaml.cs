@@ -24,7 +24,6 @@ namespace No_Mole.Components
         private readonly MainWindow _mainWindow;
         public SpecialIfAny(ModalWindow modalWindow)
         {
-            _mainWindow = new MainWindow();
             _modalWindow = modalWindow;
             InitializeComponent();
         }

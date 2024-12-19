@@ -12,7 +12,7 @@
         <Button
             Height="48"
             Width="95"
-            Background="White"
+            Background="{Binding CustomButtonBackground, ElementName=root}"
             ToolTip="{Binding ToolTipText, ElementName=root}"
             Click="Button_Click">
             <Button.Resources>
