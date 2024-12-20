@@ -24,10 +24,11 @@
                     FontSize="14"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
-                    Click="Close_Popup_Click"/>
+                    Click="Close_Popup_Click"
+                    />
         </DockPanel>
         <ScrollViewer VerticalScrollBarVisibility="Auto"
-                      Height="390">
+                      Height="380">
             <WrapPanel x:Name="ImageWrapPanel"/>
         </ScrollViewer>
     </Grid>

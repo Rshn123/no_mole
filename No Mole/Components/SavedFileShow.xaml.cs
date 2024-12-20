@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 
 
@@ -72,7 +73,28 @@ namespace No_Mole.Components
 
         public void Close_Popup_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            OpenModal(new WarningModal(this), 300, 600);
+        }
+
+        private void OpenModal(Window modal, int height, int width)
+        {
+            BlurEffect blur = new()
+            {
+                Radius = 10
+            };
+
+            this.Effect = blur;
+
+            modal.Owner = this;
+            modal.Width = width;
+            modal.Height = height;
+
+            modal.Left = this.Left + (this.Width - modal.Width) / 2;
+            modal.Top = this.Top + (this.Height - modal.Height) / 2;
+
+            modal.ShowDialog();
+
+            this.Effect = null;
         }
     }
 }

@@ -84,7 +84,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAD4BAAAAAAAAAAAAAEUBAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAAAHABAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-20T22:30:58.702Z",
               "EditorCaption": ""
@@ -99,8 +99,7 @@
               "RelativeToolTip": "Helper\\OpenModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T21:55:57.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T21:55:57.924Z"
             },
             {
               "$type": "Document",
@@ -112,8 +111,7 @@
               "RelativeToolTip": "Components\\SavedFileShow.xaml.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAmwEoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:49:27.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T15:49:27.252Z"
             },
             {
               "$type": "Document",
@@ -124,8 +122,7 @@
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\SavedFileShow.xaml",
               "RelativeToolTip": "Components\\SavedFileShow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-20T15:30:19.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T15:30:19.116Z"
             },
             {
               "$type": "Document",
@@ -137,8 +134,7 @@
               "RelativeToolTip": "Components\\UDIEnterModal.xaml.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAowCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T14:43:44.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T14:43:44.574Z"
             },
             {
               "$type": "Document",
@@ -149,8 +145,7 @@
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\UDIEnterModal.xaml",
               "RelativeToolTip": "Components\\UDIEnterModal.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-20T12:54:59.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T12:54:59.421Z"
             },
             {
               "$type": "Document",
@@ -161,8 +156,7 @@
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\CustomButton.xaml",
               "RelativeToolTip": "Components\\CustomButton.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-20T12:54:29.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T12:54:29.503Z"
             },
             {
               "$type": "Document",
@@ -186,8 +180,7 @@
               "RelativeToolTip": "Components\\CustomButton.xaml.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAowFgAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T02:52:46.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T02:52:46.94Z"
             },
             {
               "$type": "Document",
@@ -233,8 +226,7 @@
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T15:15:23.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T15:15:23.791Z"
             },
             {
               "$type": "Document",
@@ -257,8 +249,7 @@
               "ToolTip": "D:\\Roshan Workspace\\no_mole\\No Mole\\Components\\InspectionDetailModal.xaml",
               "RelativeToolTip": "Components\\InspectionDetailModal.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-18T14:56:54.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:56:54.904Z"
             }
           ]
         }
