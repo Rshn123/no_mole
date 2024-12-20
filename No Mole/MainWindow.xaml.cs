@@ -42,7 +42,7 @@ namespace No_Mole
         private float _zoomFactor = 1.0f;
         private bool zoomSliderVisibility = false;
         private bool brightnessSliderVisibility = false;
-
+        Bitmap? bitmap = null;
         private string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
 
         public MainWindow()
@@ -110,7 +110,6 @@ namespace No_Mole
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap? bitmap = null;
 
             try
             {
@@ -141,18 +140,8 @@ namespace No_Mole
                 // Check if an image capture was requested
                 if (_isCaptureRequested)
                 {
-                    // Save the frame as an image
-                    string imagePath = $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg";
-                    bitmap.Save(imagePath, ImageFormat.Jpeg);
-
-                    // Reset the capture request flag
+                    CaptureImage(bitmap);
                     _isCaptureRequested = false;
-
-                    // Notify the user
-                    Dispatcher.Invoke(() =>
-                    {
-                        MessageBox.Show($"Image saved to {imagePath}");
-                    });
                 }
 
                 // Apply brightness
@@ -253,10 +242,6 @@ namespace No_Mole
             MessageBox.Show($"Video saved as {_outputFileName}");
         }
 
-        private void CaptureButtonClicked()
-        {
-            _isCaptureRequested = true; // Set the flag to capture the next frame
-        }
 
         [DllImport("gdi32.dll")]
         private static extern bool DeleteObject(IntPtr hObject);
@@ -335,8 +320,31 @@ namespace No_Mole
 
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            _isCaptureRequested = true;
+           
         }
+
+        private void CaptureImage(Bitmap bitmap)
+        {
+            try
+            {
+                // Get the project directory
+                string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Create a folder named "CapturedFiles" inside the project directory
+                string captureFolder = Path.Combine(projectDirectory, "CapturedFiles");
+                Directory.CreateDirectory(captureFolder); // Ensure the folder exists
+                string imagePath = Path.Combine(captureFolder,
+                                                $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
+                bitmap.Save(imagePath, ImageFormat.Jpeg);
+                Dispatcher.Invoke(() => MessageBox.Show($"Image saved to {imagePath}"));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Image capture error: {ex.Message}");
+            }
+        }
+
 
         private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
         {
