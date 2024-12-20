@@ -10,7 +10,11 @@ namespace No_Mole.Notification
 {
     public class ViewModal : BaseViewModel
     {
-        public ICommand SendTestNotification { get; private set; }
+        public ICommand SendMessageInspectionNotification { get; private set; }
+        public ICommand SendRecordingStartedNotification { get; private set; }
+        public ICommand SendRecordingSavedNotification { get; private set; }
+        public ICommand SendImageCaptureNotification { get; private set; }
+
         private readonly ToastProvider _toastProvider;
         private readonly AppTheme _appTheme;
 
@@ -22,20 +26,21 @@ namespace No_Mole.Notification
 
             _toastProvider = new ToastProvider(notificationContainer);
             _appTheme = new AppTheme();
-            SendTestNotification = new RelayCommand(_ => OnSend());
+
+            // Assign commands to corresponding methods
+            SendMessageInspectionNotification = new RelayCommand(_ => SendMessageInspection());
+            SendRecordingStartedNotification = new RelayCommand(_ => SendRecordingStarted());
+            SendRecordingSavedNotification = new RelayCommand(_ => SendRecordingSaved());
+            SendImageCaptureNotification = new RelayCommand(_ => SendImageCapture());
         }
 
         // Parameterless constructor (optional)
-        public ViewModal()
+        public ViewModal() : this(new NotificationContainer())
         {
-            var notificationContainer = new NotificationContainer();
-            _toastProvider = new ToastProvider(notificationContainer);
-            _appTheme = new AppTheme();
-            SendTestNotification = new RelayCommand(_ => OnSend());
         }
 
-        // Method to send notifications
-        public void OnSend()
+        // Methods for each button
+        private void SendMessageInspection()
         {
             _toastProvider.NotificationService.AddNotification(
                 Flattinger.Core.Enums.ToastType.INFO,
@@ -44,7 +49,10 @@ namespace No_Mole.Notification
                 5,
                 animationConfig: new AnimationConfig { }
             );
+        }
 
+        private void SendRecordingStarted()
+        {
             _toastProvider.NotificationService.AddNotification(
                 Flattinger.Core.Enums.ToastType.INFO,
                 "Recording Started",
@@ -52,7 +60,10 @@ namespace No_Mole.Notification
                 5,
                 animationConfig: new AnimationConfig { }
             );
+        }
 
+        private void SendRecordingSaved()
+        {
             _toastProvider.NotificationService.AddNotification(
                 Flattinger.Core.Enums.ToastType.SUCCESS,
                 "Recording Saved",
@@ -60,7 +71,10 @@ namespace No_Mole.Notification
                 5,
                 animationConfig: new AnimationConfig { }
             );
+        }
 
+        private void SendImageCapture()
+        {
             _toastProvider.NotificationService.AddNotification(
                 Flattinger.Core.Enums.ToastType.INFO,
                 "Image Capture",
@@ -69,6 +83,5 @@ namespace No_Mole.Notification
                 animationConfig: new AnimationConfig { }
             );
         }
-
     }
 }
