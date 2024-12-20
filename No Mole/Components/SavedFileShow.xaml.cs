@@ -56,7 +56,9 @@ namespace No_Mole.Components
                         MessageBox.Show($"Error loading image {file}: {ex.Message}");
                     }
                 }
-            } catch(Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Error displaying files: {ex.Message}");
             }
         }

@@ -31,7 +31,7 @@ namespace No_Mole.Components
 
         private void Continue_Button(object sender, RoutedEventArgs e)
         {
-            if (!(UDIInputField.Text.Length>0))
+            if (!(UDIInputField.Text.Length > 0))
             {
                 UDIErrorMsg.Visibility = Visibility.Visible;
                 _udiErrorMessageVisibility = true;
