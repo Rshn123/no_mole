@@ -286,6 +286,7 @@
                     FontWeight="Bold"
                     BorderBrush="Transparent"
                     FontSize="16"
+                    x:Name="RVIButton"
                     Click="Button_Click">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">

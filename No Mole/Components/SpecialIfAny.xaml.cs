@@ -22,7 +22,7 @@ namespace No_Mole.Components
     /// </summary>
     public partial class SpecialIfAny
     {
-        private readonly Window _modalWindow;
+        private readonly ModalWindow _modalWindow;
         public SpecialIfAny(ModalWindow modalWindow)
         {
             _modalWindow = modalWindow;
@@ -30,7 +30,7 @@ namespace No_Mole.Components
         }
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenModal(new SavedFileShow(), 415, 615);
+            _modalWindow.ChangeRVIButtonState("#AD42AD", "Resources/Icons/play.png", "Start RVI");
             _modalWindow.Close();
         }
 

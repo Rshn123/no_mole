@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
+using Accord;
 
 namespace No_Mole.Components
 {
@@ -58,15 +59,35 @@ namespace No_Mole.Components
             }
             else
             {
+                OpenModal(new SavedFileShow(), 415, 600);
                 _mainButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#AD42AD"));
-                _mainWindow!.ChangeText("Start Inspection");
+                _mainWindow!.ChangeText("Start RVI");
                 _mainWindow.ChangeButtonImage("Resources/Icons/play.png");
                 _mainWindow.ChangeRecordingVisibility(false);
                 _mainWindow.StopTimer();
                 _modalWindow!.Close();
             }
+        }
 
+        private void OpenModal(Window modal, int height, int width)
+        {
+            BlurEffect blur = new()
+            {
+                Radius = 10
+            };
 
+            _modalWindow!.Effect = blur;
+
+            modal.Owner = _modalWindow;
+            modal.Width = width;
+            modal.Height = height;
+
+            modal.Left = _modalWindow.Left + (_modalWindow.Width - modal.Width) / 2;
+            modal.Top = _modalWindow.Top + (_modalWindow.Height - modal.Height) / 2;
+
+            modal.ShowDialog();
+
+            _modalWindow.Effect = null;
         }
     }
 }

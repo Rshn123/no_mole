@@ -99,4 +99,8 @@
 	<ItemGroup>
 	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\postproc-54.dll" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avcodec-57.dll" />
+	</ItemGroup>
 </Project>

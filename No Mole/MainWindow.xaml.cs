@@ -364,39 +364,33 @@ namespace No_Mole
         {
             Button? button = sender as Button;
 
-            if (ButtonText.Text.ToString() == "Stop Inspection")
+            if (ButtonText.Text.ToString() == "Stop RVI")
             {
-                BlurEffect blur = new()
-                {
-                    Radius = 10
-                };
-                this.Effect = blur;
-
                 ModalWindow modal = new(this, button!)
                 {
                     Owner = this,
                     Width = 615,
                     Height = 430
                 };
-
-                modal.Left = this.Left + (this.Width - modal.Width) / 2;
-                modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-                modal.ShowDialog();
-
-                this.Effect = null;
-
+                OpenModal(modal, 430, 615);
+                
             }
             else
             {
-                button!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
-
-                ChangeButtonImage("Resources/Icons/stop.png");
-
-                ChangeText("Stop Inspection");
+                ChangeRVIButtonState("#D43E3E", "Resources/Icons/stop.png", "Stop RVI");
             }
 
         }
+
+        public void ChangeRVIButtonState(string color, string image, string text)
+        {
+            RVIButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(color));
+
+            ChangeButtonImage(image);
+
+            ChangeText(text);
+        }
+
         public void ChangeButtonImage(string imageSource)
 
         {

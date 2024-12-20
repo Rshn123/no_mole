@@ -20,8 +20,10 @@ namespace No_Mole.Components
     public partial class InspectionDetailModal
     {
         private readonly ModalWindow _modalWindow;
+        private bool _errorMessageVisibility = false;
         public InspectionDetailModal(ModalWindow modalWindow)
         {
+            InspectionModalErrorMsg.Visibility = Visibility.Hidden;
             _modalWindow = modalWindow;
             InitializeComponent();
         }
@@ -31,10 +33,13 @@ namespace No_Mole.Components
         {
             if (string.IsNullOrWhiteSpace(SerialNumberTextBox.Text))
             {
-                MessageBox.Show("Serial Number* Field cannot be empty.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                InspectionModalErrorMsg.Visibility = Visibility.Visible;
+                _errorMessageVisibility = true;
             }
             else
             {
+                InspectionModalErrorMsg.Visibility = Visibility.Hidden;
+                _errorMessageVisibility = false;
                 _modalWindow.MainFrame.Navigate(new ReasonForFailureModal(_modalWindow));
             }
 

@@ -28,6 +28,9 @@
     <Compile Update="Components\ModalWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\PreviewWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\ReasonForFailureModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\ModalWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\PreviewWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\ReasonForFailureModal.xaml">

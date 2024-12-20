@@ -11,6 +11,21 @@
         WindowStyle="None"
         Title="SavedFileShow" Height="450" Width="800">
     <Grid>
-        <ListBox Name="SavedFilesListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <DockPanel Grid.Row="0"
+            Margin="0,0,10,0">
+            <Button Content="X"
+                Width="30"
+                Height="30"
+                Foreground="White"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                FontSize="14"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="Close_Popup_Click"/>
+        </DockPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="390">
+            <WrapPanel x:Name="ImageWrapPanel" />
+        </ScrollViewer>
     </Grid>
 </Window>
