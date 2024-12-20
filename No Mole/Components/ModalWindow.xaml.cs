@@ -34,5 +34,10 @@ namespace No_Mole.Components
         {
             Close();
         }
+
+        public void ChangeRVIButtonState(string color, string image, string text)
+        {
+            _mainWindow.ChangeRVIButtonState(color, image, text);
+        }
     }
 }

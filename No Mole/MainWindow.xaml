@@ -180,13 +180,12 @@
                     <components:CustomIcons ImageSource="../Resources/Icons/VideoFolder.png"
                                             Margin="0,0,0,40"/>
 
-
                     <components:CustomIcons ImageSource="../Resources/Icons/ImageFolder.png"
                                             Margin="0,0,0,0"/>
 
-
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            x:Name="BrightnessSliderUI">
                     <TextBlock Text="Brightness"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -211,27 +210,24 @@
 
                 <!-- Camera View -->
                 <Border Grid.Row="0"
-                        CornerRadius="10"
+                        CornerRadius="2"
                         BorderBrush="Gray"
                         BorderThickness="2"
                         Width="400"
                         Height="400"
                         x:Name="CameraViewBorder"
-                        Background="White">
+                        ClipToBounds="True"
+                        Background="White"
+                        Padding="2">
                     <Image x:Name="CameraImage"
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            Stretch="UniformToFill">
-                        <Image.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius"
-                                        Value="10"/>
-                            </Style>
-                        </Image.Resources>
                     </Image>
                 </Border>
 
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            x:Name="ZoomSliderUI">
                     <Slider x:Name="ZoomSlider"
                             Minimum="1.0"
                             Maximum="4.0"
@@ -250,20 +246,18 @@
                             <RotateTransform Angle="-90"/>
                         </TextBlock.LayoutTransform>
                     </TextBlock>
-                    <StackPanel Orientation="Vertical"
-                                VerticalAlignment="Center">
-
-                        <components:CustomIcons ImageSource="../Resources/Icons/RecordVideo.png"
-                                                Margin="0,0,0,40"/>
-
-
-                        <components:CustomIcons ImageSource="../Resources/Icons/REcordImage.png"
-                                                Margin="0,0,0,0"/>
-
-
-                    </StackPanel>
                 </StackPanel>
+                <StackPanel Orientation="Vertical"
+            VerticalAlignment="Center">
 
+                    <components:CustomIcons ImageSource="../Resources/Icons/RecordVideo.png"
+                            Margin="0,0,0,40"/>
+
+
+                    <components:CustomIcons ImageSource="../Resources/Icons/REcordImage.png"
+                            Margin="0,0,0,0"/>
+
+                </StackPanel>
             </StackPanel>
 
 
@@ -275,20 +269,28 @@
                          Width="400">
                 <components:CustomButton ToolTipText="Video Enhancement"
                                          ImageSource="../Resources/Icons/sun.png"
+                                         CustomButtonBackground="#ffffff"
+                                         ButtonClick="BrightnessButtonClicked"
+                                         x:Name="BrightnessButton"
                                          ButtonText="Brightness"/>
                 <components:CustomButton ToolTipText="Zoom"
                                          ImageSource="../Resources/Icons/scan-search.png"
+                                         CustomButtonBackground="#ffffff"
+                                         x:Name="ZoomSliderButton"
+                                         ButtonClick="ZoomButtonClicked"
                                          ButtonText="Zoom"/>
                 <components:CustomButton ToolTipText="Image Capture"
                                          ImageSource="../Resources/Icons/camera.png"
                                          x:Name="capture_btn"
                                          ButtonClick="CaptureButtonClicked"
+                                         CustomButtonBackground="#ffffff"
                                          ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
                                          ButtonClick="RecordButtonClicked"
                                          ButtonText="Record"
-                                         x:Name="record_btn"/>
+                                         CustomButtonBackground="#ffffff"
+                                         x:Name="Record_Button"/>
             </UniformGrid>
 
             <!-- Main Button -->
@@ -300,6 +302,7 @@
                     FontWeight="Bold"
                     BorderBrush="Transparent"
                     FontSize="16"
+                    x:Name="RVIButton"
                     Click="Button_Click">
                 <Button.Resources>
                     <Style TargetType="Button">

@@ -1,6 +1,7 @@
-﻿using System.Configuration;
-using System.Data;
+﻿
 using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
+using No_Mole.Components;
 
 namespace No_Mole
 {
@@ -11,7 +12,18 @@ namespace No_Mole
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+            var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+        }
+
+        private void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<MainWindow>();
+            services.AddTransient<ReasonForFailureModal>();
+            services.AddTransient<SpecialIfAny>();
         }
     }
 

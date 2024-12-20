@@ -12,10 +12,10 @@ using System.Windows.Media.Effects;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ColorConverter = System.Windows.Media.ColorConverter;
-using System.ComponentModel;
 using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
 using System.Diagnostics;
+using System.IO;
 
 namespace No_Mole
 {
@@ -24,27 +24,36 @@ namespace No_Mole
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private FilterInfoCollection? _videoDevices;
         private VideoCaptureDevice? _videoSource;
         private bool recordingVisibility = false;
 
+        private bool _isRecording = false;
+        private Process? _ffmpegProcess;
+        private bool _isCaptureRequested = false;
+        private string _captureImagePath = string.Empty;
         private DispatcherTimer _timer;        // Timer for updating the clock
         private TimeSpan _elapsedTime;        // Tracks elapsed time
         private TimeSpan _durationLimit;      // Duration limit (15 seconds)
         private float _brightnessFactor = 1.0f; // Default value (no brightness change)
         private float _zoomFactor = 1.0f;
+        private bool zoomSliderVisibility = false;
+        private bool brightnessSliderVisibility = false;
+        Bitmap? bitmap = null;
+        private string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
             Recording_Info.Visibility = Visibility.Hidden;
+            ZoomSliderUI.Visibility = Visibility.Hidden;
+            BrightnessSliderUI.Visibility = Visibility.Hidden;
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
             _timer.Tick += Timer_Tick!;
-            record_btn.IsEnabled = true;
+            Record_Button.IsEnabled = true;
             CameraViewBorder.Width = 400;
             // Set the duration limit to 15 seconds
             _durationLimit = TimeSpan.FromSeconds(15);
@@ -98,7 +107,6 @@ namespace No_Mole
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap? bitmap = null;
 
             try
             {
@@ -126,6 +134,13 @@ namespace No_Mole
                     }
                 }
 
+                // Check if an image capture was requested
+                if (_isCaptureRequested)
+                {
+                    CaptureImage(bitmap);
+                    _isCaptureRequested = false;
+                }
+
                 // Apply brightness
                 if (_brightnessFactor != 1.0f)
                 {
@@ -140,17 +155,37 @@ namespace No_Mole
                     }
                 }
 
+                if (_isRecording && _ffmpegProcess != null)
+                {
+                    using var ms = new MemoryStream();
+                    bitmap.Save(ms, ImageFormat.Bmp);
+                    var bmpData = ms.ToArray();
+
+                    if (_ffmpegProcess.StandardInput.BaseStream.CanWrite)
+                    {
+                        _ffmpegProcess.StandardInput.BaseStream.Write(bmpData, 0, bmpData.Length);
+                        _ffmpegProcess.StandardInput.BaseStream.Flush();
+                    }
+                }
+
                 // Display the frame
                 Dispatcher.Invoke(() =>
                 {
                     try
                     {
                         IntPtr hBitmap = bitmap.GetHbitmap();
-                        CameraImage.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                        var bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
                             hBitmap,
                             IntPtr.Zero,
                             Int32Rect.Empty,
                             BitmapSizeOptions.FromEmptyOptions());
+
+                        // Ensure the image is centered and scaled to maintain aspect ratio
+                        CameraImage.Source = bitmapSource;
+
+                        // Optionally adjust the layout properties (to center the image within the container)
+                        CameraImage.HorizontalAlignment = HorizontalAlignment.Center;
+                        CameraImage.VerticalAlignment = VerticalAlignment.Center;
 
                         // Ensure proper cleanup of unmanaged resources
                         DeleteObject(hBitmap);
@@ -173,6 +208,17 @@ namespace No_Mole
                 bitmap?.Dispose();
             }
         }
+
+        private void StartRecording()
+        {
+
+        }
+
+        private void StopRecording()
+        {
+
+        }
+
 
         [DllImport("gdi32.dll")]
         private static extern bool DeleteObject(IntPtr hObject);
@@ -248,57 +294,77 @@ namespace No_Mole
         {
             _zoomFactor = (float)e.NewValue;
         }
-        private void CustomButton_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CustomButton_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CustomButton_Loaded_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CustomButton_Loaded_3(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
+            _isCaptureRequested = true;
 
         }
 
-        private void Change_Resolution(int resolution)
+        private void CaptureImage(Bitmap bitmap)
         {
-            CameraViewBorder.Width = resolution;
+            try
+            {
+                // Get the project directory
+                string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Create a folder named "CapturedFiles" inside the project directory
+                string captureFolder = Path.Combine(projectDirectory, "CapturedFiles/Images");
+                Directory.CreateDirectory(captureFolder); // Ensure the folder exists
+                string imagePath = Path.Combine(captureFolder,
+                                                $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
+                bitmap.Save(imagePath, ImageFormat.Jpeg);
+                Dispatcher.Invoke(() => MessageBox.Show($"Image saved to {imagePath}"));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Image capture error: {ex.Message}");
+            }
         }
+
+        private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
+        {
+            visibilityFlag = !visibilityFlag;
+            uiElement.Visibility = visibilityFlag ? Visibility.Visible : Visibility.Hidden;
+            button.CustomButtonBackground = visibilityFlag ? "#AD42AD" : "#ffffff";
+        }
+
+        private void ZoomButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ToggleUIElement(ref zoomSliderVisibility, ZoomSliderUI, ZoomSliderButton);
+        }
+
+        private void BrightnessButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ToggleUIElement(ref brightnessSliderVisibility, BrightnessSliderUI, BrightnessButton);
+        }
+
         private void RecordButtonClicked(object sender, RoutedEventArgs e)
         {
+            recordingVisibility = !recordingVisibility;
+            ChangeRecordingVisibility(recordingVisibility);
+            Record_Button.ImageSource = recordingVisibility
+                ? "../Resources/Icons/stop.png"
+                : "../Resources/Icons/recorder.png";
+            Record_Button.CustomButtonBackground = recordingVisibility ? "#AD42AD" : "#ffffff";
+
             if (recordingVisibility)
             {
-                ChangeRecordingVisibility(false);
-                recordingVisibility = false;
-                StopTimer();
+                StartTimer();
+                StartRecording();
             }
             else
             {
-                ChangeRecordingVisibility(true);
-                recordingVisibility = true;
-                StartTimer();
+                StopTimer();
+                StopRecording();
             }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button? button = sender as Button;
 
-            if (ButtonText.Text.ToString() == "Stop Inspection")
+            if (ButtonText.Text.ToString() == "Stop RVI")
             {
                 BlurEffect blur = new()
                 {
@@ -312,25 +378,25 @@ namespace No_Mole
                     Width = 615,
                     Height = 430
                 };
-
-                modal.Left = this.Left + (this.Width - modal.Width) / 2;
-                modal.Top = this.Top + (this.Height - modal.Height) / 2;
-
-                modal.ShowDialog();
-
-                this.Effect = null;
+                OpenModal(modal, 430, 615);
 
             }
             else
             {
-                button!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#D43E3E"));
-
-                ChangeButtonImage("Resources/Icons/stop.png");
-
-                ChangeText("Stop Inspection");
+                ChangeRVIButtonState("#D43E3E", "Resources/Icons/stop.png", "Stop RVI");
             }
 
         }
+
+        public void ChangeRVIButtonState(string color, string image, string text)
+        {
+            RVIButton!.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(color));
+
+            ChangeButtonImage(image);
+
+            ChangeText(text);
+        }
+
         public void ChangeButtonImage(string imageSource)
 
         {

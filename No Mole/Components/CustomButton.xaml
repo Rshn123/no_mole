@@ -13,6 +13,7 @@
             Height="48"
             Width="95"
             Cursor="Hand"
+            Background="{Binding CustomButtonBackground, ElementName=root}"
             ToolTip="{Binding ToolTipText, ElementName=root}"
             Click="Button_Click">
             <Button.Style>
