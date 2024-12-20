@@ -154,6 +154,7 @@
                                  VerticalContentAlignment="Center"
                                  Text="Fullname"/>
                     </StackPanel>
+                    
 
                     <Grid Margin="0,10,0,10">
                         <Grid.ColumnDefinitions>
@@ -206,6 +207,8 @@
                                  TextWrapping="Wrap"
                                  AcceptsReturn="True"/>
                     </StackPanel>
+                   
+                 
 
                     <Button Content="Send"
                             Width="120" Cursor="Hand"

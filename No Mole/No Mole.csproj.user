@@ -25,6 +25,9 @@
     <Compile Update="Components\FailedInspection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\InputField.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\InspectionDetailModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\FailedInspection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\InputField.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\InspectionDetailModal.xaml">
