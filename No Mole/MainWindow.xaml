@@ -6,9 +6,7 @@
         xmlns:local="clr-namespace:No_Mole"
         xmlns:components="clr-namespace:No_Mole.Components"
         xmlns:local1="clr-namespace:No_Mole.Converters"
-        
-      xmlns:Toast="clr-namespace:Flattinger.UI.ToastMessage.Controls;assembly=Flattinger.UI.ToastMessage"
-       
+        xmlns:Toast="clr-namespace:Flattinger.UI.ToastMessage.Controls;assembly=Flattinger.UI.ToastMessage" xmlns:notification="clr-namespace:No_Mole.Notification" d:DataContext="{d:DesignInstance Type=notification:ViewModal}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
@@ -287,6 +285,7 @@
                                          x:Name="capture_btn"
                                          ButtonClick="CaptureButtonClicked"
                                          CustomButtonBackground="#ffffff"
+                                         Command="{Binding SendImageCaptureNotification}"
                                          ButtonText="Capture"/>
                 <components:CustomButton ToolTipText="Video Record"
                                          ImageSource="../Resources/Icons/recorder.png"
@@ -349,13 +348,13 @@
             </Button>
         </StackPanel>
 
-        <Grid>
-            
-            <Toast:NotificationContainer x:Name="NotificationContainer" HorizontalAlignment="Right" VerticalAlignment="Top" />
-
-
-        </Grid>
-        
+        <Toast:NotificationContainer 
+            x:Name="NotificationContainer" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top" 
+            Grid.Column="1" 
+            Background="Purple">
+        </Toast:NotificationContainer>
     </Grid>
 </Window>
 
