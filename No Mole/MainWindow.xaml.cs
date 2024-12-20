@@ -16,6 +16,7 @@ using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
 using System.Diagnostics;
 using System.IO;
+using No_Mole.Notification;
 
 namespace No_Mole
 {
@@ -46,6 +47,7 @@ namespace No_Mole
         {
             InitializeComponent();
             DataContext = this;
+            DataContext = new ViewModal(NotificationContainer);
             Recording_Info.Visibility = Visibility.Hidden;
             ZoomSliderUI.Visibility = Visibility.Hidden;
             BrightnessSliderUI.Visibility = Visibility.Hidden;

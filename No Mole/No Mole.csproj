@@ -26,6 +26,7 @@
 		<PackageReference Include="AForge.Video" Version="2.2.5" />
 		<PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
 		<PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+		<PackageReference Include="Flattinger.UI.ToastMessage" Version="1.0.0.3" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
 		<PackageReference Include="System.Drawing.Common" Version="9.0.0" />
 	</ItemGroup>
@@ -41,12 +42,12 @@
 		<Resource Include="Resources/Icons/stop.png" />
 		<Resource Include="Resources/Icons/no_mole_logo.png" />
 		<Resource Include="Resources/Icons/arrow-down.png" />
-		<Resource Include="Resources/Icons/RecordImage.png"/>
-		<Resource Include="Resources/Icons/RecordVideo.png"/>
-		<Resource Include="Resources/Icons/VideoFolder.png"/>
-		<Resource Include="Resources/Icons/ImageFolder.png"/>
-		<Resource Include="Resources/Icons/eyeclose.png"/>
-		<Resource Include="Resources/Icons/transfer.png"/>
+		<Resource Include="Resources/Icons/RecordImage.png" />
+		<Resource Include="Resources/Icons/RecordVideo.png" />
+		<Resource Include="Resources/Icons/VideoFolder.png" />
+		<Resource Include="Resources/Icons/ImageFolder.png" />
+		<Resource Include="Resources/Icons/eyeclose.png" />
+		<Resource Include="Resources/Icons/transfer.png" />
 		
 
 	</ItemGroup>

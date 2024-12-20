@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:No_Mole"
         xmlns:components="clr-namespace:No_Mole.Components"
         xmlns:local1="clr-namespace:No_Mole.Converters"
+        
+      xmlns:Toast="clr-namespace:Flattinger.UI.ToastMessage.Controls;assembly=Flattinger.UI.ToastMessage"
+       
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
@@ -345,6 +348,14 @@
                 </Button.Content>
             </Button>
         </StackPanel>
+
+        <Grid>
+            
+            <Toast:NotificationContainer x:Name="NotificationContainer" HorizontalAlignment="Right" VerticalAlignment="Top" />
+
+
+        </Grid>
+        
     </Grid>
 </Window>
 
