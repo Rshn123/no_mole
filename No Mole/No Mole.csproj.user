@@ -55,6 +55,9 @@
     <Compile Update="Components\VideoEffect.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\WarningModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Components\About.xaml">
@@ -103,6 +106,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\VideoEffect.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\WarningModal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
