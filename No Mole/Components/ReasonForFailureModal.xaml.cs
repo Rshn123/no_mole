@@ -20,7 +20,7 @@ namespace No_Mole.Components
     /// </summary>
     public partial class ReasonForFailureModal
     {
-        ModalWindow _modalWindow;
+        private readonly ModalWindow _modalWindow;
         public ReasonForFailureModal(ModalWindow modalWindow)
         {
             InitializeComponent();

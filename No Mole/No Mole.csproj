@@ -43,4 +43,60 @@
 		<Resource Include="Resources/Icons/arrow-down.png" />
 
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avcodec-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avdevice-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avfilter-6.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avformat-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avutil-55.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\postproc-54.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\swresample-2.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\swscale-4.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avcodec-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avdevice-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avfilter-6.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avformat-57.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\avutil-55.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\rshre\.nuget\packages\accord.video.ffmpeg\3.8.0\build\postproc-54.dll" />
+	</ItemGroup>
 </Project>

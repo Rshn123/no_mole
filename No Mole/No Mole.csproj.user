@@ -31,6 +31,9 @@
     <Compile Update="Components\ReasonForFailureModal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\SavedFileShow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\SpecialIfAny.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\ReasonForFailureModal.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\SavedFileShow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\SpecialIfAny.xaml">

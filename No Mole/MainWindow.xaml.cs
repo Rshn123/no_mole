@@ -16,7 +16,6 @@ using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
 using System.Diagnostics;
 using System.IO;
-using System.Formats.Asn1;
 
 namespace No_Mole
 {
@@ -25,14 +24,12 @@ namespace No_Mole
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private FilterInfoCollection? _videoDevices;
         private VideoCaptureDevice? _videoSource;
         private bool recordingVisibility = false;
 
         private bool _isRecording = false;
         private Process? _ffmpegProcess;
-        private string _outputFileName = $"video_{DateTime.Now:yyyyMMdd_HHmmss}.mp4";
         private bool _isCaptureRequested = false;
         private string _captureImagePath = string.Empty;
         private DispatcherTimer _timer;        // Timer for updating the clock
@@ -214,32 +211,12 @@ namespace No_Mole
 
         private void StartRecording()
         {
-            _isRecording = true;
-            _ffmpegProcess = new Process
-            {
-                StartInfo =
-            {
-                FileName = "ffmpeg",
-                Arguments = $"-y -f rawvideo -pix_fmt bgr24 -s {640}x{480} -r 30 -i pipe:0 -c:v libx264 {_outputFileName}",
-                UseShellExecute = false,
-                RedirectStandardInput = true,
-                RedirectStandardError = true,
-                CreateNoWindow = true
-            }
-            };
-            _ffmpegProcess.Start();
+            
         }
 
         private void StopRecording()
         {
-            if (_ffmpegProcess != null && !_ffmpegProcess.HasExited)
-            {
-                _ffmpegProcess.StandardInput.Close();
-                _ffmpegProcess.WaitForExit();
-                _ffmpegProcess.Dispose();
-            }
-            _isRecording = false;
-            MessageBox.Show($"Video saved as {_outputFileName}");
+           
         }
 
 
@@ -332,7 +309,7 @@ namespace No_Mole
                 string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
                 // Create a folder named "CapturedFiles" inside the project directory
-                string captureFolder = Path.Combine(projectDirectory, "CapturedFiles");
+                string captureFolder = Path.Combine(projectDirectory, "CapturedFiles/Images");
                 Directory.CreateDirectory(captureFolder); // Ensure the folder exists
                 string imagePath = Path.Combine(captureFolder,
                                                 $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
@@ -344,7 +321,6 @@ namespace No_Mole
                 Debug.WriteLine($"Image capture error: {ex.Message}");
             }
         }
-
 
         private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
         {
@@ -383,7 +359,6 @@ namespace No_Mole
                 StopRecording();
             }
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
