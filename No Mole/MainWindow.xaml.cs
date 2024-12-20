@@ -211,12 +211,12 @@ namespace No_Mole
 
         private void StartRecording()
         {
-            
+
         }
 
         private void StopRecording()
         {
-           
+
         }
 
 
@@ -298,7 +298,7 @@ namespace No_Mole
         private void CaptureButtonClicked(object sender, RoutedEventArgs e)
         {
             _isCaptureRequested = true;
-           
+
         }
 
         private void CaptureImage(Bitmap bitmap)
@@ -366,6 +366,12 @@ namespace No_Mole
 
             if (ButtonText.Text.ToString() == "Stop RVI")
             {
+                BlurEffect blur = new()
+                {
+                    Radius = 10
+                };
+                this.Effect = blur;
+
                 ModalWindow modal = new(this, button!)
                 {
                     Owner = this,
@@ -373,7 +379,7 @@ namespace No_Mole
                     Height = 430
                 };
                 OpenModal(modal, 430, 615);
-                
+
             }
             else
             {
@@ -452,6 +458,11 @@ namespace No_Mole
         private void Video_Click(object sender, RoutedEventArgs e)
         {
             OpenModal(new VideoEffect(), 300, 450);
+        }
+
+        private void CustomIcons_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

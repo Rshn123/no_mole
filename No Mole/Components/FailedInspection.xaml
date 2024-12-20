@@ -41,6 +41,7 @@
                                 Margin="0,40,0,20">
                         <Button x:Name="PassButton"
                                 Width="140"
+                                Cursor="Hand"
                                 Height="45"
                                 Margin="0,0,10,0"
                                 FontWeight="Bold"
@@ -48,6 +49,15 @@
                                 Foreground="White"
                                 BorderBrush="Transparent"
                                 Click="PassButton_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="10"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center">
@@ -77,10 +87,20 @@
                                 Height="45"
                                 Margin="10,0,0,0"
                                 FontWeight="Bold"
+                                Cursor="Hand"
                                 Background="#292929"
                                 Foreground="White"
                                 BorderBrush="Transparent"
                                 Click="FailButton_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="10"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center">
@@ -130,12 +150,44 @@
                                Foreground="Red">Please choose pass or fail!</TextBlock>
                     <Button Content="Submit"
                             Width="300"
-                            Height="40 "
+                            Height="40"
                             Background="#8E44AD"
                             Foreground="White"
                             FontWeight="Bold"
                             BorderBrush="Transparent"
-                            Click="Submit_Button_Click"/>
+                            Click="Submit_Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background"
+                                        Value="#8E44AD"/>
+                                <!-- Default background -->
+                                <Setter Property="Foreground"
+                                        Value="White"/>
+                                <Setter Property="BorderBrush"
+                                        Value="Transparent"/>
+                                <Style.Triggers>
+                                    <!-- Hover Effect -->
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                        <Setter Property="Background"
+                                                Value="#9B59B6"/>
+                                        <!-- Hover background color -->
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -142,10 +142,10 @@
         </Border>
 
         <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Left"
+                    HorizontalAlignment="center"
                     VerticalAlignment="Center"
                     Grid.Column="1"
-                    Margin="467,0,0,0">
+                    Margin="0,0,0,0">
             <StackPanel x:Name="Recording_Info"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -174,8 +174,18 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Height="400">
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center">
 
-                <StackPanel Orientation="Horizontal" x:Name="BrightnessSliderUI">
+                    <components:CustomIcons ImageSource="../Resources/Icons/VideoFolder.png"
+                                            Margin="0,0,0,40"/>
+
+                    <components:CustomIcons ImageSource="../Resources/Icons/ImageFolder.png"
+                                            Margin="0,0,0,0"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            x:Name="BrightnessSliderUI">
                     <TextBlock Text="Brightness"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -194,9 +204,7 @@
                         Height="400"
                         Width="20"
                         Margin="0 0 10 0"
-                        ValueChanged="BrightnessSlider_ValueChanged">
-
-                    </Slider>
+                        ValueChanged="BrightnessSlider_ValueChanged"/>
 
                 </StackPanel>
 
@@ -209,7 +217,8 @@
                         Height="400"
                         x:Name="CameraViewBorder"
                         ClipToBounds="True"
-                        Background="White" Padding="2">
+                        Background="White"
+                        Padding="2">
                     <Image x:Name="CameraImage"
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
@@ -217,7 +226,8 @@
                     </Image>
                 </Border>
 
-                <StackPanel Orientation="Horizontal" x:Name="ZoomSliderUI">
+                <StackPanel Orientation="Horizontal"
+                            x:Name="ZoomSliderUI">
                     <Slider x:Name="ZoomSlider"
                             Minimum="1.0"
                             Maximum="4.0"
@@ -227,9 +237,7 @@
                             Width="20"
                             Margin="10 0 0 0"
                             Style="{StaticResource RoundedThumbSliderStyle}"
-                            ValueChanged="ZoomSlider_ValueChanged">
-
-                    </Slider>
+                            ValueChanged="ZoomSlider_ValueChanged"/>
                     <TextBlock Text="Zoom"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
@@ -239,7 +247,17 @@
                         </TextBlock.LayoutTransform>
                     </TextBlock>
                 </StackPanel>
+                <StackPanel Orientation="Vertical"
+            VerticalAlignment="Center">
 
+                    <components:CustomIcons ImageSource="../Resources/Icons/RecordVideo.png"
+                            Margin="0,0,0,40"/>
+
+
+                    <components:CustomIcons ImageSource="../Resources/Icons/REcordImage.png"
+                            Margin="0,0,0,0"/>
+
+                </StackPanel>
             </StackPanel>
 
 
@@ -281,31 +299,50 @@
                     Width="400"
                     Margin="0,10"
                     HorizontalAlignment="Center"
-                    Background="#ad42ad"
-                    Foreground="White"
                     FontWeight="Bold"
                     BorderBrush="Transparent"
                     FontSize="16"
                     x:Name="RVIButton"
                     Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Background"
+                                Value="#ad42ad"/>
+                        <Setter Property="Foreground"
+                                Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#ff00ff"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image x:Name="ButtonImage"
                                Source="Resources/Icons/play.png"
                                Width="18"
                                Height="18"
-                               Margin="0 0 10 0"/>
+                               Margin="0,0,10,0"/>
                         <TextBlock x:Name="ButtonText"
                                    Text="Start RVI"/>
                     </StackPanel>
                 </Button.Content>
-
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius"
-                                Value="10"/>
-                    </Style>
-                </Button.Resources>
             </Button>
         </StackPanel>
     </Grid>

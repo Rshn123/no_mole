@@ -12,23 +12,56 @@
         <Button
             Height="48"
             Width="95"
+            Cursor="Hand"
             Background="{Binding CustomButtonBackground, ElementName=root}"
             ToolTip="{Binding ToolTipText, ElementName=root}"
             Click="Button_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius"
-                            Value="10"/>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background"
+                            Value="White"/>
+                    <Setter Property="BorderBrush"
+                            Value="Gray"/>
+                    <Setter Property="BorderThickness"
+                            Value="1"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="10">
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="#ad42ad"/>
+
+                            <Setter Property="BorderBrush"
+                                    Value="#FFAAAAAA"/>
+
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
-            </Button.Resources>
+            </Button.Style>
             <StackPanel Orientation="Vertical">
                 <Image Source="{Binding ImageSource,ElementName=root}"
                        Width="24"
                        Height="24"/>
                 <TextBlock Text="{Binding ButtonText, ElementName=root}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"/>
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
     </Grid>
 </UserControl>
+

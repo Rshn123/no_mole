@@ -41,6 +41,13 @@
 		<Resource Include="Resources/Icons/stop.png" />
 		<Resource Include="Resources/Icons/no_mole_logo.png" />
 		<Resource Include="Resources/Icons/arrow-down.png" />
+		<Resource Include="Resources/Icons/RecordImage.png"/>
+		<Resource Include="Resources/Icons/RecordVideo.png"/>
+		<Resource Include="Resources/Icons/VideoFolder.png"/>
+		<Resource Include="Resources/Icons/ImageFolder.png"/>
+		<Resource Include="Resources/Icons/eyeclose.png"/>
+		<Resource Include="Resources/Icons/transfer.png"/>
+		
 
 	</ItemGroup>
 

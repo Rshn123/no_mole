@@ -98,15 +98,46 @@
                            Margin="0 10"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center">Please enter serial number.</TextBlock>
-
                 <Button Content="Continue"
                         Width="200"
                         Height="40"
                         Background="#8E44AD"
                         Foreground="White"
+                        Cursor="Hand"
                         FontWeight="Bold"
                         BorderBrush="Transparent"
-                        Click="Button_Click"/>
+                        Click="Button_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background"
+                                    Value="#8E44AD"/>
+                            <!-- Default background -->
+                            <Setter Property="Foreground"
+                                    Value="White"/>
+                            <Setter Property="BorderBrush"
+                                    Value="Transparent"/>
+                            <Style.Triggers>
+                                <!-- Hover Effect -->
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#9B59B6"/>
+                                    <!-- Hover background color -->
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
                 <TextBlock Text="Don't have a serial number?"
                            Foreground="#787878"
                            FontSize="12"
