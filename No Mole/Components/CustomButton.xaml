@@ -17,9 +17,12 @@
             Click="Button_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="White" />
-                    <Setter Property="BorderBrush" Value="Gray" />
-                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="Background"
+                            Value="White"/>
+                    <Setter Property="BorderBrush"
+                            Value="Gray"/>
+                    <Setter Property="BorderThickness"
+                            Value="1"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
@@ -30,18 +33,21 @@
                                     CornerRadius="10">
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
-                                        VerticalAlignment="Center" />
+                                        VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                     <Style.Triggers>
                         <!-- Hover Effect -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#ad42ad" />
-                          
-                            <Setter Property="BorderBrush" Value="#FFAAAAAA" />
-                           
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="#ad42ad"/>
+
+                            <Setter Property="BorderBrush"
+                                    Value="#FFAAAAAA"/>
+
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -49,8 +55,10 @@
             <StackPanel Orientation="Vertical">
                 <Image Source="{Binding ImageSource,ElementName=root}"
                        Width="24"
-                       Height="24" />
-                <TextBlock Text="{Binding ButtonText, ElementName=root}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                       Height="24"/>
+                <TextBlock Text="{Binding ButtonText, ElementName=root}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
     </Grid>

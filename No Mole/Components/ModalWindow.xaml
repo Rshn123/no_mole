@@ -7,24 +7,29 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         AllowsTransparency="True"
-Background="#1F1F1F"          WindowStyle="None"
+        Background="#1F1F1F"
+        WindowStyle="None"
         Height="450"
         Title="ModalWindow">
     <Grid>
         <DockPanel Grid.Row="0"
-           Margin="0,0,10,0">
+                   Margin="0,0,10,0">
             <Button Content="X"
-            Width="30"
-            Height="30"
-            Foreground="White"
+                    Width="30"
+                    Height="30"
+                    Foreground="White"
                     Background="Transparent"
-          BorderBrush="Transparent"
-            FontSize="14"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Click="Close_Popup_Click"/>
+                    BorderBrush="Transparent"
+                    FontSize="14"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="Close_Popup_Click"/>
         </DockPanel>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Height="415" Width="615" Margin="0 29"/>
+        <Frame x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"
+               Height="415"
+               Width="615"
+               Margin="0 29"/>
 
     </Grid>
 </Window>

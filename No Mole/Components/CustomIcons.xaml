@@ -1,12 +1,13 @@
 ﻿<UserControl x:Class="No_Mole.Components.CustomIcons"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:No_Mole.Components"
              x:Name="root"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
     <Grid>
         <Button
             Height="70"
@@ -23,29 +24,36 @@
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <ContentPresenter HorizontalAlignment="Center"
                                                   VerticalAlignment="Center"
-                                                  Content="{TemplateBinding Content}" />
+                                                  Content="{TemplateBinding Content}"/>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
             </Button.Style>
 
-            <StackPanel Orientation="Vertical" Width="160">
-            
-                <Border Width="80" Height="67">
+            <StackPanel Orientation="Vertical"
+                        Width="160">
+
+                <Border Width="80"
+                        Height="67">
                     <Border.Style>
                         <Style TargetType="Border">
-                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Background"
+                                    Value="Transparent"/>
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#AD42AD" /> 
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#AD42AD"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
                     </Border.Style>
-                   
+
                     <Image Source="{Binding ImageSource, ElementName=root}"
-                           Width="160" Height="67" Stretch="Uniform" />
+                           Width="160"
+                           Height="67"
+                           Stretch="Uniform"/>
                 </Border>
             </StackPanel>
         </Button>

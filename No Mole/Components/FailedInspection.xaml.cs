@@ -54,7 +54,7 @@ namespace No_Mole.Components
 
             if (_failOrPass)
             {
-                _modalWindow!.MainFrame.Navigate( new UdiOrNonUdiModal(_modalWindow));
+                _modalWindow!.MainFrame.Navigate(new UdiOrNonUdiModal(_modalWindow));
             }
             else
             {

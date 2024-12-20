@@ -22,11 +22,11 @@ namespace No_Mole.Components
 
         public static readonly DependencyProperty HintProperty =
             DependencyProperty.Register(
-                nameof(Hint), 
+                nameof(Hint),
                 typeof(string),
                 typeof(InputField));
 
-    
+
         public string Caption
         {
             get { return (string)GetValue(CaptionProperty); }

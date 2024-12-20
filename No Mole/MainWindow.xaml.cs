@@ -306,7 +306,7 @@ namespace No_Mole
                 };
                 this.Effect = blur;
 
-               ModalWindow modal = new(this, button!)
+                ModalWindow modal = new(this, button!)
                 {
                     Owner = this,
                     Width = 615,
