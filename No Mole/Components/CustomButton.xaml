@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:No_Mole.Components"
+             xmlns:local="clr-namespace:No_Mole.Components" xmlns:notification="clr-namespace:No_Mole.Notification" d:DataContext="{d:DesignInstance Type=notification:ViewModal}"
              mc:Ignorable="d"
              x:Name="root"
              d:DesignHeight="450"
@@ -15,6 +15,7 @@
             Cursor="Hand"
             Background="{Binding CustomButtonBackground, ElementName=root}"
             ToolTip="{Binding ToolTipText, ElementName=root}"
+            Command ="{Binding Command, ElementName=root}"
             Click="Button_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">

@@ -16,6 +16,7 @@ using Color = System.Windows.Media.Color;
 using System.Windows.Threading;
 using System.Diagnostics;
 using System.IO;
+using No_Mole.Notification;
 
 namespace No_Mole
 {
@@ -46,6 +47,7 @@ namespace No_Mole
         {
             InitializeComponent();
             DataContext = this;
+            DataContext = new ViewModal(NotificationContainer);
             Recording_Info.Visibility = Visibility.Hidden;
             ZoomSliderUI.Visibility = Visibility.Hidden;
             BrightnessSliderUI.Visibility = Visibility.Hidden;
@@ -314,13 +316,43 @@ namespace No_Mole
                 string imagePath = Path.Combine(captureFolder,
                                                 $"capture_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
                 bitmap.Save(imagePath, ImageFormat.Jpeg);
-                Dispatcher.Invoke(() => MessageBox.Show($"Image saved to {imagePath}"));
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Image capture error: {ex.Message}");
             }
         }
+
+        public void DeleteImages_Click()
+        {
+            // Get the project directory
+            string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Create a folder named "CapturedFiles" inside the project directory
+            string directoryPath = Path.Combine(projectDirectory, "CapturedFiles/Images");
+            string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp" };
+
+            try
+            {
+                string[] files = Directory.GetFiles(directoryPath);
+
+                foreach (string file in files)
+                {
+                    if (Array.Exists(imageExtensions, ext => file.EndsWith(ext, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        File.Delete(file);
+                        Console.WriteLine($"Deleted: {file}");
+                    }
+                }
+
+                MessageBox.Show("All images deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
 
         private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
         {
