@@ -25,32 +25,51 @@ namespace No_Mole.Components
         {
             try
             {
+                // Get the project directory
                 string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string captureFolder = Path.Combine(projectDirectory, "CapturedFiles/Images");
 
-                string[] files = Directory.GetFiles(captureFolder);
+                // Create a folder named "CapturedFiles/Images" inside the project directory
+                string directoryPath = Path.Combine(projectDirectory, "CapturedFiles", "Images");
+
+                // Ensure the directory exists
+                if (!Directory.Exists(directoryPath))
+                {
+                    MessageBox.Show("The CapturedFiles directory does not exist.");
+                    return;
+                }
+
+                string[] files = Directory.GetFiles(directoryPath);
 
                 foreach (string file in files)
                 {
                     try
                     {
-                        // Load the image
-                        BitmapImage bitmap = new BitmapImage(new Uri(file, UriKind.Absolute));
-                        Image image = new Image
+                        // Load the image into memory to prevent file locks
+                        using (FileStream stream = new (file, FileMode.Open, FileAccess.Read, FileShare.Read))
                         {
-                            Source = bitmap,
-                            Width = 100,
-                            Height = 100,
-                            Margin = new Thickness(5),
-                            Cursor = Cursors.Hand // Indicate that the image is clickable
+                            BitmapImage bitmap = new();
+                            bitmap.BeginInit();
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad; // Load into memory
+                            bitmap.StreamSource = stream;
+                            bitmap.EndInit();
+                            bitmap.Freeze(); // Allow cross-thread access
 
-                        };
-                        // Add click event to preview the image
-                        image.MouseLeftButtonDown += (s, e) => ShowPreviewWindow(bitmap);
+                            // Create Image control and display it
+                            Image image = new ()
+                            {
+                                Source = bitmap,
+                                Width = 100,
+                                Height = 100,
+                                Margin = new Thickness(5),
+                                Cursor = Cursors.Hand // Indicate that the image is clickable
+                            };
 
-                        // Add the image to the panel
-                        ImageWrapPanel.Children.Add(image);
-                        // Add the image to the panel
+                            // Add click event to preview the image
+                            image.MouseLeftButtonDown += (s, e) => ShowPreviewWindow(bitmap);
+
+                            // Add the image to the panel
+                            ImageWrapPanel.Children.Add(image);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -67,7 +86,7 @@ namespace No_Mole.Components
         private void ShowPreviewWindow(BitmapImage image)
         {
             // Create and show a new window with the preview
-            PreviewWindow previewWindow = new PreviewWindow(image);
+            PreviewWindow previewWindow = new (image);
             previewWindow.ShowDialog(); // Show as a modal dialog
         }
 

@@ -14,6 +14,7 @@ using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Accord;
+using Flattinger.UI.ToastMessage;
 
 namespace No_Mole.Components
 {
@@ -31,28 +32,30 @@ namespace No_Mole.Components
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
             _modalWindow.ChangeRVIButtonState("#AD42AD", "Resources/Icons/play.png", "Start RVI");
+            TriggerToast();
             _modalWindow.Close();
         }
 
-        private void OpenModal(Window modal, int height, int width)
+        private void TriggerToast()
         {
-            BlurEffect blur = new()
+            // Access MainWindow and its NotificationContainer
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow != null)
             {
-                Radius = 10
-            };
-
-            this.Effect = blur;
-
-            modal.Owner = _modalWindow;
-            modal.Width = width;
-            modal.Height = height;
-
-            modal.Left = _modalWindow.Left + (this.Width - modal.Width) / 2;
-            modal.Top = _modalWindow.Top + (this.Height - modal.Height) / 2;
-
-            modal.ShowDialog();
-
-            this.Effect = null;
+                // Trigger a toast notification
+                var toastProvider = new ToastProvider(mainWindow.NotificationContainer);
+                toastProvider.NotificationService.AddNotification(
+                    Flattinger.Core.Enums.ToastType.INFO,
+                    "Saved in cloud.",
+                    "Video and Images are saved to cloud.",
+                    5
+                );
+            }
+            else
+            {
+                MessageBox.Show("MainWindow is not accessible.");
+            }
         }
     }
 }

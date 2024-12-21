@@ -29,34 +29,37 @@ namespace No_Mole
         private VideoCaptureDevice? _videoSource;
         private bool recordingVisibility = false;
 
-        private bool _isRecording = false;
-        private Process? _ffmpegProcess;
+        private readonly bool _isRecording = false;
         private bool _isCaptureRequested = false;
-        private string _captureImagePath = string.Empty;
-        private DispatcherTimer _timer;        // Timer for updating the clock
-        private TimeSpan _elapsedTime;        // Tracks elapsed time
-        private TimeSpan _durationLimit;      // Duration limit (15 seconds)
-        private float _brightnessFactor = 1.0f; // Default value (no brightness change)
+        // Timer for updating the clock
+        private readonly DispatcherTimer _timer;
+        // Tracks elapsed time
+        private TimeSpan _elapsedTime;
+        // Duration limit (15 seconds)
+        private readonly TimeSpan _durationLimit;
+        // Default value (no brightness change)
+        private float _brightnessFactor = 1.0f;
         private float _zoomFactor = 1.0f;
         private bool zoomSliderVisibility = false;
         private bool brightnessSliderVisibility = false;
         Bitmap? bitmap = null;
-        private string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
+        private readonly string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = this;
             DataContext = new ViewModal(NotificationContainer);
             Recording_Info.Visibility = Visibility.Hidden;
             ZoomSliderUI.Visibility = Visibility.Hidden;
             BrightnessSliderUI.Visibility = Visibility.Hidden;
+
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
             _timer.Tick += Timer_Tick!;
             Record_Button.IsEnabled = true;
             CameraViewBorder.Width = 400;
+
             // Set the duration limit to 15 seconds
             _durationLimit = TimeSpan.FromSeconds(15);
 
@@ -70,8 +73,11 @@ namespace No_Mole
         private void Timer_Tick(object sender, EventArgs e)
         {
             _elapsedTime = _elapsedTime.Add(TimeSpan.FromSeconds(1)); // Increment elapsed time
-            TimerText.Text = "recording...";  // Update the display
-                                              // Toggle the visibility of the TextBlock
+
+            // Update the display
+            TimerText.Text = "recording...";
+
+            // Toggle the visibility of the TextBlock
             if (TimerText.Visibility == Visibility.Visible)
             {
                 TimerText.Visibility = Visibility.Hidden;
@@ -109,7 +115,6 @@ namespace No_Mole
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-
             try
             {
                 bitmap = (Bitmap)eventArgs.Frame.Clone();
@@ -154,19 +159,6 @@ namespace No_Mole
                     {
                         // Handle brightness adjustment errors
                         Debug.WriteLine($"Brightness adjustment error: {ex.Message}");
-                    }
-                }
-
-                if (_isRecording && _ffmpegProcess != null)
-                {
-                    using var ms = new MemoryStream();
-                    bitmap.Save(ms, ImageFormat.Bmp);
-                    var bmpData = ms.ToArray();
-
-                    if (_ffmpegProcess.StandardInput.BaseStream.CanWrite)
-                    {
-                        _ffmpegProcess.StandardInput.BaseStream.Write(bmpData, 0, bmpData.Length);
-                        _ffmpegProcess.StandardInput.BaseStream.Flush();
                     }
                 }
 
@@ -303,7 +295,7 @@ namespace No_Mole
 
         }
 
-        private void CaptureImage(Bitmap bitmap)
+        private static void CaptureImage(Bitmap bitmap)
         {
             try
             {
@@ -323,38 +315,7 @@ namespace No_Mole
             }
         }
 
-        public void DeleteImages_Click()
-        {
-            // Get the project directory
-            string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
-            // Create a folder named "CapturedFiles" inside the project directory
-            string directoryPath = Path.Combine(projectDirectory, "CapturedFiles/Images");
-            string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp" };
-
-            try
-            {
-                string[] files = Directory.GetFiles(directoryPath);
-
-                foreach (string file in files)
-                {
-                    if (Array.Exists(imageExtensions, ext => file.EndsWith(ext, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        File.Delete(file);
-                        Console.WriteLine($"Deleted: {file}");
-                    }
-                }
-
-                MessageBox.Show("All images deleted successfully.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-
-        private void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
+        private static void ToggleUIElement(ref bool visibilityFlag, UIElement uiElement, CustomButton button)
         {
             visibilityFlag = !visibilityFlag;
             uiElement.Visibility = visibilityFlag ? Visibility.Visible : Visibility.Hidden;

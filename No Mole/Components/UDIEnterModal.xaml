@@ -58,8 +58,7 @@
             <!-- Footer -->
             <StackPanel Grid.Row="4"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Height="76"
+                        Height="100"
                         Width="200"
                         Margin="0 40">
                 <TextBlock Foreground="Red"
@@ -88,10 +87,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <TextBlock Text="Don't have a serial number?"
-                           Foreground="#787878"
-                           FontSize="12"
-                           TextAlignment="Center"/>
+
             </StackPanel>
         </StackPanel>
     </Border>

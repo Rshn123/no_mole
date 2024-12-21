@@ -19,7 +19,7 @@ namespace No_Mole
             mainWindow.Show();
         }
 
-        private void ConfigureServices(IServiceCollection services)
+        private static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<MainWindow>();
             services.AddTransient<ReasonForFailureModal>();

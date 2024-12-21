@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using Flattinger.Core.Interface.ToastMessage;
 using Flattinger.Core.MVVM;
@@ -14,9 +15,9 @@ namespace No_Mole.Notification
         public ICommand SendRecordingStartedNotification { get; private set; }
         public ICommand SendRecordingSavedNotification { get; private set; }
         public ICommand SendImageCaptureNotification { get; private set; }
+        public ICommand SendDataToCloudNotification { get; private set; }
 
         private readonly ToastProvider _toastProvider;
-        private readonly AppTheme _appTheme;
 
         // Constructor with NotificationContainer
         public ViewModal(NotificationContainer notificationContainer)
@@ -25,13 +26,14 @@ namespace No_Mole.Notification
                 throw new ArgumentNullException(nameof(notificationContainer));
 
             _toastProvider = new ToastProvider(notificationContainer);
-            _appTheme = new AppTheme();
 
             // Assign commands to corresponding methods
             SendMessageInspectionNotification = new RelayCommand(_ => SendMessageInspection());
             SendRecordingStartedNotification = new RelayCommand(_ => SendRecordingStarted());
             SendRecordingSavedNotification = new RelayCommand(_ => SendRecordingSaved());
             SendImageCaptureNotification = new RelayCommand(_ => SendImageCapture());
+            SendDataToCloudNotification = new RelayCommand(_ => SendDataToCloud());
+
         }
 
         // Parameterless constructor (optional)
@@ -79,6 +81,17 @@ namespace No_Mole.Notification
                 Flattinger.Core.Enums.ToastType.INFO,
                 "Image Capture",
                 "An image has been captured.",
+                5,
+                animationConfig: new AnimationConfig { }
+            );
+        }
+
+        private void SendDataToCloud()
+        {
+            _toastProvider.NotificationService.AddNotification(
+                Flattinger.Core.Enums.ToastType.INFO,
+                "Saved in cloud.",
+                "Video and Images are saved to cloud.",
                 5,
                 animationConfig: new AnimationConfig { }
             );

@@ -353,7 +353,7 @@
             HorizontalAlignment="Right" 
             VerticalAlignment="Top" 
             Grid.Column="1" 
-            Background="Purple">
+            Background="White">
         </Toast:NotificationContainer>
     </Grid>
 </Window>
