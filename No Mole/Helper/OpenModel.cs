@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Accord;
-using System.Windows.Media.Effects;
+﻿using System.Windows.Media.Effects;
 using System.Windows;
 
 namespace No_Mole.Helper

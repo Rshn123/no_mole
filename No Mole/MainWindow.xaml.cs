@@ -43,7 +43,6 @@ namespace No_Mole
         private bool zoomSliderVisibility = false;
         private bool brightnessSliderVisibility = false;
         Bitmap? bitmap = null;
-        private readonly string outputVideoDirectory = Path.Combine(Directory.GetCurrentDirectory(), "video"); // Path for video folder
 
         public MainWindow()
         {
@@ -52,7 +51,7 @@ namespace No_Mole
             Recording_Info.Visibility = Visibility.Hidden;
             ZoomSliderUI.Visibility = Visibility.Hidden;
             BrightnessSliderUI.Visibility = Visibility.Hidden;
-
+            this.Closed += Window_Closed!;
             // Initialize the timer
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);  // Update every second
@@ -65,10 +64,33 @@ namespace No_Mole
 
             // Initialize elapsed time
             _elapsedTime = TimeSpan.Zero;
-
+            CreateCaptureFolders();
             StartLive();
         }
 
+        private static void CreateCaptureFolders()
+        {
+            // Get the base directory of the application
+            string projectDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Define the base "CapturedFiles" folder path
+            string capturedFilesFolder = Path.Combine(projectDirectory, "CapturedFiles");
+
+            // Define paths for "Images" and "Videos" folders
+            string imagesFolder = Path.Combine(capturedFilesFolder, "Images");
+            string videosFolder = Path.Combine(capturedFilesFolder, "Videos");
+
+            // Create the folders if they don't exist
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
+
+            if (!Directory.Exists(videosFolder))
+            {
+                Directory.CreateDirectory(videosFolder);
+            }
+        }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -76,7 +98,6 @@ namespace No_Mole
 
             // Update the display
             TimerText.Text = "recording...";
-
             // Toggle the visibility of the TextBlock
             if (TimerText.Visibility == Visibility.Visible)
             {
@@ -260,9 +281,25 @@ namespace No_Mole
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            _videoSource!.SignalToStop();
-            _videoSource.WaitForStop();
-            _videoSource = null;
+            // Stop the video source
+            if (_videoSource != null)
+            {
+                _videoSource.SignalToStop();
+                _videoSource.WaitForStop();
+                _videoSource = null;
+            }
+
+            // Ensure all windows are closed
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != this) // Skip the main window
+                {
+                    window.Close();
+                }
+            }
+
+            // Shutdown the application
+            Application.Current.Shutdown();
         }
 
         private void To_400(object sender, RoutedEventArgs e)
@@ -451,11 +488,6 @@ namespace No_Mole
         private void Video_Click(object sender, RoutedEventArgs e)
         {
             OpenModal(new VideoEffect(), 300, 450);
-        }
-
-        private void CustomIcons_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

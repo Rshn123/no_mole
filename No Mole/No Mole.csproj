@@ -22,7 +22,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Accord.Video.FFMPEG" Version="3.8.0" />
 		<PackageReference Include="AForge.Video" Version="2.2.5" />
 		<PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
 		<PackageReference Include="Emgu.CV" Version="4.9.0.5494" />

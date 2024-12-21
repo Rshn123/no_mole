@@ -15,12 +15,7 @@
             CornerRadius="10"
             BorderThickness="1">
         <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-                <RowDefinition Height="0"/>
-                <RowDefinition Height="75.96"/>
-            </Grid.RowDefinitions>
+
 
             <!-- Form -->
             <StackPanel Grid.Row="1"
@@ -30,8 +25,7 @@
                         Width="420">
                 <UniformGrid Rows="2"
                              Columns="2"
-                             HorizontalAlignment="Stretch">
-                    <!-- Batch -->
+                             >
                     <StackPanel Margin="5"
                                 Width="200">
                         <TextBlock Text="Set Number"
@@ -75,10 +69,7 @@
                                             BorderThickness="0">
                                         <TextBlock Foreground="White"
                                                    FontSize="12"
-                                                   TextWrapping="Wrap">
-                                            It is a unique identifier assigned by the manufacturer, typically printed on the device itself or included in its documentation. This serial number is used for tracking, support, and warranty purposes.
-                                            If you don't have a serial number, enter your own serial number. It is used for creating a folder name.
-                                        </TextBlock>
+                                                   TextWrapping="Wrap"><Run Text="It is a unique identifier assigned by the manufacturer, typically printed on the device itself or included in its documentation. This serial number is used for tracking, support, and warranty purposes. If you don't have a serial number, enter your own serial number. It is used for creating a folder name."/></TextBlock>
                                     </Border>
                                 </ToolTip>
                             </TextBlock.ToolTip>
@@ -88,11 +79,11 @@
             </StackPanel>
 
             <!-- Footer -->
-            <StackPanel Grid.Row="4"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
+            <StackPanel Grid.Row="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
                         Height="76"
-                        Width="200">
+                        Width="200" Margin="177,250,0,0">
                 <TextBlock Foreground="Red"
                            x:Name="InspectionModalErrorMsg"
                            Margin="0 10"
